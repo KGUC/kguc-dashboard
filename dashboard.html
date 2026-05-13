@@ -1501,6 +1501,7 @@ function renderTodayStaff() {
 
   // Parse shift start hour (24h)
   function shiftStartHour(shift) {
+    if (!shift) return 12;
     const m = shift.match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i);
     if (!m) return 12;
     let h = parseInt(m[1]);
@@ -1513,7 +1514,7 @@ function renderTodayStaff() {
 
   // Detect split shifts — contains two time ranges separated by ' / '
   function isSplitShift(shift) {
-    return shift.includes(' / ');
+    return !!(shift && shift.includes(' / '));
   }
 
   // For split shifts: first segment start hour, second segment start hour
@@ -1532,7 +1533,7 @@ function renderTodayStaff() {
       // Split shift: show in both columns
       const h1 = splitSegmentHour(s.shift, 0);
       const h2 = splitSegmentHour(s.shift, 1);
-      const parts = s.shift.split(' / ');
+      const parts = (s.shift||'').split(' / ');
       if (h1 < 15) lunchStaff.push({ ...s, shift: parts[0].trim(), splitBadge: true });
       if (h2 >= 15) dinnerStaff.push({ ...s, shift: parts[1].trim(), splitBadge: true });
     } else if (shiftStartHour(s.shift) < 15) {
@@ -1546,10 +1547,10 @@ function renderTodayStaff() {
   function staffCard(s) {
     const firstName = s.name.split(' ')[0];
     // Extract job code from shift e.g. "(S)", "(H)", "(T)", "(S/TR)", "(H On Call)"
-    const codeMatch = s.shift.match(/\(([^)]+)\)\s*$/);
+    const codeMatch = (s.shift||'').match(/\(([^)]+)\)\s*$/);
     const jobCode   = codeMatch ? codeMatch[1].replace(/\s*On Call/i, '').trim() : '';
-    const isOnCall  = /on call/i.test(s.shift);
-    const shiftBase = s.shift.replace(/\s*\([^)]+\)\s*$/, '').trim();
+    const isOnCall  = /on call/i.test(s.shift||'');
+    const shiftBase = (s.shift||'').replace(/\s*\([^)]+\)\s*$/, '').trim();
     const splitBadge = s.splitBadge
       ? '<span class="text-[9px] font-bold text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 rounded px-1 ml-0.5 whitespace-nowrap">split</span>'
       : '';
@@ -1617,7 +1618,7 @@ function computeStats() {
 
   let lunch = 0, dinner = 0;
   todayData.forEach(r => {
-    const h = parseInt(r.time.split(':')[0]);
+    const h = parseInt((r.time||'00:00').split(':')[0]);
     if (h < 15) lunch += r.covers; else dinner += r.covers;
   });
   lunchEl.textContent  = lunch  || '—';
@@ -1927,13 +1928,13 @@ na.addEventListener('input', () => {
 // ── BOARDROOMS ─────────────────────────────────────────────────────────────────
 const BR_SHEET_URL = 'https://oakview-my.sharepoint.com/:x:/r/personal/ash_franco_oakviewgroup_com/_layouts/15/Doc.aspx?sourcedoc=%7B09FC94B2-C685-446C-B504-76850C3B3CC9%7D&file=Boardrooms.xlsx&action=default&mobileredirect=true';
 const DEFAULT_BOARDROOMS = [
-  { date:'2026-05-13', member:'Kerri Nakamura',       poc:'',               time:'7:30am',  people:5,  status:'In Progress', preorder:'5.13 Kerri Nakamura BR Pre-Order',       link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQBr2wMKWH6zRLVm6WZDLFxjAS-XqrDAH74bswJJgtY_PJc?e=kqNBs8', past:true },
-  { date:'2026-05-15', member:'Andrea Wallace',        poc:'',               time:'9:00am',  people:18, status:'In Progress', preorder:'5.15 Andrea Wallace BR Pre-Order',        link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQDCqS1ip6asS4ms9wB3x_YvAbM6X4FLkG5izdKXvn57HHs?e=Sxz5UA', past:false },
-  { date:'2026-05-19', member:'Ibi Guevara',           poc:'Kristen Cordova',time:'7:30am',  people:20, status:'In Progress', preorder:'5.19 Ibi Guevara BR Pre-Order',           link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQD7tQin2nDqSbG5yhhoy4fKAZ4Wf9AFcbTcTA87gSI8tU8?e=9By6NT', past:false },
-  { date:'2026-06-05', member:'Scott Betts',           poc:'Lisa Shick',     time:'8:00am',  people:10, status:'In Progress', preorder:'6.5 Scott Betts BR Pre-Order',            link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQBK_cmMgDhgQrw7EXJbWjUBAWxoOBCySabxhkUreEJsJlY?e=64QjYy', past:false },
-  { date:'2026-06-18', member:'Branden Dalley',        poc:'',               time:'8:00am',  people:20, status:'In Progress', preorder:'6.18 Branden Dalley BR Pre-Order',        link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQB-ifdRE9PnQKo10VTFOfYJAfpxyU2nYiG4FJDF_006vvI?e=2d2KMp', past:false },
-  { date:'2026-06-26', member:'Encarnacion Gallardo',  poc:'',               time:'9:30am',  people:20, status:'In Progress', preorder:'6.26 Encarnacion Gallardo BR Pre-Order',  link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQAAW-QXIb3eTpTo4Vklui0_Aa_svL-2EoxcivpgPcJOTxQ?e=gY2jel', past:false },
-  { date:'2026-07-07', member:'Paul Kohn',             poc:'Kamarie Nicdao', time:'10:00am', people:15, status:'In Progress', preorder:'7.7 Paul Kohn BR Pre-Order',              link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQDVO9fQn95oRax8QcGsDtA9AYDMsQu2-cHpui7sDV9zJIM?e=upOgNq', past:false },
+  { date:'2026-05-13', rawDate:'5.13', member:'Kerri Nakamura',       poc:'',               time:'7:30am',  people:5,  status:'In Progress', preorder:'5.13 Kerri Nakamura BR Pre-Order',       link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQBr2wMKWH6zRLVm6WZDLFxjAS-XqrDAH74bswJJgtY_PJc?e=kqNBs8', past:true },
+  { date:'2026-05-15', rawDate:'5.15', member:'Andrea Wallace',        poc:'',               time:'9:00am',  people:18, status:'In Progress', preorder:'5.15 Andrea Wallace BR Pre-Order',        link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQDCqS1ip6asS4ms9wB3x_YvAbM6X4FLkG5izdKXvn57HHs?e=Sxz5UA', past:false },
+  { date:'2026-05-19', rawDate:'5.19', member:'Ibi Guevara',           poc:'Kristen Cordova',time:'7:30am',  people:20, status:'In Progress', preorder:'5.19 Ibi Guevara BR Pre-Order',           link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQD7tQin2nDqSbG5yhhoy4fKAZ4Wf9AFcbTcTA87gSI8tU8?e=9By6NT', past:false },
+  { date:'2026-06-05', rawDate:'6.5',  member:'Scott Betts',           poc:'Lisa Shick',     time:'8:00am',  people:10, status:'In Progress', preorder:'6.5 Scott Betts BR Pre-Order',            link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQBK_cmMgDhgQrw7EXJbWjUBAWxoOBCySabxhkUreEJsJlY?e=64QjYy', past:false },
+  { date:'2026-06-18', rawDate:'6.18', member:'Branden Dalley',        poc:'',               time:'8:00am',  people:20, status:'In Progress', preorder:'6.18 Branden Dalley BR Pre-Order',        link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQB-ifdRE9PnQKo10VTFOfYJAfpxyU2nYiG4FJDF_006vvI?e=2d2KMp', past:false },
+  { date:'2026-06-26', rawDate:'6.26', member:'Encarnacion Gallardo',  poc:'',               time:'9:30am',  people:20, status:'In Progress', preorder:'6.26 Encarnacion Gallardo BR Pre-Order',  link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQAAW-QXIb3eTpTo4Vklui0_Aa_svL-2EoxcivpgPcJOTxQ?e=gY2jel', past:false },
+  { date:'2026-07-07', rawDate:'7.7',  member:'Paul Kohn',             poc:'Kamarie Nicdao', time:'10:00am', people:15, status:'In Progress', preorder:'7.7 Paul Kohn BR Pre-Order',              link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQDVO9fQn95oRax8QcGsDtA9AYDMsQu2-cHpui7sDV9zJIM?e=upOgNq', past:false },
 ];
 // Version stamp — bump this whenever DEFAULT_BOARDROOMS is updated to force a reset
 const BR_VERSION = '2026-05-13-a';
@@ -1943,10 +1944,10 @@ if (stor('dashboard:boardrooms:version') !== BR_VERSION) {
 }
 let boardrooms = stor('dashboard:boardrooms') || DEFAULT_BOARDROOMS;
 
-function parseBRDate(raw) { const p=raw.split('.'); if(p.length<2)return null; return new Date(2026,parseInt(p[0])-1,parseInt(p[1])); }
+function parseBRDate(raw) { if(!raw)return null; const p=String(raw).split('.'); if(p.length<2)return null; return new Date(2026,parseInt(p[0])-1,parseInt(p[1])); }
 function formatBRDate(raw) { const d=parseBRDate(raw); if(!d)return raw; return d.toLocaleDateString('en-US',{month:'short',day:'numeric'}); }
-function isBRPast(br) { if(br.past)return true; const d=parseBRDate(br.rawDate); const today=new Date(); today.setHours(0,0,0,0); return d&&d<today; }
-function isBRThisWeek(br) { const d=parseBRDate(br.rawDate); if(!d)return false; const t=new Date(WEEK_DATES[0]+'T12:00:00'),e=new Date(WEEK_DATES[WEEK_DATES.length-1]+'T12:00:00'); return d>=t&&d<=e; }
+function isBRPast(br) { if(br.past)return true; if(!br.rawDate && br.date) { const d=new Date(br.date+'T12:00:00'); const today=new Date(); today.setHours(0,0,0,0); return d<today; } const d=parseBRDate(br.rawDate); const today=new Date(); today.setHours(0,0,0,0); return d&&d<today; }
+function isBRThisWeek(br) { const d=br.rawDate?parseBRDate(br.rawDate):(br.date?new Date(br.date+'T12:00:00'):null); if(!d)return false; const t=new Date(WEEK_DATES[0]+'T12:00:00'),e=new Date(WEEK_DATES[WEEK_DATES.length-1]+'T12:00:00'); return d>=t&&d<=e; }
 
 function renderBoardrooms() {
   const tbody = document.getElementById('br-tbody'); tbody.innerHTML = '';
