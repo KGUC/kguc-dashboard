@@ -528,18 +528,15 @@
           </div>
           <!-- Month tabs -->
           <div class="flex gap-2 mb-5 flex-wrap">
-            <button onclick="showEventsMonth('april')" id="evt-tab-april" class="evt-month-tab active px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-primary text-on-primary">April</button>
-            <button onclick="showEventsMonth('may')"   id="evt-tab-may"   class="evt-month-tab px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-[#0f172a] text-on-surface-variant hover:text-primary">May</button>
+            <button onclick="showEventsMonth('may')"  id="evt-tab-may"  class="evt-month-tab active px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-primary text-on-primary">May</button>
+            <button onclick="showEventsMonth('june')" id="evt-tab-june" class="evt-month-tab px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-[#0f172a] text-on-surface-variant hover:text-primary">June</button>
           </div>
           <!-- Event lists per month -->
-          <div id="evt-march" class="evt-month-panel">
-            <div id="evt-march-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
-          </div>
-          <div id="evt-april" class="evt-month-panel hidden">
-            <div id="evt-april-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
-          </div>
-          <div id="evt-may" class="evt-month-panel hidden">
+          <div id="evt-may" class="evt-month-panel">
             <div id="evt-may-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
+          </div>
+          <div id="evt-june" class="evt-month-panel hidden">
+            <div id="evt-june-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
           </div>
         </div>
       </section>
@@ -2143,7 +2140,7 @@ function buildEvtCard(ev, compact) {
 }
 
 function renderEventsLists() {
-  ['march','april','may'].forEach(month => {
+  ['may','june'].forEach(month => {
     const el = document.getElementById('evt-' + month + '-list');
     if (!el) return;
     const html = CLUB_EVENTS[month].map(ev => buildEvtCard(ev, false)).filter(Boolean).join('');
@@ -2163,7 +2160,7 @@ function showEventsMonth(month) {
 function renderThisWeekEvents() {
   const el = document.getElementById('events-this-week');
   if (!el) return;
-  const allEvents = [...CLUB_EVENTS.march, ...CLUB_EVENTS.april, ...CLUB_EVENTS.may];
+  const allEvents = [...CLUB_EVENTS.may, ...(CLUB_EVENTS.june||[])];
   const thisWeek  = allEvents.filter(ev => {
     const diff = Math.round((ev.raw - TODAY_EVT) / 86400000);
     return diff >= 0 && diff <= 7;
