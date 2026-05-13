@@ -1,0 +1,2574 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ken Garff University Club | Daily Briefing</title>
+<script>const _cw=console.warn;console.warn=(...a)=>{if(typeof a[0]==='string'&&a[0].includes('cdn.tailwindcss.com'))return;_cw.apply(console,a)};</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" onerror="var s=document.createElement('script');s.src='https://unpkg.com/xlsx@0.18.5/dist/xlsx.full.min.js';document.head.appendChild(s);"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-tertiary-fixed-variant": "#ffdbcf",
+          "surface-container": "#1e293b",
+          "on-surface": "#f1f5f9",
+          "on-surface-variant": "#94a3b8",
+          "surface-container-lowest": "#0f172a",
+          "inverse-on-surface": "#0f172a",
+          "secondary-container": "#334155",
+          "primary-fixed": "#2dd4bf",
+          "primary": "#2dd4bf",
+          "secondary": "#94a3b8",
+          "on-tertiary-fixed": "#ffdbcf",
+          "on-background": "#f1f5f9",
+          "surface-tint": "#2dd4bf",
+          "on-error-container": "#fca5a5",
+          "background": "#020617",
+          "on-secondary-container": "#cbd5e1",
+          "surface-container-low": "#1e293b",
+          "surface-container-highest": "#334155",
+          "inverse-surface": "#f1f5f9",
+          "secondary-fixed-dim": "#b8c8da",
+          "on-primary-fixed": "#042f2e",
+          "tertiary-container": "#7e2600",
+          "inverse-primary": "#042f2e",
+          "surface-bright": "#1e293b",
+          "on-secondary-fixed": "#0d1d2a",
+          "surface": "#020617",
+          "on-primary": "#042f2e",
+          "error": "#ef4444",
+          "tertiary-fixed-dim": "#ffb59c",
+          "on-primary-container": "#2dd4bf",
+          "error-container": "#7f1d1d",
+          "outline-variant": "#334155",
+          "outline": "#64748b",
+          "tertiary": "#ff9671",
+          "on-secondary-fixed-variant": "#394857",
+          "primary-container": "#134e4a",
+          "secondary-fixed": "#d4e4f6",
+          "on-primary-fixed-variant": "#2dd4bf",
+          "primary-fixed-dim": "#2dd4bf",
+          "surface-variant": "#1e293b",
+          "tertiary-fixed": "#ffdbcf",
+          "on-tertiary-container": "#ff9671",
+          "on-error": "#ffffff",
+          "on-secondary": "#0f172a",
+          "on-tertiary": "#0f172a",
+          "surface-container-high": "#334155",
+          "surface-dim": "#0f172a"
+        },
+        fontFamily: {
+          "headline": ["Plus Jakarta Sans"],
+          "body": ["Inter"],
+          "label": ["Inter"]
+        },
+        borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+  body { font-family: 'Inter', sans-serif; }
+  h1, h2, h3, .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* CLUBSPOT TABS */
+  .cs-day-panel { display: none; }
+  .cs-day-panel.active { display: block; }
+  .cs-tab-btn { transition: all .15s; }
+  .cs-tab-btn.active { background: #2dd4bf; color: #042f2e; }
+  .cs-tab-btn.no-res { opacity: .45; }
+
+  /* BOARDROOM STATUS TOGGLE */
+  .br-status-btn { cursor: pointer; transition: all .15s; font-size: 0.65rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; border: none; }
+  .br-status-btn.complete { background: rgba(45,212,191,.15); color: #2dd4bf; }
+  .br-status-btn.in-progress { background: rgba(255,150,113,.15); color: #ff9671; }
+
+  /* GOAL INPUTS */
+  .goal-input { background: transparent !important; border: none !important; outline: none !important; color: #f1f5f9 !important; font-family: 'Inter', sans-serif !important; font-size: 0.875rem !important; width: 100%; box-shadow: none !important; }
+  .goal-input:focus { background: rgba(45,212,191,.1) !important; border-radius: 4px; padding: 2px 4px; color: #ffffff !important; }
+  .goal-input::placeholder { color: #4d6b5e !important; }
+
+  /* NOTES */
+  .notes-ta { width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 10px 12px; color: #f1f5f9; font-family: 'Inter', sans-serif; font-size: 0.82rem; resize: vertical; min-height: 90px; outline: none; line-height: 1.6; }
+  .notes-ta:focus { border-color: #2dd4bf; }
+
+  /* TASK INPUT */
+  .task-inp { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 8px 12px; color: #f1f5f9 !important; font-family: 'Inter', sans-serif; font-size: 0.82rem; outline: none; flex: 1; -webkit-text-fill-color: #f1f5f9; }
+  .task-inp:focus { border-color: #2dd4bf; color: #f1f5f9 !important; -webkit-text-fill-color: #f1f5f9; }
+  .task-sel { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 8px 8px; color: #94a3b8; font-family: 'Inter', sans-serif; font-size: 0.75rem; outline: none; }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #0f172a; }
+  ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+
+
+  /* SIDEBAR COLLAPSE */
+  .sidebar-collapsed { width: 60px !important; }
+  .sidebar-collapsed .sidebar-label,
+  .sidebar-collapsed .sidebar-logo-text,
+  .sidebar-collapsed .sidebar-btn-text,
+  .sidebar-collapsed #goals-section,
+  .sidebar-collapsed #user-info { display: none !important; }
+  .sidebar-collapsed .sidebar-icon { margin: 0 auto; }
+  #main-content { transition: margin-left 0.2s ease; }
+
+  /* SERVICE LOG */
+  .log-entry { animation: fadeIn .2s ease; }
+
+  /* ON CALL badge */
+  .oncall-badge { font-size: 9px; font-weight: 800; padding: 1px 5px; border-radius: 4px; background: rgba(255,150,113,.15); color: #ff9671; letter-spacing: .04em; text-transform: uppercase; margin-left: 4px; }
+
+  /* BR CHECKLIST */
+
+  /* EXTENSION SYNC BAR */
+  #ext-sync-bar { display: flex; gap: 8px; flex-wrap: wrap; }
+  .ext-src { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px; letter-spacing: .04em; }
+  .ext-src-ok    { background: rgba(45,212,191,.12); color: #2dd4bf; }
+  .ext-src-stale { background: rgba(245,158,11,.12); color: #f59e0b; }
+  .ext-src-none  { background: rgba(100,116,139,.1); color: #64748b; }
+  #ext-toast { transition: opacity .4s ease; }
+
+  /* PRINT */
+  @media print {
+    aside, #section-events, #section-boardrooms, #section-staff, #section-tasks, .no-print { display: none !important; }
+    main { margin-left: 0 !important; }
+    #section-reservations { display: block !important; }
+    body { background: white; color: #111; }
+    .cs-day-panel { display: block !important; }
+    .cs-day-panel:not(.active) { display: none !important; }
+  }
+
+  /* BR INLINE EDIT */
+  .br-inline-input { background: transparent !important; border: none !important; outline: none !important; box-shadow: none !important; -webkit-appearance: none; appearance: none; color: inherit; font-family: 'Inter', sans-serif; font-size: inherit; width: 100%; min-width: 40px; padding: 0; }
+  .br-inline-input:hover { background: transparent !important; }
+  .br-inline-input:focus { background: rgba(45,212,191,.06) !important; border-radius: 4px; padding: 1px 4px; color: #f1f5f9; }
+
+  /* BR FORM */
+  .br-form-inp { background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 6px 10px; color: #f1f5f9; font-family: 'Inter', sans-serif; font-size: 0.78rem; outline: none; width: 100%; }
+  .br-form-inp:focus { border-color: #2dd4bf; }
+
+  @keyframes fadeIn { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:none; } }
+  .fade-in { animation: fadeIn .2s ease; }
+
+  /* SERVICE TOGGLE */
+  .cs-svc-btn.active { background: #2dd4bf !important; color: #042f2e !important; }
+
+  /* EVENT TABS */
+  .evt-month-tab.active { background: #2dd4bf !important; color: #042f2e !important; }
+  .evt-month-panel.hidden { display: none; }
+  .evt-card-alert { border-color: rgba(255,150,113,.4) !important; background: rgba(255,150,113,.05) !important; }
+</style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+
+<!-- ═══ SIDEBAR ═══════════════════════════════════════════════════════════════ -->
+<aside id="sidebar" class="fixed left-0 top-0 h-full flex flex-col p-4 z-40 bg-[#0f172a] border-r border-outline-variant/20 w-64 overflow-y-auto no-scrollbar transition-all duration-200">
+  <div class="mb-8 px-2">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-lg shadow-primary/20">
+        <span class="material-symbols-outlined text-2xl">restaurant_menu</span>
+      </div>
+      <div>
+        <h2 class="font-headline font-bold text-primary leading-tight text-sm sidebar-label sidebar-logo-text">Ken Garff University Club</h2>
+        <p class="text-xs text-on-surface-variant font-medium">Oak View Group</p>
+      </div>
+    </div>
+    <a href="https://theclubspot.com/dashboard/acct/0OIc9hATkR/dining" target="_blank" rel="noopener"
+       class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-3 px-4 rounded-xl flex items-center justify-center gap-2 font-headline font-semibold shadow-md hover:shadow-lg transition-all active:scale-[0.98] text-sm no-underline">
+      <span class="material-symbols-outlined text-lg">add_circle</span>
+      <span>Open ClubSpot</span>
+    </a>
+  </div>
+  <!-- Collapse toggle -->
+  <button onclick="toggleSidebar()" class="absolute top-4 right-3 text-on-surface-variant hover:text-primary transition-colors" title="Collapse sidebar">
+    <span class="material-symbols-outlined text-lg" id="sidebar-toggle-icon">menu_open</span>
+  </button>
+  <nav class="flex-1 space-y-1">
+    <a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary rounded-lg shadow-sm font-semibold translate-x-1 duration-200 cursor-pointer" onclick="navTo(null)">
+      <span class="material-symbols-outlined">dashboard</span>
+      <span class="font-label text-sm sidebar-label">Dashboard</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all duration-300 rounded-lg cursor-pointer" onclick="navTo('section-reservations')">
+      <span class="material-symbols-outlined">restaurant</span>
+      <span class="font-label text-sm sidebar-label">Reservations</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all duration-300 rounded-lg cursor-pointer" onclick="navTo('section-events')">
+      <span class="material-symbols-outlined">celebration</span>
+      <span class="font-label text-sm sidebar-label">Club Events</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all duration-300 rounded-lg cursor-pointer" onclick="navTo('section-boardrooms')">
+      <span class="material-symbols-outlined">meeting_room</span>
+      <span class="font-label text-sm sidebar-label">Boardrooms</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all duration-300 rounded-lg cursor-pointer" onclick="navTo('section-staff')">
+      <span class="material-symbols-outlined">group</span>
+      <span class="font-label text-sm sidebar-label">Staff Schedule</span>
+    </a>
+  </nav>
+  <!-- Today's Goals in sidebar -->
+  <div id="goals-section">
+  <div class="mt-4 mx-1 border-t border-outline-variant/10 pt-4">
+    <div class="flex items-center justify-between mb-2 px-1">
+      <h3 class="font-headline font-bold text-primary text-sm flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-base">target</span>
+        Today's Goals
+      </h3>
+      <button onclick="toggleGoalInput()" class="text-primary hover:text-primary-fixed transition-colors" title="Add goal">
+        <span class="material-symbols-outlined text-base">add_circle</span>
+      </button>
+    </div>
+    <!-- Add goal input -->
+    <div id="goal-add-row" class="hidden mb-2 flex gap-1">
+      <input id="goal-new-input" placeholder="New goal…"
+        class="flex-1 bg-[#0f172a] border border-outline-variant/30 rounded-lg px-2 py-1.5 text-xs text-on-surface outline-none focus:border-primary placeholder-on-surface-variant/40"
+        onkeydown="if(event.key==='Enter')addGoal()" />
+      <button onclick="addGoal()" class="bg-primary text-on-primary px-2 py-1 rounded-lg text-xs font-bold hover:bg-primary-fixed-dim transition-colors">Add</button>
+    </div>
+    <ul class="space-y-1.5" id="goals-list"></ul>
+  </div>
+
+  </div><!-- /goals-section -->
+  <div id="user-info" class="mt-auto pt-4 border-t border-outline-variant/10">
+    <div class="flex items-center gap-3 px-4 py-4">
+      <div class="w-10 h-10 rounded-full bg-primary/20 ring-2 ring-primary/30 flex items-center justify-center text-primary font-bold text-sm flex-shrink-0">AF</div>
+      <div class="overflow-hidden">
+        <p class="text-sm font-bold text-on-surface truncate">Ash Franco</p>
+        <p class="text-[10px] uppercase tracking-wider text-on-surface-variant font-semibold">Asst. Manager</p>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- ═══ MAIN CONTENT ═══════════════════════════════════════════════════════════ -->
+<main id="main-content" class="ml-64 min-h-screen transition-all duration-200">
+
+  <!-- TOP BAR -->
+  <header class="fixed top-0 left-64 right-0 z-30 h-16 bg-[#020617]/80 backdrop-blur-md border-b border-outline-variant/20 flex justify-between items-center px-8">
+    <div class="flex items-center gap-6">
+      <h1 class="font-headline font-extrabold text-primary text-xl tracking-tight">Ken Garff University Club</h1>
+      <div class="h-8 w-px bg-outline-variant/20"></div>
+      <div class="flex items-center text-on-surface-variant">
+        <span class="material-symbols-outlined text-xl mr-2">calendar_today</span>
+        <span class="font-headline font-bold text-lg text-on-surface" id="live-date">—</span>
+        <span class="mx-3 text-outline-variant">•</span>
+        <span class="font-body font-medium text-sm" id="live-time">—</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-xs text-on-surface-variant bg-surface-container px-3 py-1 rounded-full border border-outline-variant/20">📋 Live from ClubSpot · SharePoint</span>
+      <button
+        onclick="if(confirm('Clear localStorage and reload? This resets all cached data — imported reservations and service logs will be lost unless you have the latest dashboard.html saved.')) { localStorage.clear(); location.reload(); }"
+        title="Clear localStorage cache and reload"
+        class="flex items-center gap-1.5 text-xs text-on-surface-variant bg-surface-container hover:bg-surface-container-high hover:text-on-surface px-3 py-1 rounded-full border border-outline-variant/20 transition-colors cursor-pointer"
+      >
+        <span class="material-symbols-outlined text-sm" style="font-size:14px;">refresh</span>
+        <span>Reset Cache</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE CANVAS -->
+  <div class="pt-24 pb-12 px-8 max-w-[1600px] mx-auto">
+    <div class="grid grid-cols-12 gap-4">
+
+      <!-- ══ ROW 1: Morning Briefing + Manager Notes sidebar ═══════════════ -->
+
+      <!-- Morning Briefing Card -->
+      <section class="col-span-12 lg:col-span-8">
+        <div class="bg-surface-container-low rounded-xl p-5 shadow-sm border border-outline-variant/10">
+          <div class="flex justify-between items-start mb-4 flex-wrap gap-3">
+            <div>
+              <h3 class="font-headline text-2xl font-bold text-on-surface" id="greeting-text">Good morning, Ash 👋</h3>
+              <p class="text-on-surface-variant text-sm">Assistant Restaurant Manager · Ken Garff University Club</p>
+            </div>
+            <div class="bg-primary-container text-primary px-4 py-2 rounded-lg font-bold text-sm" id="today-shift-badge">—</div>
+          </div>
+          <div class="grid grid-cols-4 gap-3">
+            <div class="bg-[#0f172a] rounded-lg p-4 border border-outline-variant/5 transition-transform hover:scale-[1.02] cursor-default">
+              <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest block mb-1">Lunch Covers</span>
+              <div class="flex items-baseline gap-2">
+                <span class="text-3xl font-headline font-extrabold text-primary" id="stat-lunch">—</span>
+                <span class="text-on-surface-variant text-sm font-medium">covers</span>
+              </div>
+            </div>
+            <div class="bg-[#0f172a] rounded-lg p-4 border border-outline-variant/5 transition-transform hover:scale-[1.02] cursor-default">
+              <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest block mb-1">Dinner Covers</span>
+              <div class="flex items-baseline gap-2">
+                <span class="text-3xl font-headline font-extrabold text-primary" id="stat-dinner">—</span>
+                <span class="text-on-surface-variant text-sm font-medium">covers</span>
+              </div>
+            </div>
+            <div class="bg-[#0f172a] rounded-lg p-4 border border-outline-variant/5 transition-transform hover:scale-[1.02] cursor-default">
+              <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest block mb-1">Boardrooms</span>
+              <div class="flex items-baseline gap-2">
+                <span class="text-3xl font-headline font-extrabold text-on-tertiary-container" id="br-stat-count">14</span>
+                <span class="text-on-surface-variant text-sm font-medium" id="br-stat-sub">tracked</span>
+              </div>
+            </div>
+            <div class="bg-[#0f172a] rounded-lg p-4 border border-outline-variant/5 transition-transform hover:scale-[1.02] cursor-default">
+              <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest block mb-1">Staff Today</span>
+              <div class="flex items-baseline gap-2">
+                <span class="text-3xl font-headline font-extrabold text-on-surface" id="stat-staff">—</span>
+                <span class="text-on-surface-variant text-sm font-medium" id="stat-staff-sub">working</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Manager Notes sidebar (top right) -->
+      <aside class="col-span-12 lg:col-span-4">
+        <div class="bg-surface-container-low rounded-xl p-5 shadow-sm border border-outline-variant/10">
+          <h3 class="font-headline text-lg font-bold flex items-center gap-2 text-on-surface mb-4">
+            <span class="material-symbols-outlined text-primary">edit_note</span>
+            Manager Notes
+          </h3>
+          <textarea class="notes-ta w-full" id="notes-area" placeholder="Type notes here… auto-saved." style="min-height:90px;resize:vertical;"></textarea>
+          <span class="text-[10px] text-on-surface-variant mt-1 block" id="notes-saved"></span>
+        </div>
+      </aside>
+
+      <!-- ══ ROW 2: My Schedule + Today's Staff (stacked) ══════════════════════ -->
+
+      <!-- My Schedule Card -->
+      <div class="col-span-12 bg-surface-container-low rounded-xl p-5 shadow-sm border border-outline-variant/10">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-headline text-lg font-bold flex items-center gap-2 text-on-surface">
+              <span class="material-symbols-outlined text-primary">calendar_month</span>
+              My Schedule
+            </h3>
+            <!-- This Week / Next Week tabs -->
+            <div class="flex rounded-lg overflow-hidden border border-outline-variant/20 text-xs font-bold">
+              <button onclick="schedShowWeek('current')" id="sched-tab-current"
+                class="px-3 py-1.5 bg-primary text-on-primary transition-colors">This Week</button>
+              <button onclick="schedShowWeek('next')" id="sched-tab-next"
+                class="px-3 py-1.5 bg-[#0f172a] text-on-surface-variant hover:text-primary transition-colors">Next Week</button>
+            </div>
+          </div>
+          <!-- Week label -->
+          <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2" id="sched-week-badge">—</p>
+          <!-- Today banner (only shown on This Week tab) -->
+          <div id="sched-today-banner" class="flex items-center gap-3 bg-primary/5 border border-primary/20 rounded-xl p-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-primary-container flex flex-col items-center justify-center flex-shrink-0">
+              <span class="font-headline font-extrabold text-primary text-lg leading-none" id="sched-today-day">—</span>
+              <span class="text-[9px] text-primary font-bold" id="sched-today-dow">—</span>
+            </div>
+            <div>
+              <p class="font-bold text-on-surface text-sm" id="sched-today-shift">—</p>
+              <p class="text-xs text-on-surface-variant mt-0.5">Asst. R. Manager · Restaurant Schedule 26</p>
+            </div>
+          </div>
+          <!-- Week mini grid -->
+          <div class="grid grid-cols-5 gap-1.5" id="sched-week-mini"></div>
+        </div>
+
+      <!-- Today's Staff Card -->
+      <div class="col-span-12 bg-surface-container-low rounded-xl p-5 shadow-sm border border-outline-variant/10">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-headline text-lg font-bold flex items-center gap-2 text-on-surface">
+              <span class="material-symbols-outlined text-primary">groups</span>
+              Today's Staff
+            </h3>
+            <span class="text-xs bg-[#0f172a] px-2 py-1 rounded font-bold text-on-surface-variant" id="staff-badge">Tue 3/24</span>
+          </div>
+          <div id="staff-today-grid"></div>
+      </div>
+
+
+
+      <!-- ══ ROW 3: ClubSpot Reservations (full width) ══════════════════════ -->
+      <section class="col-span-12" id="section-reservations">
+        <div class="bg-surface-container-low rounded-xl p-5 shadow-sm border border-outline-variant/10">
+          <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+            <div>
+              <h3 class="font-headline text-lg font-bold flex items-center gap-2 text-on-surface">
+                <span class="material-symbols-outlined text-primary">book_online</span>
+                ClubSpot Dining Reservations
+              </h3>
+              <p class="text-xs text-on-surface-variant mt-0.5 ml-8" id="cs-date-badge"></p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-xs text-on-surface-variant" id="cs-pulled-label"></span>
+              <button onclick="document.getElementById('cs-json-import').click()"
+                class="text-xs font-bold px-3 py-1.5 rounded-lg border border-outline-variant/30 bg-surface-container text-on-surface-variant hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-all">
+                ↑ Import CSV
+              </button>
+              <input type="file" id="cs-json-import" accept=".csv" class="hidden" onchange="csImportCsv(this)">
+              <a href="https://theclubspot.com/dashboard/acct/0OIc9hATkR/dining" target="_blank" rel="noopener"
+                 class="text-sm font-bold text-primary hover:underline underline-offset-4">↗ Open ClubSpot</a>
+            </div>
+          </div>
+          <!-- Lunch / Dinner toggle -->
+          <div class="flex items-center gap-2 mb-3">
+            <div class="flex rounded-lg overflow-hidden border border-outline-variant/20 text-xs font-bold">
+              <button onclick="csSetService('all')" id="cs-svc-all"
+                class="cs-svc-btn px-3 py-1.5 bg-primary text-on-primary transition-colors">All</button>
+              <button onclick="csSetService('lunch')" id="cs-svc-lunch"
+                class="cs-svc-btn px-3 py-1.5 bg-[#0f172a] text-on-surface-variant hover:text-primary transition-colors">Lunch</button>
+              <button onclick="csSetService('dinner')" id="cs-svc-dinner"
+                class="cs-svc-btn px-3 py-1.5 bg-[#0f172a] text-on-surface-variant hover:text-primary transition-colors">Dinner</button>
+            </div>
+            <span class="text-[10px] text-on-surface-variant" id="cs-svc-label"></span>
+          </div>
+          <!-- Day tabs -->
+          <div class="flex flex-wrap gap-2 mb-4">
+            <button onclick="csShowDay('thu-may7')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Thu 5/7 <span class="opacity-60">0</span></button>
+            <button onclick="csShowDay('fri-may8')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Fri 5/8 <span class="opacity-60">0</span></button>
+            <button onclick="csShowDay('sat-may9')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Sat 5/9 <span class="opacity-60">0</span></button>
+            <button onclick="csShowDay('tue-may12')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Tue 5/12 <span class="opacity-60">0</span></button>
+            <button onclick="csShowDay('wed-may13')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Wed 5/13 <span class="opacity-60">10</span></button>
+          </div>
+
+                    
+          <div class="cs-day-panel" id="cs-thu-may7">
+            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">0 reservations</strong> · <span class="text-on-surface-variant/50">Not yet synced</span></p>
+            <!-- Service Log -->
+            <div class="mt-4 border-t border-outline-variant/10 pt-3">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-xs">edit_note</span>Service Log</span>
+                <span class="text-[10px] text-on-surface-variant" id="log-saved-thu-may7"></span>
+              </div>
+              <textarea id="service-log-thu-may7" rows="3" placeholder="Jot notes here — 86 items, complaints, comps, timing issues, highlights…"
+                class="w-full bg-[#0f172a] border border-outline-variant/20 rounded-lg px-3 py-2 text-xs text-on-surface outline-none focus:border-primary resize-none placeholder-on-surface-variant/30 transition-colors"
+                oninput="saveServiceLog('thu-may7', this.value)"></textarea>
+            </div>
+          </div>
+          <div class="cs-day-panel" id="cs-fri-may8">
+            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">0 reservations</strong> · <span class="text-on-surface-variant/50">Not yet synced</span></p>
+            <!-- Service Log -->
+            <div class="mt-4 border-t border-outline-variant/10 pt-3">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-xs">edit_note</span>Service Log</span>
+                <span class="text-[10px] text-on-surface-variant" id="log-saved-fri-may8"></span>
+              </div>
+              <textarea id="service-log-fri-may8" rows="3" placeholder="Jot notes here — 86 items, complaints, comps, timing issues, highlights…"
+                class="w-full bg-[#0f172a] border border-outline-variant/20 rounded-lg px-3 py-2 text-xs text-on-surface outline-none focus:border-primary resize-none placeholder-on-surface-variant/30 transition-colors"
+                oninput="saveServiceLog('fri-may8', this.value)"></textarea>
+            </div>
+          </div>
+          <div class="cs-day-panel" id="cs-sat-may9">
+            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">0 reservations</strong> · <span class="text-on-surface-variant/50">Not yet synced</span></p>
+            <!-- Service Log -->
+            <div class="mt-4 border-t border-outline-variant/10 pt-3">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-xs">edit_note</span>Service Log</span>
+                <span class="text-[10px] text-on-surface-variant" id="log-saved-sat-may9"></span>
+              </div>
+              <textarea id="service-log-sat-may9" rows="3" placeholder="Jot notes here — 86 items, complaints, comps, timing issues, highlights…"
+                class="w-full bg-[#0f172a] border border-outline-variant/20 rounded-lg px-3 py-2 text-xs text-on-surface outline-none focus:border-primary resize-none placeholder-on-surface-variant/30 transition-colors"
+                oninput="saveServiceLog('sat-may9', this.value)"></textarea>
+            </div>
+          </div>
+          <div class="cs-day-panel" id="cs-tue-may12">
+            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">0 reservations</strong> · <span class="text-on-surface-variant/50">Not yet synced</span></p>
+            <!-- Service Log -->
+            <div class="mt-4 border-t border-outline-variant/10 pt-3">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-xs">edit_note</span>Service Log</span>
+                <span class="text-[10px] text-on-surface-variant" id="log-saved-tue-may12"></span>
+              </div>
+              <textarea id="service-log-tue-may12" rows="3" placeholder="Jot notes here — 86 items, complaints, comps, timing issues, highlights…"
+                class="w-full bg-[#0f172a] border border-outline-variant/20 rounded-lg px-3 py-2 text-xs text-on-surface outline-none focus:border-primary resize-none placeholder-on-surface-variant/30 transition-colors"
+                oninput="saveServiceLog('tue-may12', this.value)"></textarea>
+            </div>
+          </div>
+          <div class="cs-day-panel active" id="cs-wed-may13">
+            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">10 reservations</strong> · 45 covers · <span class="text-primary">⟳ Synced May 13</span></p>
+            <div class="overflow-hidden"><table class="w-full text-left"><thead><tr class="text-on-surface-variant text-xs font-bold border-b border-outline-variant/20 uppercase tracking-wider"><th class="pb-2 px-2">Time</th><th class="pb-2 px-2">Member</th><th class="pb-2 px-2 text-center">Covers</th><th class="pb-2 px-2">Note</th></tr></thead><tbody class="text-sm"><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">11:30 AM</td><td class="py-3 px-2 font-semibold">Lori Kowaleski-Jones</td><td class="py-3 px-2 text-center text-on-surface-variant">2</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:00 PM</td><td class="py-3 px-2 font-semibold">Branden Dalley</td><td class="py-3 px-2 text-center text-on-surface-variant">8</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:10 PM</td><td class="py-3 px-2 font-semibold">Erin Dermody</td><td class="py-3 px-2 text-center text-on-surface-variant">2</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:30 PM</td><td class="py-3 px-2 font-semibold">Jennifer Wilcox</td><td class="py-3 px-2 text-center text-on-surface-variant">12</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">5:00 PM</td><td class="py-3 px-2 font-semibold">Becky Johnson</td><td class="py-3 px-2 text-center text-on-surface-variant">2</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">5:00 PM</td><td class="py-3 px-2 font-semibold">Mike Shuping</td><td class="py-3 px-2 text-center text-on-surface-variant">5</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">Wings and Whisky — 6-top round table, 4:00–6:00</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">5:30 PM</td><td class="py-3 px-2 font-semibold">Alexandria Vogt</td><td class="py-3 px-2 text-center text-on-surface-variant">3</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">5:30 PM</td><td class="py-3 px-2 font-semibold">Craig Mosman</td><td class="py-3 px-2 text-center text-on-surface-variant">4</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">5:40 PM</td><td class="py-3 px-2 font-semibold">Bryant Dieffenbacher</td><td class="py-3 px-2 text-center text-on-surface-variant">5</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">7:30 PM</td><td class="py-3 px-2 font-semibold">William Chaus</td><td class="py-3 px-2 text-center text-on-surface-variant">2</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr></tbody></table></div>
+            
+            <!-- Service Log -->
+            <div class="mt-4 border-t border-outline-variant/10 pt-3">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-xs">edit_note</span>Service Log</span>
+                <span class="text-[10px] text-on-surface-variant" id="log-saved-wed-may13"></span>
+              </div>
+              <textarea id="service-log-wed-may13" rows="3" placeholder="Jot notes here — 86 items, complaints, comps, timing issues, highlights…"
+                class="w-full bg-[#0f172a] border border-outline-variant/20 rounded-lg px-3 py-2 text-xs text-on-surface outline-none focus:border-primary resize-none placeholder-on-surface-variant/30 transition-colors"
+                oninput="saveServiceLog('wed-may13', this.value)"></textarea>
+            </div>
+          </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+
+      <!-- ══ ROW 3b: Full Club Events Calendar ════════════════════════════════════ -->
+      <section class="col-span-12" id="section-events">
+        <div class="bg-surface-container-low rounded-xl p-5 shadow-sm border border-outline-variant/10">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-[0.2em] block mb-1">Member Programming</span>
+              <h3 class="font-headline text-2xl font-black text-on-surface flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-2xl">celebration</span>
+                Club Events Calendar
+              </h3>
+            </div>
+            <div class="flex gap-2">
+              <a href="https://theclubspot.com/dashboard/acct/0OIc9hATkR/events/social"
+                 target="_blank" rel="noopener"
+                 class="px-4 py-2 rounded-lg bg-primary text-on-primary text-xs font-bold shadow-md hover:bg-primary-fixed-dim transition-colors">↗ ClubSpot Events</a>
+              <a href="https://oakview-my.sharepoint.com/:x:/r/personal/becca_glover_oakviewgroup_com/_layouts/15/Doc.aspx?sourcedoc=%7BF2AB35D8-5DEA-4713-AAB2-24A646EBD637%7D&file=2026%20Event%20Calendar.xlsx&action=default&mobileredirect=true&wdOrigin=OUTLOOK-METAOS.FILEBROWSER"
+                 target="_blank" rel="noopener"
+                 class="px-4 py-2 rounded-lg bg-surface-container text-on-surface-variant text-xs font-bold shadow-md hover:text-primary hover:bg-surface-container-high transition-colors border border-outline-variant/20">↗ Calendar Sheet</a>
+            </div>
+          </div>
+          <!-- Month tabs -->
+          <div class="flex gap-2 mb-5 flex-wrap">
+            <button onclick="showEventsMonth('april')" id="evt-tab-april" class="evt-month-tab active px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-primary text-on-primary">April</button>
+            <button onclick="showEventsMonth('may')"   id="evt-tab-may"   class="evt-month-tab px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-[#0f172a] text-on-surface-variant hover:text-primary">May</button>
+          </div>
+          <!-- Event lists per month -->
+          <div id="evt-march" class="evt-month-panel">
+            <div id="evt-march-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
+          </div>
+          <div id="evt-april" class="evt-month-panel hidden">
+            <div id="evt-april-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
+          </div>
+          <div id="evt-may" class="evt-month-panel hidden">
+            <div id="evt-may-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ ROW 4: Boardrooms (full width) ════════════════════════════════ -->
+      <section class="col-span-12 mt-4" id="section-boardrooms">
+        <div class="bg-surface-container-low rounded-xl p-5 shadow-sm border border-outline-variant/10">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-headline text-lg font-bold flex items-center gap-2 text-on-surface">
+              <span class="material-symbols-outlined text-primary">meeting_room</span>
+              Boardrooms
+              <span class="text-xs bg-[#0f172a] px-2 py-0.5 rounded font-bold text-on-surface-variant ml-1" id="br-count-badge">— bookings</span>
+            </h3>
+            <div id="br-add-toggle" class="flex items-center gap-2">
+              <button onclick="document.getElementById('br-xlsx-import').click()"
+                class="flex items-center gap-1.5 text-xs font-bold text-on-surface-variant border border-outline-variant/30 bg-surface-container px-3 py-1.5 rounded-lg hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-all">
+                ↑ Import Boardrooms
+              </button>
+              <input type="file" id="br-xlsx-import" accept=".xlsx" class="hidden" onchange="importBoardroomsXlsx(this)">
+              <button onclick="toggleBRForm()" class="flex items-center gap-1.5 text-xs font-bold text-primary border border-primary/30 bg-primary/5 px-3 py-1.5 rounded-lg hover:bg-primary/10 transition-colors">
+                <span class="material-symbols-outlined text-sm">add</span> Add Booking
+              </button>
+            </div>
+          </div>
+          <!-- Summary row -->
+          <div class="flex gap-3 mb-4 flex-wrap" id="br-summary-row"></div>
+          <!-- Add form -->
+          <div id="br-add-form" class="hidden mb-4 bg-[#0f172a] rounded-xl p-4 border border-outline-variant/10 fade-in">
+            <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-3">New Boardroom Booking</p>
+            <div class="grid grid-cols-3 gap-2 mb-2">
+              <input class="br-form-inp" id="br-date"   placeholder="Date (e.g. 4.15)" />
+              <input class="br-form-inp" id="br-member" placeholder="Member name" />
+              <input class="br-form-inp" id="br-poc"    placeholder="POC (optional)" />
+              <input class="br-form-inp" id="br-time"   placeholder="Time (e.g. 6:00 PM)" />
+              <input class="br-form-inp" id="br-guests" placeholder="# Guests" />
+              <input class="br-form-inp" id="br-link"   placeholder="Pre-order URL (optional)" />
+            </div>
+            <div class="flex gap-2 mt-1">
+              <button onclick="addBR()" class="bg-primary text-on-primary px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-primary-fixed-dim transition-colors">Save Booking</button>
+              <button onclick="toggleBRForm()" class="text-on-surface-variant border border-outline-variant/30 px-3 py-1.5 rounded-lg text-xs font-medium hover:bg-white/5 transition-colors">Cancel</button>
+            </div>
+          </div>
+          <!-- Table -->
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr class="text-on-surface-variant text-xs font-bold border-b border-outline-variant/20 uppercase tracking-wider">
+                  <th class="pb-3 px-2">Date</th>
+                  <th class="pb-3 px-2">Member</th>
+                  <th class="pb-3 px-2">POC</th>
+                  <th class="pb-3 px-2">Time</th>
+                  <th class="pb-3 px-2 text-center">Guests</th>
+                  <th class="pb-3 px-2">Status</th>
+                  <th class="pb-3 px-2">Pre-Order</th>
+                  <th class="pb-3 px-2"></th>
+                </tr>
+              </thead>
+              <tbody id="br-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ ROW 5: Full Weekly Team Schedule (bottom) ══════════════════════ -->
+      <section class="col-span-12 mt-4" id="section-staff">
+        <div class="bg-surface-container-low rounded-2xl p-6 shadow-sm border border-outline-variant/10">
+          <div class="flex items-end justify-between mb-4">
+            <div>
+              <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-[0.2em] block mb-1">Master Schedule</span>
+              <h3 class="font-headline text-2xl font-black text-on-surface" id="roster-title">Apr 9 – 15</h3>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="flex rounded-lg overflow-hidden border border-outline-variant/20 text-xs font-bold">
+                <button onclick="showRosterWeek('current')" id="roster-btn-current"
+                  class="px-3 py-1.5 bg-primary text-on-primary transition-colors">Apr 9–15</button>
+                <button onclick="showRosterWeek('next')" id="roster-btn-next"
+                  class="px-3 py-1.5 bg-[#0f172a] text-on-surface-variant hover:text-primary transition-colors">Apr 16–22</button>
+              </div>
+              <button onclick="document.getElementById('sched-xlsx-import').click()"
+                class="text-xs font-bold px-3 py-2 rounded-lg border border-outline-variant/30 bg-surface-container text-on-surface-variant hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-all">
+                ↑ Import Schedule
+              </button>
+              <input type="file" id="sched-xlsx-import" accept=".xlsx" class="hidden" onchange="importScheduleXlsx(this)">
+              <a href="https://oakview-my.sharepoint.com/:x:/r/personal/bbutterstein_oakviewgroup_com/_layouts/15/Doc.aspx?sourcedoc=%7BC3990037-FDB1-4FBD-9B9E-0D870B190FDE%7D&file=Restaurant%20Schedule%2026.xlsx&fromShare=true&action=default&mobileredirect=true"
+                 target="_blank" rel="noopener"
+                 class="px-4 py-2 rounded-lg bg-primary text-on-primary text-xs font-bold shadow-md hover:bg-primary-fixed-dim transition-colors">↗ Open Schedule</a>
+            </div>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left" style="min-width:700px">
+              <thead id="roster-thead"></thead>
+              <tbody class="text-sm" id="roster-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<script>
+// ── NAV ───────────────────────────────────────────────────────────────────────
+function navTo(id) {
+  if (!id) { window.scrollTo({top:0, behavior:'smooth'}); return; }
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+}
+let _sidebarCollapsed = false;
+function toggleSidebar() {
+  _sidebarCollapsed = !_sidebarCollapsed;
+  const sidebar = document.getElementById('sidebar');
+  const main    = document.getElementById('main-content');
+  const icon    = document.getElementById('sidebar-toggle-icon');
+  if (_sidebarCollapsed) {
+    sidebar.classList.add('sidebar-collapsed');
+    if (main) main.style.marginLeft = '60px';
+    if (icon) icon.textContent = 'menu';
+  } else {
+    sidebar.classList.remove('sidebar-collapsed');
+    if (main) main.style.marginLeft = '256px';
+    if (icon) icon.textContent = 'menu_open';
+  }
+}
+
+// ── STORAGE ──────────────────────────────────────────────────────────────────
+function stor(key, val) {
+  try {
+    if (typeof val !== 'undefined') {
+      localStorage.setItem(key, JSON.stringify(val));
+      return;
+    }
+    const r = localStorage.getItem(key);
+    return r ? JSON.parse(r) : null;
+  } catch(e) { return null; }
+}
+
+// ── EXTENSION BRIDGE ─────────────────────────────────────────────────────────
+// Reads data synced by the KGUCC Chrome extension and applies it to the dashboard.
+// Safe to call even if extension is not installed — silently skips in that case.
+
+const EXT_ID = null; // leave null — bridge uses runtime messaging from same extension context
+let _extAvailable = false;
+let _lastExtSync = null;
+
+function extBridgeInit() {
+  // Check if we're running inside the extension context OR if chrome.storage is accessible
+  if (typeof chrome === 'undefined' || !chrome.storage?.local) return;
+  _extAvailable = true;
+  extPullAll();
+  // Auto-refresh every 60 seconds
+  setInterval(extPullAll, 60000);
+}
+
+function extPullAll() {
+  if (!_extAvailable) return;
+  try {
+    chrome.storage.local.get(null, (data) => {
+      if (chrome.runtime.lastError) return;
+      if (!data || Object.keys(data).length === 0) return;
+
+      let updated = [];
+
+      // ── 1. Reservations from ClubSpot ──────────────────────────────────────
+      const resData = data['clubspot:reservations:latest'];
+      if (resData?.reservations?.length) {
+        updated.push('reservations');
+        extApplyReservations(resData);
+      }
+
+      // ── 2. Staff Roster from Schedule ──────────────────────────────────────
+      const schedData = data['schedule:roster'];
+      if (schedData?.data?.length) {
+        updated.push('schedule');
+        extApplyRoster(schedData.data);
+      }
+
+      // ── 3. Boardrooms ───────────────────────────────────────────────────────
+      const brData = data['boardrooms:list'];
+      if (brData?.data?.length) {
+        updated.push('boardrooms');
+        extApplyBoardrooms(brData.data, brData.syncedAt);
+      }
+
+      // ── 4. Event Calendar ───────────────────────────────────────────────────
+      const evData = data['events:calendar'];
+      if (evData?.data?.length) {
+        updated.push('events');
+        extApplyEvents(evData.data);
+      }
+
+      // ── Update sync status badge ────────────────────────────────────────────
+      if (updated.length > 0) {
+        _lastExtSync = new Date();
+        extShowSyncBadge(updated);
+      }
+
+      extUpdateSyncBar(data);
+    });
+  } catch(e) { /* extension not available */ }
+}
+
+// ── Apply reservations to the active day tab ──────────────────────────────────
+function csImportCsv(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const raw = e.target.result.replace(/^\uFEFF/, ''); // strip BOM
+      const lines = raw.split(/\r?\n/).filter(l => l.trim());
+
+      // Find header row (contains "First name" or "Time")
+      let headerIdx = lines.findIndex(l => /first name|time/i.test(l));
+      if (headerIdx < 0) throw new Error('No header row found');
+
+      const parseCSVLine = line => {
+        const fields = [];
+        let cur = '', inQ = false;
+        for (let i = 0; i < line.length; i++) {
+          const ch = line[i];
+          if (ch === '"') {
+            if (inQ && line[i+1] === '"') { cur += '"'; i++; }
+            else inQ = !inQ;
+          } else if (ch === ',' && !inQ) {
+            fields.push(cur.trim()); cur = '';
+          } else cur += ch;
+        }
+        fields.push(cur.trim());
+        return fields;
+      };
+
+      const headers = parseCSVLine(lines[headerIdx]).map(h => h.replace(/"/g,'').toLowerCase().trim());
+      const iFirst  = headers.findIndex(h => h.includes('first'));
+      const iLast   = headers.findIndex(h => h.includes('last'));
+      const iParty  = headers.findIndex(h => h.includes('party'));
+      const iTime   = headers.findIndex(h => h === 'time');
+      const iNote   = headers.findIndex(h => h.includes('special') || h.includes('request'));
+
+      const reservations = [];
+      for (let i = headerIdx + 1; i < lines.length; i++) {
+        const cols = parseCSVLine(lines[i]);
+        if (cols.length < 3) continue;
+        const firstName = (cols[iFirst] || '').replace(/"/g,'').trim();
+        const lastName  = (cols[iLast]  || '').replace(/"/g,'').trim();
+        const name = (firstName + ' ' + lastName).trim();
+        const covers = parseInt((cols[iParty] || '0').replace(/"/g,'')) || 0;
+        const time   = (cols[iTime] || '').replace(/"/g,'').trim();
+        const note   = (cols[iNote] || '').replace(/"/g,'').replace(/\n/g,' ').trim();
+        if (!time || !name) continue;
+        reservations.push({ time, name, covers, note });
+      }
+
+      if (!reservations.length) throw new Error('No reservation rows found in CSV');
+
+      extApplyReservations({ reservations, date: null, syncedAt: new Date().toISOString() });
+
+      const label = document.getElementById('cs-pulled-label');
+      if (label) label.textContent = 'Imported ' + new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+    } catch(err) {
+      alert('CSV import error: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+  input.value = '';
+}
+
+function extApplyReservations(resData) {
+  const { reservations, date, syncedAt } = resData;
+  if (!reservations?.length) return;
+
+  // Determine which panel is active
+  const activePanel = document.querySelector('.cs-day-panel.active');
+  if (!activePanel) return;
+
+  // Build updated table body
+  const rows = [...reservations]
+    .sort((a, b) => {
+      // Sort by time
+      const toMin = t => {
+        const m = t.match(/(\d+):(\d+)\s*(AM|PM)/i);
+        if (!m) return 0;
+        let h = parseInt(m[1]), min = parseInt(m[2]);
+        if (m[3].toUpperCase() === 'PM' && h !== 12) h += 12;
+        if (m[3].toUpperCase() === 'AM' && h === 12) h = 0;
+        return h * 60 + min;
+      };
+      return toMin(a.time) - toMin(b.time);
+    })
+    .map(r => `
+      <tr class="hover:bg-white/5 border-t border-outline-variant/5">
+        <td class="py-3 px-2 font-bold text-primary text-xs">${r.time}</td>
+        <td class="py-3 px-2 font-semibold">${r.name}</td>
+        <td class="py-3 px-2 text-center text-on-surface-variant">${r.covers || '—'}</td>
+        <td class="py-3 px-2 text-on-surface-variant text-xs">${r.note || '—'}</td>
+      </tr>`).join('');
+
+  const totalCovers = reservations.reduce((s, r) => s + (parseInt(r.covers) || 0), 0);
+  const syncTime = syncedAt ? new Date(syncedAt).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}) : '';
+
+  // Update summary line
+  const summary = activePanel.querySelector('p.text-xs.text-on-surface-variant');
+  if (summary) {
+    summary.innerHTML = `<strong class="text-on-surface">${reservations.length} reservations</strong> · ${totalCovers} covers · <span class="text-primary">⟳ Synced ${syncTime}</span>`;
+  }
+
+  // Update or create table
+  let table = activePanel.querySelector('table');
+  if (table) {
+    const tbody = table.querySelector('tbody');
+    if (tbody) tbody.innerHTML = rows;
+  } else {
+    const tableHTML = `
+      <div class="overflow-hidden mt-2">
+        <table class="w-full text-left">
+          <thead><tr class="text-on-surface-variant text-xs font-bold border-b border-outline-variant/20 uppercase tracking-wider">
+            <th class="pb-2 px-2">Time</th><th class="pb-2 px-2">Member</th>
+            <th class="pb-2 px-2 text-center">Covers</th><th class="pb-2 px-2">Note</th>
+          </tr></thead>
+          <tbody class="text-sm">${rows}</tbody>
+        </table>
+      </div>`;
+    const placeholder = activePanel.querySelector('.text-center.py-8');
+    if (placeholder) placeholder.outerHTML = tableHTML;
+  }
+
+  // Update tab button count
+  const activeBtn = document.querySelector('.cs-tab-btn.active');
+  if (activeBtn) {
+    const span = activeBtn.querySelector('span');
+    if (span) span.textContent = reservations.length;
+  }
+
+  // Update cover stats — convert 12-hr AM/PM to 24-hr hour before applying cutoff
+  const toHour24 = t => {
+    const m = t && t.match(/(\d+)(?::(\d+))?\s*(AM|PM)?/i);
+    if (!m) return 0;
+    let h = parseInt(m[1]);
+    const isPM = m[3] && m[3].toUpperCase() === 'PM';
+    const isAM = m[3] && m[3].toUpperCase() === 'AM';
+    if (isPM && h !== 12) h += 12;
+    if (isAM && h === 12) h = 0;
+    return h;
+  };
+  const lunchCovers = reservations.filter(r => toHour24(r.time) < 15)
+    .reduce((s, r) => s + (parseInt(r.covers) || 0), 0);
+  const dinnerCovers = totalCovers - lunchCovers;
+  const lEl = document.getElementById('stat-lunch');
+  const dEl = document.getElementById('stat-dinner');
+  if (lEl) lEl.textContent = lunchCovers;
+  if (dEl) dEl.textContent = dinnerCovers;
+
+  // Update "pulled" timestamp
+  const pulled = document.getElementById('cs-pulled-label');
+  if (pulled && syncedAt) {
+    pulled.textContent = 'Synced via extension ' + new Date(syncedAt).toLocaleString('en-US', {
+      weekday:'short', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'
+    });
+    pulled.style.color = '#2dd4bf';
+  }
+
+  // ── Persist reservations to localStorage keyed by panel date ────────────────
+  // Use the active panel's id (e.g. "cs-fri-apr10") to derive the ISO date key
+  // so data survives a page reload and can be restored into the correct panel.
+  if (activePanel) {
+    const panelId = activePanel.id; // e.g. "cs-fri-apr10"
+    stor('dashboard:reservations:' + panelId, {
+      reservations,
+      syncedAt: syncedAt || new Date().toISOString()
+    });
+    // Maintain an index of which panel keys have saved data
+    const resIndex = stor('dashboard:reservations:index') || [];
+    if (!resIndex.includes(panelId)) {
+      resIndex.push(panelId);
+      stor('dashboard:reservations:index', resIndex);
+    }
+  }
+}
+
+// ── Apply roster data ─────────────────────────────────────────────────────────
+function extApplyRoster(rosterData) {
+  if (!rosterData?.length) return;
+  // Update the STAFF_ROSTER array if names match
+  rosterData.forEach(extStaff => {
+    const match = STAFF_ROSTER.find(s =>
+      s.name.toLowerCase().includes(extStaff.name?.split(' ')[0]?.toLowerCase())
+    );
+    if (match && extStaff.shifts?.length) {
+      match.shifts = extStaff.shifts.slice(0, 7);
+    }
+  });
+  // Re-render roster table
+  const tbody = document.getElementById('roster-tbody');
+  if (tbody) tbody.innerHTML = '';
+  // Trigger re-render by re-running roster logic
+  extRenderRoster();
+}
+
+function extRenderRoster() {
+  const tbody = document.getElementById('roster-tbody');
+  if (!tbody) return;
+  tbody.innerHTML = '';
+  STAFF_ROSTER.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.className = 'border-t border-outline-variant/10 hover:bg-white/5 transition-colors';
+    const nameCell = `<td class="py-3 px-3"><span class="font-semibold text-sm text-on-surface">${r.name}</span>${r.role ? `<span class="block text-[10px] text-on-surface-variant">${r.role}</span>` : ''}</td>`;
+    const shiftCells = r.shifts.map((s, i) => {
+      const isToday = WEEK_DATES[i] === _todayStr;
+      return `<td class="py-3 px-3 ${isToday ? 'bg-primary/5' : ''}"><span class="${shiftCls(s)}">${shiftLbl(s)}</span></td>`;
+    }).join('');
+    tr.innerHTML = nameCell + shiftCells;
+    tbody.appendChild(tr);
+  });
+}
+
+// ── Apply boardroom data ──────────────────────────────────────────────────────
+function extApplyBoardrooms(brList, syncedAt) {
+  if (!brList?.length) return;
+  // Merge with existing boardrooms — add new ones, don't overwrite manual edits
+  const existing = boardrooms.map(b => b.id);
+  let added = 0;
+  brList.forEach(ext => {
+    const alreadyExists = boardrooms.some(b =>
+      b.member?.toLowerCase() === ext.member?.toLowerCase() &&
+      b.rawDate === ext.rawDate
+    );
+    if (!alreadyExists && ext.member) {
+      boardrooms.push({
+        id: Date.now() + Math.random(),
+        rawDate: ext.rawDate || '',
+        member: ext.member || '',
+        poc: ext.poc || '',
+        time: ext.time || '',
+        guests: ext.guests || '',
+        status: 'in-progress',
+        link: '',
+      });
+      added++;
+    }
+  });
+  if (added > 0) {
+    stor('dashboard:boardrooms', boardrooms);
+    renderBoardrooms();
+  }
+}
+
+// ── Apply events data ─────────────────────────────────────────────────────────
+function extApplyEvents(evList) {
+  // Events are rendered from the hardcoded CLUB_EVENTS object
+  // Extension data augments it for any new events not already listed
+  if (!evList?.length) return;
+  // For now, just flag that events were synced — full merge would require
+  // matching against existing CLUB_EVENTS entries
+  const badge = document.getElementById('ext-events-badge');
+  if (badge) badge.textContent = `⟳ Synced ${evList.length} events`;
+}
+
+// ── Sync status bar at top of reservations section ───────────────────────────
+function extUpdateSyncBar(data) {
+  const bar = document.getElementById('ext-sync-bar');
+  if (!bar) return;
+
+  const sources = [
+    { key: 'clubspot:reservations:latest', label: 'Reservations' },
+    { key: 'schedule:roster',              label: 'Schedule' },
+    { key: 'boardrooms:list',              label: 'Boardrooms' },
+    { key: 'events:calendar',              label: 'Events' },
+  ];
+
+  bar.innerHTML = sources.map(s => {
+    const d = data[s.key];
+    if (!d) return `<span class="ext-src ext-src-none">${s.label}</span>`;
+    const age = Math.floor((Date.now() - new Date(d.syncedAt)) / 60000);
+    const fresh = age < 60;
+    return `<span class="ext-src ${fresh ? 'ext-src-ok' : 'ext-src-stale'}" title="Synced ${age}m ago">⟳ ${s.label}</span>`;
+  }).join('');
+}
+
+// ── Sync badge toast ──────────────────────────────────────────────────────────
+function extShowSyncBadge(updated) {
+  const existing = document.getElementById('ext-toast');
+  if (existing) existing.remove();
+  const toast = document.createElement('div');
+  toast.id = 'ext-toast';
+  toast.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:9999;background:#134e4a;border:1px solid #2dd4bf;color:#f1f5f9;font-family:Inter,sans-serif;font-size:12px;font-weight:600;padding:10px 16px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,.4);';
+  toast.innerHTML = `<span style="color:#2dd4bf">⟳ Extension synced</span> — ${updated.join(', ')}`;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.style.opacity = '0', 3000);
+  setTimeout(() => toast.remove(), 3500);
+}
+
+// ── Manual sync trigger (button in UI) ───────────────────────────────────────
+function extManualSync() {
+  if (!_extAvailable) {
+    alert('KGUCC extension not detected. Install it from the kgucc-extension folder and try again.');
+    return;
+  }
+  extPullAll();
+}
+
+// ── Init bridge on page load ──────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => setTimeout(extBridgeInit, 500));
+// Also try immediately (in case DOMContentLoaded already fired)
+setTimeout(extBridgeInit, 600);
+
+// ── Restore persisted reservation data into day panels on load ────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const resIndex = stor('dashboard:reservations:index') || [];
+  resIndex.forEach(panelId => {
+    const saved = stor('dashboard:reservations:' + panelId);
+    if (!saved?.reservations?.length) return;
+    const panel = document.getElementById(panelId);
+    if (!panel) return;
+    // Temporarily activate this panel so extApplyReservations can target it,
+    // then restore the original active state.
+    const wasActive = panel.classList.contains('active');
+    if (!wasActive) panel.classList.add('active');
+    extApplyReservations(saved);
+    if (!wasActive) panel.classList.remove('active');
+  });
+});
+
+// ── CLOCK ─────────────────────────────────────────────────────────────────────
+function updateClock() {
+  const n = new Date();
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('live-date').textContent = days[n.getDay()] + ', ' + months[n.getMonth()] + ' ' + n.getDate() + ', ' + n.getFullYear();
+  let h = n.getHours(), m = n.getMinutes(), ap = h >= 12 ? 'PM' : 'AM';
+  const greet = h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening';
+  document.getElementById('greeting-text').textContent = greet + ', Ash 👋';
+  h = h % 12 || 12;
+  document.getElementById('live-time').textContent = h + ':' + String(m).padStart(2,'0') + ' ' + ap;
+  document.getElementById('cs-date-badge').textContent = '· ' + n.toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric'});
+}
+updateClock(); setInterval(updateClock, 30000);
+
+updateClock(); setInterval(updateClock, 30000);
+
+// ══════════════════════════════════════════════════════════════════════════════
+// SCHEDULE DATA — keyed by YYYY-MM-DD
+// Each day: { reservations:[{time:'HH:MM', covers:N}], staff:{name: shift} }
+// shifts: 'OFF' | 'R-OFF' | 'ML' | 'HH:MM–HH:MM' working shift
+// ══════════════════════════════════════════════════════════════════════════════
+const WEEK_DATES = ['2026-05-07','2026-05-08','2026-05-09','2026-05-12','2026-05-13'];
+
+// Staff shift index matches WEEK_DATES order: [Wed Apr23, Fri24, Sat25, Mon28, Tue29]
+const STAFF_ROSTER = [
+  {name:'Braxton Butterstein',      role:'Director',         shifts:['ML','ML','ML','ML','ML']},
+  {name:'Ash Franco',               role:'Asst. R. Manager', shifts:['TBD','9:00 AM - 4:00 PM','TBD','10:00 AM - 8:00 PM','12:00 PM - CLOSE (PM S)']},
+  {name:'Lacey Long',               role:'Bar Lead',         shifts:['TBD','OFF','9:30 AM - CLOSE','R-OFF','3:00 PM - CLOSE (B)']},
+  {name:'Madi Cheek',               role:'',                 shifts:['—','—','—','—','—']},
+  {name:'Brandi Obrien',            role:'',                 shifts:['TBD','OFF','1:00 PM - 10:30 PM','3:00 PM - CLOSE','4:00 PM - CLOSE (ON CALL)']},
+  {name:'Taylor Gleave',            role:'',                 shifts:['R-OFF','R-OFF','R-OFF','7:00 AM - 3:00 PM','7:00 AM - 3:00 PM']},
+  {name:'Chris Baigue',             role:'',                 shifts:['TBD','9:00 AM - 4:00 PM','1:00 PM - 10:30 PM','10:00 AM - 3:00 PM / 4:00 PM - CLOSE','4:00 PM - CLOSE']},
+  {name:'Bryn Kurt',                role:'',                 shifts:['TBD','9:00 AM - 4:00 PM','1:00 PM - 10:30 PM','OFF','OFF']},
+  {name:'Ashley Watkins',           role:'',                 shifts:['OFF','OFF','1:00 PM - 10:30 PM','OFF','OFF']},
+  {name:'Kaitlyn Adair',            role:'',                 shifts:['TBD','OFF','OFF','4:00 PM - CLOSE','10:00 AM - 3:00 PM']},
+  {name:'Shannon Keil',             role:'',                 shifts:['TBD','OFF','1:00 PM - 10:30 PM','4:00 PM - CLOSE','4:00 PM - CLOSE (ON CALL)']},
+  {name:'Jade Curtis',              role:'',                 shifts:['—','—','—','—','—']},
+  {name:'Ella Bashore',             role:'',                 shifts:['TBD','OFF','OFF','10:00 AM - 3:00 PM','10:00 AM - 3:00 PM']},
+  {name:'Audrey Irvine',            role:'',                 shifts:['—','—','—','—','—']},
+  {name:'Malia Sager',              role:'',                 shifts:['TBD','9:00 AM - 4:00 PM','1:00 PM - 10:30 PM','4:00 PM - CLOSE (ON CALL)','4:00 PM - CLOSE']},
+];
+
+// Reservations per date — updated from ClubSpot Apr 9
+const RESERVATIONS_BY_DATE = {
+  '2026-05-07': [],
+  '2026-05-08': [],
+  '2026-05-09': [],
+  '2026-05-12': [],
+    '2026-05-13': [
+    {time:'11:30', covers:2},
+    {time:'12:00', covers:8},
+    {time:'12:10', covers:2},
+    {time:'12:30', covers:12},
+    {time:'17:00', covers:2},
+    {time:'17:00', covers:5},
+    {time:'17:30', covers:3},
+    {time:'17:30', covers:4},
+    {time:'17:40', covers:5},
+    {time:'19:30', covers:2},
+  ],
+  '2026-05-02': [
+    {time:'17:20', covers:5},
+    {time:'17:50', covers:4},
+    {time:'18:00', covers:4},
+    {time:'18:10', covers:2},
+    {time:'19:00', covers:8},
+    {time:'19:30', covers:5},
+  ],
+  '2026-05-01': [
+    {time:'11:20', covers:10},
+    {time:'12:10', covers:3},
+    {time:'12:30', covers:2},
+    {time:'16:00', covers:10},
+    {time:'16:30', covers:6},
+    {time:'17:00', covers:7},
+    {time:'17:20', covers:5},
+    {time:'17:30', covers:3},
+    {time:'17:30', covers:11},
+    {time:'18:00', covers:2},
+    {time:'18:00', covers:6},
+    {time:'18:30', covers:9},
+    {time:'19:00', covers:4},
+    {time:'20:00', covers:8},
+    {time:'20:10', covers:8},
+  ],
+  '2026-04-02': [
+    {time:'11:00', covers:2},  // Jeffrey Sharpe — Membership Tour
+    {time:'12:00', covers:3},  // Mackenzie Smith — South Patio, Bo (client for Ali)
+    {time:'16:00', covers:2},  // Jennifer Weaver — Membership Tour
+    {time:'17:10', covers:2},  // Sandi Behnken
+    {time:'18:20', covers:4},  // Barry Nash — 1 Plant-Based
+    {time:'18:30', covers:7},  // Erin Dermody — 🎂 Jeff Dermody b-day
+    {time:'19:30', covers:3},  // Andrey Jolley — Boardroom/Ash
+  ],
+  '2026-04-03': [],
+  '2026-04-04': [],
+  '2026-04-05': [],
+  '2026-04-06': [],
+  '2026-04-07': [
+    {time:'12:00', covers:4},  // Jeffrey Lewis — Main Dining
+    {time:'12:00', covers:2},  // Leo Moran — Main Dining
+    {time:'12:30', covers:2},  // Marc Brown — Main Dining
+    {time:'13:00', covers:2},  // Erin Trenbeath-Murray — South Patio
+    {time:'13:10', covers:4},  // Dan Lofgren — South Patio
+  ],
+  '2026-04-08': [],
+  '2026-04-09': [
+    {time:'08:30', covers:2},  // Membership Tour — Spencer Cobabe, Lawyer, VIP prospect
+    {time:'12:00', covers:2},  // Kimberly Adamson — Main Dining
+    {time:'12:10', covers:2},  // Membership Tour — Sean Wright, VIP prospect
+    {time:'17:10', covers:3},  // Lane Bagley — BINGO!!
+    {time:'17:30', covers:2},  // William Chaus — Bingo
+    {time:'17:30', covers:2},  // Michael Kooyman — BINGO
+    {time:'18:00', covers:4},  // Steve Loyola — Bingo!
+    {time:'18:00', covers:1},  // Danielle Adams — BINGO
+    {time:'18:00', covers:3},  // Lori Kowaleski-Jones — Bingo please!
+  ],
+        '2026-04-10': [
+    {time:'11:10', covers:2},
+    {time:'12:00', covers:4},
+    {time:'12:00', covers:3},
+    {time:'12:10', covers:2},
+    {time:'12:20', covers:2},
+    {time:'12:20', covers:4},
+    {time:'12:30', covers:2},
+    {time:'12:40', covers:2},
+    {time:'12:50', covers:1},
+    {time:'13:30', covers:2},
+    {time:'17:10', covers:2},
+    {time:'18:00', covers:2},
+    {time:'18:00', covers:2},
+    {time:'18:00', covers:2},
+    {time:'18:30', covers:4},
+    {time:'19:30', covers:5},
+  ],
+  '2026-04-11': [],
+  '2026-04-12': [],
+  '2026-04-13': [],
+      '2026-04-14': [
+    {time:'12:00', covers:4},
+  ],
+    '2026-04-15': [
+    {time:'11:30', covers:2},
+    {time:'11:30', covers:4},
+    {time:'11:40', covers:10},
+    {time:'12:00', covers:2},
+    {time:'12:30', covers:2},
+    {time:'13:10', covers:3},
+    {time:'17:00', covers:2},
+    {time:'17:00', covers:4},
+    {time:'17:30', covers:2},
+    {time:'17:30', covers:6},
+    {time:'17:30', covers:2},
+    {time:'17:40', covers:4},
+    {time:'17:40', covers:6},
+    {time:'18:00', covers:6},
+    {time:'18:30', covers:3},
+    {time:'19:10', covers:5},
+  ],
+  '2026-04-16': [
+    {time:'11:00', covers:2},  // John Scheib
+    {time:'11:30', covers:3},  // Christopher Parkin
+    {time:'11:40', covers:4},  // Kimberly Adamson
+    {time:'11:50', covers:2},  // Roger Hendrix
+    {time:'12:00', covers:1},  // Jose Morales
+    {time:'12:00', covers:1},  // Andrew McLellan
+    {time:'12:10', covers:1},  // Ryan Artigues
+    {time:'13:10', covers:3},  // Membership Tour — Paula & Kristen
+    {time:'16:00', covers:2},  // Membership Tour — Anne Carson
+    {time:'17:00', covers:2},  // Jennifer Coombs
+    {time:'17:30', covers:2},  // Lori Kowaleski-Jones
+    {time:'19:10', covers:2},  // Jared Giron
+  ],
+  '2026-04-17': [],
+  '2026-04-18': [],
+  '2026-04-19': [],
+  '2026-04-20': [],
+      '2026-04-21': [
+    {time:'11:00', covers:2},
+    {time:'11:30', covers:2},
+    {time:'12:00', covers:2},
+    {time:'12:10', covers:2},
+    {time:'12:30', covers:2},
+    {time:'12:30', covers:1},
+    {time:'17:00', covers:1},
+    {time:'17:00', covers:2},
+    {time:'17:00', covers:3},
+    {time:'17:00', covers:3},
+    {time:'17:00', covers:2},
+    {time:'17:00', covers:2},
+    {time:'17:00', covers:5},
+    {time:'17:10', covers:2},
+    {time:'17:10', covers:3},
+    {time:'17:20', covers:1},
+    {time:'17:30', covers:3},
+    {time:'18:00', covers:2},
+    {time:'18:00', covers:4},
+    {time:'18:00', covers:4},
+    {time:'18:00', covers:2},
+    {time:'18:20', covers:2},
+    {time:'18:30', covers:2},
+    {time:'19:00', covers:3},
+    {time:'19:00', covers:3},
+    {time:'19:30', covers:2},
+  ],
+    '2026-04-22': [
+    {time:'11:40', covers:2},
+    {time:'12:00', covers:4},
+    {time:'12:10', covers:4},
+    {time:'13:10', covers:2},
+    {time:'13:30', covers:3},
+    {time:'18:30', covers:3},
+    {time:'19:00', covers:5},
+  ],
+  '2026-04-23': [],
+  '2026-04-24': [
+    {time:'08:30', covers:2},
+    {time:'11:10', covers:2},
+    {time:'11:30', covers:4},
+    {time:'11:40', covers:2},
+    {time:'12:00', covers:2},
+    {time:'12:10', covers:2},
+    {time:'12:10', covers:2},
+    {time:'12:30', covers:2},
+    {time:'13:10', covers:3},
+    {time:'13:20', covers:4},
+    {time:'17:00', covers:4},
+    {time:'17:30', covers:6},
+    {time:'18:10', covers:6},
+    {time:'18:30', covers:4},
+  ],
+  '2026-04-25': [],
+  '2026-04-26': [],
+  '2026-04-27': [],
+    '2026-04-28': [
+    {time:'11:30', covers:12},
+    {time:'11:40', covers:2},
+  ],
+    '2026-04-29': [
+    {time:'08:30', covers:2},
+    {time:'12:20', covers:4},
+    {time:'13:00', covers:3},
+    {time:'17:00', covers:5},
+    {time:'17:30', covers:3},
+    {time:'17:30', covers:2},
+    {time:'17:30', covers:1},
+    {time:'18:40', covers:3},
+    {time:'19:00', covers:3},
+    {time:'19:00', covers:5},
+  ],
+};
+
+// ── TODAY CONTEXT ─────────────────────────────────────────────────────────────
+const _now      = new Date();
+const _todayStr = _now.getFullYear() + '-' + String(_now.getMonth()+1).padStart(2,'0') + '-' + String(_now.getDate()).padStart(2,'0');
+const _DOW_SHORT = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const _MONTHS    = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const _MONTHS_LONG = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+// Self-healing: check current week first, then next week, then flag stale
+let _todayIdx        = WEEK_DATES.indexOf(_todayStr);
+let _activeWeekDates = WEEK_DATES;
+let _activeRoster    = STAFF_ROSTER;
+let _scheduleStale   = false;
+if (_todayIdx < 0) {
+  const nextIdx = WEEK_DATES_NEXT.indexOf(_todayStr);
+  if (nextIdx >= 0) {
+    _todayIdx        = nextIdx;
+    _activeWeekDates = WEEK_DATES_NEXT;
+    _activeRoster    = STAFF_ROSTER_NEXT;
+  } else {
+    _scheduleStale = true;
+  }
+}
+
+function dateLabel(isoStr) {
+  const d = new Date(isoStr + 'T12:00:00');
+  return _DOW_SHORT[d.getDay()] + ' ' + (d.getMonth()+1) + '/' + d.getDate();
+}
+function shiftForToday(memberName) {
+  if (_todayIdx < 0) return null;
+  const r = _activeRoster.find(r => r.name === memberName);
+  return r ? r.shifts[_todayIdx] : null;
+}
+function shiftType(s) {
+  if (!s || s === 'OFF') return 'off';
+  if (s === 'R-OFF')    return 'roff';
+  if (s === 'ML')       return 'leave';
+  if (s === 'OUT')      return 'out';
+  return 'working';
+}
+function shiftColor(s) {
+  const t = shiftType(s);
+  if (t === 'working') return 'text-emerald-400';
+  if (t === 'roff')    return 'text-emerald-400';
+  if (t === 'leave')   return 'text-pink-400';
+  if (t === 'out')     return 'text-orange-400';
+  return 'text-slate-500';
+}
+
+// ── MORNING BRIEFING BADGE ────────────────────────────────────────────────────
+(function() {
+  const ashShift = shiftForToday('Ash Franco');
+  const badge = document.getElementById('today-shift-badge');
+  if (!ashShift || ashShift === 'OFF') {
+    badge.textContent = 'OFF TODAY';
+  } else if (ashShift === 'R-OFF') {
+    badge.textContent = 'R-OFF TODAY';
+  } else if (ashShift === 'ML') {
+    badge.textContent = 'MATERNITY LEAVE';
+  } else {
+    badge.textContent = ashShift + ' TODAY';
+  }
+})();
+
+// ── MY SCHEDULE CARD ──────────────────────────────────────────────────────────
+let _schedTab = 'current'; // tracks active tab: 'current' | 'next'
+function schedRenderMini(dates, roster) {
+  const mini   = document.getElementById('sched-week-mini');
+  const badge  = document.getElementById('sched-week-badge');
+  const ashRow = roster.find(r => r.name === 'Ash Franco');
+  const wStart = new Date(dates[0] + 'T12:00:00');
+  const wEnd   = new Date(dates[dates.length-1] + 'T12:00:00');
+
+  // Week label
+  const sameMonth = wStart.getMonth() === wEnd.getMonth();
+  badge.textContent = _MONTHS_LONG[wStart.getMonth()].slice(0,3) + ' ' + wStart.getDate() +
+    '–' + (sameMonth ? '' : _MONTHS_LONG[wEnd.getMonth()].slice(0,3) + ' ') + wEnd.getDate();
+  badge.style.color = '';
+
+  if (_scheduleStale && dates === WEEK_DATES) {
+    badge.textContent = '⚠ Schedule needs update';
+    badge.style.color = '#f59e0b';
+  }
+
+  mini.innerHTML = dates.map((d, i) => {
+    const date     = new Date(d + 'T12:00:00');
+    const label    = _DOW_SHORT[date.getDay()].slice(0,3) + ' ' + date.getDate();
+    const shift    = ashRow ? ashRow.shifts[i] : '—';
+    const isToday  = d === _todayStr;
+    const shiftClr = shiftColor(shift);
+    const bg       = isToday ? 'bg-primary/10 border-primary/30' : 'bg-[#0f172a] border-outline-variant/10';
+    const lblClr   = isToday ? 'text-primary' : 'text-on-surface-variant';
+    const lbl      = shift === 'ML' ? 'Maternity' : shift === 'OUT' ? 'Out' : shift;
+    return `<div class="${bg} rounded-lg p-2 text-center border">
+      <p class="text-[9px] font-bold ${lblClr} uppercase">${label}${isToday?' ★':''}</p>
+      <p class="text-[10px] font-semibold ${shiftClr} mt-0.5 leading-tight">${lbl}</p>
+    </div>`;
+  }).join('');
+}
+
+function schedShowWeek(tab) {
+  _schedTab = tab;
+  const btnCur  = document.getElementById('sched-tab-current');
+  const btnNext = document.getElementById('sched-tab-next');
+  const banner  = document.getElementById('sched-today-banner');
+
+  if (tab === 'current') {
+    btnCur.className  = 'px-3 py-1.5 bg-primary text-on-primary transition-colors';
+    btnNext.className = 'px-3 py-1.5 bg-[#0f172a] text-on-surface-variant hover:text-primary transition-colors';
+    if (banner) banner.style.display = '';
+    schedRenderMini(WEEK_DATES, STAFF_ROSTER);
+  } else {
+    btnCur.className  = 'px-3 py-1.5 bg-[#0f172a] text-on-surface-variant hover:text-primary transition-colors';
+    btnNext.className = 'px-3 py-1.5 bg-primary text-on-primary transition-colors';
+    if (banner) banner.style.display = 'none';
+    schedRenderMini(WEEK_DATES_NEXT, STAFF_ROSTER_NEXT);
+  }
+}
+
+(function() {
+  // Today banner
+  document.getElementById('sched-today-day').textContent  = _now.getDate();
+  document.getElementById('sched-today-dow').textContent  = _DOW_SHORT[_now.getDay()].toUpperCase();
+  const ashShift = shiftForToday('Ash Franco');
+  document.getElementById('sched-today-shift').textContent =
+    _scheduleStale   ? 'Schedule out of date' :
+    (!ashShift || ashShift === 'OFF') ? 'OFF Today' :
+    ashShift === 'R-OFF' ? 'R-OFF' :
+    ashShift === 'ML'    ? 'Maternity Leave' :
+    ashShift === 'OUT'   ? 'Out' : ashShift;
+
+  // Render this week by default
+  schedRenderMini(WEEK_DATES, STAFF_ROSTER);
+})();
+
+// ── TODAY'S STAFF (derived from _activeRoster + today's date) ────────────────
+function buildTodayStaff() {
+  if (_todayIdx < 0) return _activeRoster.map(r => ({
+    name: r.name, role: r.role, shift: '—', type: 'off'
+  }));
+  return _activeRoster.map(r => {
+    const shift = r.shifts[_todayIdx];
+    return { name: r.name, role: r.role, shift: shift === 'ML' ? 'Maternity' : shift === 'OUT' ? 'Out' : shift, type: shiftType(shift) };
+  });
+}
+
+function renderTodayStaff() {
+  const TODAY_STAFF = buildTodayStaff();
+  const grid    = document.getElementById('staff-today-grid');
+  const dateTag = _DOW_SHORT[_now.getDay()] + ' ' + (_now.getMonth()+1) + '/' + _now.getDate();
+
+  // Only show staff who are actually working — exclude Ash (has own card), OFF, R-OFF, ML, OUT
+  const working = TODAY_STAFF.filter(s =>
+    s.type === 'working' && s.name !== 'Ash Franco'
+  );
+
+  if (working.length === 0) {
+    grid.innerHTML = '<p class="text-center text-on-surface-variant text-sm py-4">🌙 No team on floor today.</p>';
+    document.getElementById('staff-badge').textContent = 'All off · ' + dateTag;
+    document.getElementById('stat-staff').textContent = '0';
+    document.getElementById('stat-staff-sub').textContent = 'all off 🌙';
+    return;
+  }
+
+  // Parse shift start hour (24h)
+  function shiftStartHour(shift) {
+    const m = shift.match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i);
+    if (!m) return 12;
+    let h = parseInt(m[1]);
+    const isPM = m[3].toUpperCase() === 'PM';
+    const isAM = m[3].toUpperCase() === 'AM';
+    if (isPM && h !== 12) h += 12;
+    if (isAM && h === 12) h = 0;
+    return h;
+  }
+
+  // Detect split shifts — contains two time ranges separated by ' / '
+  function isSplitShift(shift) {
+    return shift.includes(' / ');
+  }
+
+  // For split shifts: first segment start hour, second segment start hour
+  function splitSegmentHour(shift, segment) {
+    const parts = shift.split(' / ');
+    return shiftStartHour(parts[segment] || '');
+  }
+
+  // Classify each staff member — may appear in both columns
+  const lunchStaff  = [];
+  const dinnerStaff = [];
+  const counted     = new Set(); // for badge count — split-shift staff counted once
+
+  working.forEach(s => {
+    if (isSplitShift(s.shift)) {
+      // Split shift: show in both columns
+      const h1 = splitSegmentHour(s.shift, 0);
+      const h2 = splitSegmentHour(s.shift, 1);
+      const parts = s.shift.split(' / ');
+      if (h1 < 15) lunchStaff.push({ ...s, shift: parts[0].trim(), splitBadge: true });
+      if (h2 >= 15) dinnerStaff.push({ ...s, shift: parts[1].trim(), splitBadge: true });
+    } else if (shiftStartHour(s.shift) < 15) {
+      lunchStaff.push(s);
+    } else {
+      dinnerStaff.push(s);
+    }
+    counted.add(s.name);
+  });
+
+  function staffCard(s) {
+    const firstName = s.name.split(' ')[0];
+    // Extract job code from shift e.g. "(S)", "(H)", "(T)", "(S/TR)", "(H On Call)"
+    const codeMatch = s.shift.match(/\(([^)]+)\)\s*$/);
+    const jobCode   = codeMatch ? codeMatch[1].replace(/\s*On Call/i, '').trim() : '';
+    const isOnCall  = /on call/i.test(s.shift);
+    const shiftBase = s.shift.replace(/\s*\([^)]+\)\s*$/, '').trim();
+    const splitBadge = s.splitBadge
+      ? '<span class="text-[9px] font-bold text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 rounded px-1 ml-0.5 whitespace-nowrap">split</span>'
+      : '';
+    const codeBadge = jobCode
+      ? `<span class="text-[9px] font-bold text-sky-400 bg-sky-400/10 border border-sky-400/20 rounded px-1 ml-0.5 whitespace-nowrap">${jobCode}</span>`
+      : '';
+    const onCallBadge = isOnCall
+      ? '<span class="text-[9px] font-bold text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 rounded px-1 ml-0.5 whitespace-nowrap">On Call</span>'
+      : '';
+    return `<div class="flex items-center gap-1.5 p-2 rounded-lg border bg-emerald-400/10 border-emerald-400/20">
+      <span class="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-emerald-400"></span>
+      <span class="text-xs font-semibold text-on-surface truncate flex-1">${firstName}</span>
+      <span class="flex items-center gap-0.5 flex-shrink-0">${codeBadge}${onCallBadge}${splitBadge}</span>
+      <span class="text-[10px] font-bold text-emerald-400 whitespace-nowrap">${shiftBase}</span>
+    </div>`;
+  }
+
+  function col(label, icon, staff) {
+    const header = `<p class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-widest mb-2 flex items-center gap-1">
+      <span class="material-symbols-outlined text-xs">${icon}</span>${label} <span class="ml-1 text-primary">${staff.length}</span>
+    </p>`;
+    const cards = staff.length
+      ? `<div class="grid grid-cols-2 gap-1.5">${staff.map(staffCard).join('')}</div>`
+      : `<p class="text-xs text-on-surface-variant italic">None scheduled</p>`;
+    return `<div class="min-w-0">${header}${cards}</div>`;
+  }
+
+  const showBoth = lunchStaff.length > 0 && dinnerStaff.length > 0;
+  const showLunchOnly  = lunchStaff.length > 0  && dinnerStaff.length === 0;
+
+  if (showBoth) {
+    grid.innerHTML = `<div class="grid grid-cols-2 gap-x-5 gap-y-0">
+      ${col('Lunch', 'wb_sunny', lunchStaff)}
+      <div class="border-l border-outline-variant/15 pl-5 min-w-0">${col('Dinner', 'dinner_dining', dinnerStaff)}</div>
+    </div>`;
+  } else if (showLunchOnly) {
+    grid.innerHTML = `<div class="grid grid-cols-2 md:grid-cols-3 gap-1.5">${lunchStaff.map(staffCard).join('')}</div>`;
+  } else {
+    grid.innerHTML = `<div class="grid grid-cols-2 md:grid-cols-3 gap-1.5">${dinnerStaff.map(staffCard).join('')}</div>`;
+  }
+
+  document.getElementById('staff-badge').textContent = counted.size + ' working · ' + dateTag;
+  document.getElementById('stat-staff').textContent = counted.size;
+  document.getElementById('stat-staff-sub').textContent = 'on floor today';
+}
+renderTodayStaff();
+
+// ── COVER COUNTS (derived from RESERVATIONS_BY_DATE) ─────────────────────────
+function computeStats() {
+  const todayData = RESERVATIONS_BY_DATE[_todayStr];
+  const lunchEl  = document.getElementById('stat-lunch');
+  const dinnerEl = document.getElementById('stat-dinner');
+
+  if (!todayData) {
+    // Today not in RESERVATIONS_BY_DATE at all — data is stale, flag it
+    lunchEl.textContent  = '—';
+    dinnerEl.textContent = '—';
+    lunchEl.title  = 'No reservation data for today — sync needed';
+    dinnerEl.title = 'No reservation data for today — sync needed';
+    lunchEl.classList.add('text-yellow-500');
+    dinnerEl.classList.add('text-yellow-500');
+    lunchEl.closest('.bg-\\[\\#0f172a\\]') && lunchEl.closest('[class*="rounded"]').setAttribute('title','Sync ClubSpot to populate today\'s covers');
+    return;
+  }
+
+  let lunch = 0, dinner = 0;
+  todayData.forEach(r => {
+    const h = parseInt(r.time.split(':')[0]);
+    if (h < 15) lunch += r.covers; else dinner += r.covers;
+  });
+  lunchEl.textContent  = lunch  || '—';
+  dinnerEl.textContent = dinner || '—';
+  lunchEl.classList.remove('text-yellow-500');
+  dinnerEl.classList.remove('text-yellow-500');
+}
+computeStats();
+
+// ── NEXT WEEK ROSTER (upload schedule to populate) ───────────────────────────── — sync from schedule when available ───────────
+const WEEK_DATES_NEXT = ['2026-05-07','2026-05-08','2026-05-09','2026-05-12','2026-05-13'];
+const STAFF_ROSTER_NEXT = [
+  {name:'Braxton Butterstein',      role:'Director',         shifts:['—','—','—','—','—']},
+  {name:'Ash Franco',      role:'Asst. R. Manager',         shifts:['—','—','—','—','—']},
+  {name:'Lacey Long',      role:'Bar Lead',         shifts:['—','—','—','—','—']},
+  {name:'Madi Cheek',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Brandi Obrien',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Taylor Gleave',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Chris Baigue',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Bryn Kurt',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Ashley Watkins',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Kaitlyn Adair',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Shannon Keil',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Jade Curtis',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Ella Bashore',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Audrey Irvine',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Malia Sager',      role:'',         shifts:['—','—','—','—','—']}
+];
+
+// ── ROSTER RENDER ─────────────────────────────────────────────────────────────
+function shiftCls(s) {
+  if (!s || s === '—')  return 'text-slate-600 text-[10px]';
+  if (s==='ML'||s.includes('Maternity'))  return 'text-pink-400 bg-pink-400/10 text-[10px] italic';
+  if (s==='OUT')   return 'text-orange-400 bg-orange-400/10 text-[10px] italic';
+  if (s==='OFF')   return 'text-slate-500 text-[10px]';
+  if (s==='R-OFF') return 'text-emerald-400 text-[10px] font-bold';
+  if (s==='WFH')   return 'text-blue-400 text-[10px] font-semibold';
+  if (s.includes('On Call')||s.includes('ON CALL')) return 'text-yellow-400 font-semibold text-[10px]';
+  return 'text-emerald-400 font-semibold text-[10px]';
+}
+function shiftLbl(s) {
+  if (!s) return '—';
+  if (s==='ML') return 'Maternity';
+  if (s==='OUT') return 'Out';
+  function renderSeg(seg) {
+    seg = seg.trim();
+    const isOnCall = /on call/i.test(seg);
+    const codeMatch = seg.match(/\(([^)]+)\)\s*$/);
+    const jobCode = codeMatch ? codeMatch[1].replace(/\s*On Call/i,'').trim() : '';
+    const base = seg.replace(/\s*\([^)]+\)\s*$/, '').trim();
+    const codeBadge = jobCode
+      ? `<span class="text-[9px] font-bold text-sky-400 bg-sky-400/10 border border-sky-400/20 rounded px-1 ml-0.5 whitespace-nowrap">${jobCode}</span>`
+      : '';
+    const onCallBadge = isOnCall
+      ? `<span class="text-[9px] font-bold text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 rounded px-1 ml-0.5 whitespace-nowrap">On Call</span>`
+      : '';
+    return base + codeBadge + onCallBadge;
+  }
+  if (s.includes(' / ')) {
+    return '<span class="flex flex-col gap-0.5">' + s.split(' / ').map((seg, i, arr) => '<span class="whitespace-nowrap">' + renderSeg(seg) + (i < arr.length - 1 ? ' <span class="text-slate-500 text-[9px]">/</span>' : '') + '</span>').join('') + '</span>';
+  }
+  return renderSeg(s);
+}
+
+function renderRosterWeek(dates, roster) {
+  const thead = document.getElementById('roster-thead');
+  const tbody  = document.getElementById('roster-tbody');
+  thead.innerHTML = '';
+  tbody.innerHTML  = '';
+  const headerCells = dates.map(d => {
+    const date    = new Date(d + 'T12:00:00');
+    const label   = _DOW_SHORT[date.getDay()] + ' ' + (date.getMonth()+1) + '/' + date.getDate();
+    const isToday = d === _todayStr;
+    return `<th class="pb-3 px-3 ${isToday?'text-primary':''}">${label}${isToday?' ★':''}</th>`;
+  });
+  thead.innerHTML = `<tr class="text-on-surface-variant text-xs font-bold border-b border-outline-variant/20 uppercase tracking-wider">
+    <th class="pb-3 px-3">Team Member</th>${headerCells.join('')}</tr>`;
+  roster.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.className = 'border-t border-outline-variant/10 hover:bg-white/5 transition-colors';
+    const nameCell = `<td class="py-2 px-2"><span class="font-semibold text-sm text-on-surface whitespace-nowrap">${r.name}</span>${r.role?`<span class="block text-[10px] text-on-surface-variant">${r.role}</span>`:''}</td>`;
+    const shiftCells = r.shifts.map((s, i) => {
+      const isToday = dates[i] === _todayStr;
+      return `<td class="py-2 px-2 ${isToday?'bg-primary/5':''}"><span class="${shiftCls(s)} leading-snug">${shiftLbl(s)}</span></td>`;
+    }).join('');
+    tr.innerHTML = nameCell + shiftCells;
+    tbody.appendChild(tr);
+  });
+}
+
+let _activeRosterWeek = 'current';
+function _weekLabel(dates) {
+  const s = new Date(dates[0] + 'T12:00:00'), e = new Date(dates[dates.length-1] + 'T12:00:00');
+  const sLabel = _MONTHS_LONG[s.getMonth()].slice(0,3) + ' ' + s.getDate();
+  const eLabel = s.getMonth() === e.getMonth() ? e.getDate() : _MONTHS_LONG[e.getMonth()].slice(0,3) + ' ' + e.getDate();
+  return sLabel + ' – ' + eLabel;
+}
+function showRosterWeek(week) {
+  _activeRosterWeek = week;
+  const btnCurrent = document.getElementById('roster-btn-current');
+  const btnNext    = document.getElementById('roster-btn-next');
+  const title      = document.getElementById('roster-title');
+  if (week === 'current') {
+    renderRosterWeek(WEEK_DATES, STAFF_ROSTER);
+    btnCurrent.className = 'px-3 py-1.5 bg-primary text-on-primary transition-colors';
+    btnNext.className    = 'px-3 py-1.5 bg-[#0f172a] text-on-surface-variant hover:text-primary transition-colors';
+    title.textContent = _weekLabel(WEEK_DATES);
+  } else {
+    renderRosterWeek(WEEK_DATES_NEXT, STAFF_ROSTER_NEXT);
+    btnCurrent.className = 'px-3 py-1.5 bg-[#0f172a] text-on-surface-variant hover:text-primary transition-colors';
+    btnNext.className    = 'px-3 py-1.5 bg-primary text-on-primary transition-colors';
+    title.textContent = _weekLabel(WEEK_DATES_NEXT);
+  }
+}
+
+// Initial render — default to current week
+// ── Restore persisted roster from localStorage (survives page reload) ─────────
+(function() {
+  const savedCurrent = stor('dashboard:roster:current');
+  const savedNext    = stor('dashboard:roster:next');
+  if (savedCurrent?.length) {
+    savedCurrent.forEach(saved => {
+      const match = STAFF_ROSTER.find(s => s.name === saved.name);
+      if (match) match.shifts = saved.shifts;
+    });
+  }
+  if (savedNext?.length) {
+    savedNext.forEach(saved => {
+      const match = STAFF_ROSTER_NEXT.find(s => s.name === saved.name);
+      if (match) match.shifts = saved.shifts;
+    });
+  }
+})();
+renderRosterWeek(WEEK_DATES, STAFF_ROSTER);
+
+function csRefresh() {
+  window.open('https://theclubspot.com/dashboard/acct/0OIc9hATkR/dining', '_blank', 'noopener');
+  const btn = document.getElementById('cs-refresh-btn');
+  const label = document.getElementById('cs-pulled-label');
+  btn.innerHTML = '<span class="material-symbols-outlined text-base leading-none animate-spin">refresh</span> Opening…';
+  setTimeout(() => {
+    const now = new Date();
+    const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    let h = now.getHours(), m = now.getMinutes(), ap = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    const ts = `${days[now.getDay()]} ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()} ${h}:${String(m).padStart(2,'0')} ${ap}`;
+    label.textContent = 'Opened ' + ts + ' — update reservations manually if needed';
+    btn.innerHTML = '<span class="material-symbols-outlined text-base leading-none">refresh</span> Refresh';
+  }, 1500);
+}
+function csShowDay(key) {
+  document.querySelectorAll('.cs-day-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.cs-tab-btn').forEach(t => t.classList.remove('active'));
+  const panel = document.getElementById('cs-' + key);
+  if (panel) panel.classList.add('active');
+  document.querySelectorAll('.cs-tab-btn').forEach(t => {
+    if (t.getAttribute('onclick') && t.getAttribute('onclick').includes(key)) t.classList.add('active');
+  });
+  // Re-apply current service filter to newly shown panel
+  csApplyServiceFilter();
+}
+
+let _csService = 'all';
+function csSetService(svc) {
+  _csService = svc;
+  // Update toggle button states
+  document.querySelectorAll('.cs-svc-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById('cs-svc-' + svc);
+  if (btn) btn.classList.add('active');
+  csApplyServiceFilter();
+}
+
+function csApplyServiceFilter() {
+  const panel = document.querySelector('.cs-day-panel.active');
+  if (!panel) return;
+  const rows = panel.querySelectorAll('tbody tr');
+  let shown = 0, covers = 0;
+  rows.forEach(row => {
+    const timeCell = row.querySelector('td:first-child');
+    if (!timeCell) return;
+    const timeText = (timeCell.textContent || timeCell.innerText || '').trim();
+    const isLunch  = isLunchTime(timeText);
+    const isDinner = !isLunch;
+    let visible = true;
+    if (_csService === 'lunch')  visible = isLunch;
+    if (_csService === 'dinner') visible = isDinner;
+    row.style.display = visible ? '' : 'none';
+    if (visible) {
+      shown++;
+      const coverCell = row.querySelector('td:nth-child(3)');
+      covers += parseInt(coverCell?.innerText?.trim()) || 0;
+    }
+  });
+  // Update label
+  const label = document.getElementById('cs-svc-label');
+  if (label) {
+    if (_csService === 'all')    label.textContent = '';
+    if (_csService === 'lunch')  label.textContent = shown + ' reservations · ' + covers + ' covers';
+    if (_csService === 'dinner') label.textContent = shown + ' reservations · ' + covers + ' covers';
+  }
+}
+
+function isLunchTime(timeStr) {
+  // Dinner = 4:00 PM and later. Lunch = everything before 4 PM.
+  if (!timeStr) return true;
+  const clean = timeStr.replace(/\s+/g, ' ').trim();
+  const m = clean.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+  if (!m) return true;
+  const h   = parseInt(m[1], 10);
+  const isPM = m[3].toUpperCase() === 'PM';
+  // Convert to 24h
+  let h24 = h;
+  if (isPM && h !== 12) h24 = h + 12;  // 1PM→13, 4PM→16
+  if (!isPM && h === 12) h24 = 0;       // 12AM→0
+  // 12PM = 12 in 24h, that's noon — treat as lunch cutoff
+  return h24 < 16; // strictly before 4:00 PM = lunch
+}
+(function() {
+  // Derive panel key from an ISO date string (e.g. '2026-04-16' → 'thu-apr16')
+  // Matches the naming convention used when panels are built during rollover.
+  const DOW  = ['sun','mon','tue','wed','thu','fri','sat'];
+  const MONS = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+  function isoToKey(iso) {
+    const d = new Date(iso + 'T12:00:00');
+    return DOW[d.getDay()] + '-' + MONS[d.getMonth()] + d.getDate();
+  }
+  // Build map from WEEK_DATES so it updates automatically every rollover
+  const map = {};
+  (WEEK_DATES || []).forEach(iso => { map[iso] = isoToKey(iso); });
+  if (map[_todayStr]) {
+    csShowDay(map[_todayStr]);
+  } else {
+    // Today is not in this week — show the first panel of the current week
+    const firstKey = WEEK_DATES && WEEK_DATES[0] ? isoToKey(WEEK_DATES[0]) : null;
+    if (firstKey) csShowDay(firstKey);
+  }
+})();
+
+
+// ── GOALS ──────────────────────────────────────────────────────────────────────
+const DEFAULT_GOALS = [];
+let goals = stor('dashboard:goals') || DEFAULT_GOALS;
+
+function renderGoals() {
+  const ul = document.getElementById('goals-list');
+  if (!ul) return;
+  ul.innerHTML = '';
+  goals.forEach((g, i) => {
+    const li = document.createElement('li');
+    li.className = 'flex items-center gap-2 group';
+    li.innerHTML = `
+      <span class="w-5 h-5 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold text-[10px] flex-shrink-0">${i+1}</span>
+      <input type="text"
+        class="flex-1 bg-transparent border-none outline-none text-xs text-on-surface placeholder-on-surface-variant/40 focus:bg-primary/5 focus:rounded px-1 py-0.5 transition-colors min-w-0"
+        value="${g.text.replace(/"/g,'&quot;')}"
+        placeholder="Set a goal…"
+        data-id="${g.id}"
+        onchange="updateGoal(${g.id}, this.value)" />
+      <button onclick="deleteGoal(${g.id})"
+        class="text-on-surface-variant/30 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100 flex-shrink-0 text-base leading-none">×</button>`;
+    ul.appendChild(li);
+  });
+}
+
+function updateGoal(id, text) {
+  goals = goals.map(g => g.id === id ? {...g, text: text.trim()} : g);
+  stor('dashboard:goals', goals);
+}
+function deleteGoal(id) {
+  goals = goals.filter(g => g.id !== id);
+  stor('dashboard:goals', goals);
+  renderGoals();
+}
+function addGoal() {
+  const inp = document.getElementById('goal-new-input');
+  const text = inp.value.trim();
+  if (!text) return;
+  goals.push({id: Date.now(), text});
+  stor('dashboard:goals', goals);
+  renderGoals();
+  inp.value = '';
+  document.getElementById('goal-add-row').classList.add('hidden');
+}
+function toggleGoalInput() {
+  const row = document.getElementById('goal-add-row');
+  row.classList.toggle('hidden');
+  if (!row.classList.contains('hidden')) {
+    setTimeout(() => document.getElementById('goal-new-input').focus(), 50);
+  }
+}
+renderGoals();
+
+// ── SERVICE LOG ──────────────────────────────────────────────────────────────
+const SERVICE_LOG_DAYS = ['thu-may7','fri-may8','sat-may9','tue-may12','wed-may13'];
+function saveServiceLog(day, text) {
+  stor('dashboard:log:' + day, text);
+  const el = document.getElementById('log-saved-' + day);
+  if (el) el.textContent = 'Saved ' + new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+}
+function loadServiceLogs() {
+  SERVICE_LOG_DAYS.forEach(day => {
+    const ta = document.getElementById('service-log-' + day);
+    if (!ta) return;
+    const saved = stor('dashboard:log:' + day);
+    if (saved) ta.value = saved;
+  });
+}
+loadServiceLogs();
+
+// ── NOTES ──────────────────────────────────────────────────────────────────────
+const na = document.getElementById('notes-area'), ns = document.getElementById('notes-saved');
+let nt;
+const savedNotes = stor('dashboard:notes');
+if (savedNotes) na.value = savedNotes;
+na.addEventListener('input', () => {
+  clearTimeout(nt); ns.textContent = 'Saving…';
+  nt = setTimeout(() => {
+    stor('dashboard:notes', na.value);
+    ns.textContent = 'Saved at ' + new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+  }, 800);
+});
+
+
+// ── BOARDROOMS ─────────────────────────────────────────────────────────────────
+const BR_SHEET_URL = 'https://oakview-my.sharepoint.com/:x:/r/personal/ash_franco_oakviewgroup_com/_layouts/15/Doc.aspx?sourcedoc=%7B09FC94B2-C685-446C-B504-76850C3B3CC9%7D&file=Boardrooms.xlsx&action=default&mobileredirect=true';
+const DEFAULT_BOARDROOMS = [
+  {id:1 , rawDate:"4.29", member:"Maria Mullahi",     poc:"",                time:"6:00pm",  guests:"17", status:"complete",    link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQChiny1QxX0SL3llVo79CQ1ATlfhmAGV5tYttOffI44N3Q?e=pHsX13", past:true},
+  {id:2 , rawDate:"4.3",  member:"Katia Henderson",   poc:"",                time:"9:00am",  guests:"16", status:"complete",    link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQCeIo2b26ZrSYv-1kROmcYKARxRU82PVXXanQaWNNN1wY0?e=ABgFzY", past:true},
+  {id:3 , rawDate:"5.1",  member:"Jeana Campbell",    poc:"",                time:"10:30am", guests:"12", status:"complete",    link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQBC-2HE4C3KQ5bxjL6cQljfAe_cKbN3nVrtAhfTAc8E5-0?e=cZguHU", past:true},
+  {id:4 , rawDate:"5.2",  member:"Troy Perry",        poc:"",                time:"5:30pm",  guests:"17", status:"complete",    link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQDU-BJDVO8BS4ss-DfFRh0-ATIhWzS6JnLQxayhPJXC624?e=lmcGmD"},
+  {id:5 , rawDate:"5.13", member:"Kerri Nakamura",    poc:"",                time:"7:30am",  guests:"5",  status:"in-progress", link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQBr2wMKWH6zRLVm6WZDLFxjAS-XqrDAH74bswJJgtY_PJc?e=kqNBs8"},
+  {id:6 , rawDate:"5.15", member:"Andrea Wallace",    poc:"",                time:"9:00am",  guests:"18", status:"in-progress", link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQDCqS1ip6asS4ms9wB3x_YvAbM6X4FLkG5izdKXvn57HHs?e=Sxz5UA"},
+  {id:7 , rawDate:"5.19", member:"Ibi Guevara",       poc:"Kristen Cordova", time:"7:30am",  guests:"20", status:"in-progress", link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQD7tQin2nDqSbG5yhhoy4fKAZ4Wf9AFcbTcTA87gSI8tU8?e=9By6NT"},
+  {id:8 , rawDate:"5.20", member:"Tanya Flores",      poc:"",                time:"6:00pm",  guests:"10", status:"in-progress", link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQAo5c7AJO0zSrrFdqpOON5oAc30v-f6tj_zi70dC7eTUc8?e=X81Gnh"},
+  {id:9 , rawDate:"6.5",  member:"Scott Betts",       poc:"Lisa Shick",      time:"8:00am",  guests:"10", status:"in-progress", link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQBK_cmMgDhgQrw7EXJbWjUBAWxoOBCySabxhkUreEJsJlY?e=64QjYy"},
+  {id:10, rawDate:"6.18", member:"Branden Dalley",    poc:"",                time:"8:00am",  guests:"20", status:"in-progress", link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQB-ifdRE9PnQKo10VTFOfYJAfpxyU2nYiG4FJDF_006vvI?e=2d2KMp"},
+  {id:11, rawDate:"7.7",  member:"Paul Kohn",         poc:"Kamarie Nicdao",  time:"10:00am", guests:"15", status:"in-progress", link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQDVO9fQn95oRax8QcGsDtA9AYDMsQu2-cHpui7sDV9zJIM?e=upOgNq"},
+];
+// Version stamp — bump this whenever DEFAULT_BOARDROOMS is updated to force a reset
+const BR_VERSION = '2026-05-02-a';
+if (stor('dashboard:boardrooms:version') !== BR_VERSION) {
+  stor('dashboard:boardrooms', DEFAULT_BOARDROOMS);
+  stor('dashboard:boardrooms:version', BR_VERSION);
+}
+let boardrooms = stor('dashboard:boardrooms') || DEFAULT_BOARDROOMS;
+
+function parseBRDate(raw) { const p=raw.split('.'); if(p.length<2)return null; return new Date(2026,parseInt(p[0])-1,parseInt(p[1])); }
+function formatBRDate(raw) { const d=parseBRDate(raw); if(!d)return raw; return d.toLocaleDateString('en-US',{month:'short',day:'numeric'}); }
+function isBRPast(br) { if(br.past)return true; const d=parseBRDate(br.rawDate); const today=new Date(); today.setHours(0,0,0,0); return d&&d<today; }
+function isBRThisWeek(br) { const d=parseBRDate(br.rawDate); if(!d)return false; const t=new Date(WEEK_DATES[0]+'T12:00:00'),e=new Date(WEEK_DATES[WEEK_DATES.length-1]+'T12:00:00'); return d>=t&&d<=e; }
+
+function renderBoardrooms() {
+  const tbody = document.getElementById('br-tbody'); tbody.innerHTML = '';
+  const sorted = [...boardrooms]
+    .filter(br => !isBRPast(br))
+    .sort((a,b)=>{ const da=parseBRDate(a.rawDate),db=parseBRDate(b.rawDate); return da&&db?da-db:0; });
+  sorted.forEach(br => {
+    const past = false, week = isBRThisWeek(br);
+    const preorderHTML = (br.link&&br.link.trim())
+      ? `<a href="${br.link}" target="_blank" rel="noopener" class="text-primary text-xs font-bold hover:underline">🔗 Pre-Order</a>`
+      : `<a href="${BR_SHEET_URL}" target="_blank" rel="noopener" class="text-on-surface-variant text-xs hover:text-primary transition-colors">📄 Sheet</a>`;
+    const statusClass = br.status==='complete' ? 'complete' : 'in-progress';
+    const rowCls = past ? 'opacity-40' : week ? 'bg-primary/5' : '';
+    const tr = document.createElement('tr');
+    tr.className = `border-t border-outline-variant/10 hover:bg-white/5 transition-colors ${rowCls}`;
+
+    // Inline editable cell helper
+    function editCell(field, value, cls='') {
+      return `<td class="py-2 px-2">
+        <input type="text" value="${(value||'').replace(/"/g,'&quot;')}"
+          class="br-inline-input ${cls}"
+          onchange="updateBR(${br.id},'${field}',this.value)"
+          placeholder="—" /></td>`;
+    }
+
+    tr.innerHTML = `
+      ${editCell('rawDate', br.rawDate, 'text-xs font-bold ' + (week?'text-primary':'text-on-surface-variant'))}
+      ${editCell('member',  br.member,  'font-semibold text-on-surface text-sm')}
+      ${editCell('poc',     br.poc,     'text-xs text-on-surface-variant')}
+      ${editCell('time',    br.time,    'text-xs text-on-surface-variant')}
+      ${editCell('guests',  br.guests,  'text-xs text-center text-on-surface-variant w-14')}
+      <td class="py-2 px-2">
+        <button class="br-status-btn ${statusClass}" onclick="toggleBRStatus(${br.id})">
+          ${br.status==='complete'?'✅ Complete':'⏳ In Progress'}
+        </button>
+      </td>
+      <td class="py-2 px-2">${preorderHTML}</td>
+      <td class="py-2 px-2">
+        <button onclick="deleteBR(${br.id})" class="text-on-surface-variant hover:text-red-400 transition-colors text-base leading-none">×</button>
+      </td>`;
+    tbody.appendChild(tr);
+  });
+  // Summary
+  const upcoming = boardrooms.filter(b => !isBRPast(b));
+  const complete = upcoming.filter(b=>b.status==='complete').length;
+  const inprog   = upcoming.filter(b=>b.status==='in-progress').length;
+  document.getElementById('br-count-badge').textContent = upcoming.length + ' upcoming';
+  document.getElementById('br-summary-row').innerHTML = `
+    <div class="flex items-center gap-2 bg-emerald-400/10 border border-emerald-400/20 rounded-lg px-4 py-2 text-sm">
+      <span class="font-bold text-emerald-400">${complete}</span>
+      <span class="text-on-surface-variant text-xs">Complete (upcoming)</span>
+    </div>
+    <div class="flex items-center gap-2 bg-tertiary/10 border border-tertiary/20 rounded-lg px-4 py-2 text-sm">
+      <span class="font-bold text-tertiary">${inprog}</span>
+      <span class="text-on-surface-variant text-xs">In Progress</span>
+    </div>`;
+  // Stats in hero
+  document.getElementById('br-stat-count').textContent = upcoming.length;
+  document.getElementById('br-stat-sub').textContent = inprog + ' need pre-order';
+}
+function toggleBRStatus(id) {
+  boardrooms = boardrooms.map(b=>b.id===id?{...b,status:b.status==='complete'?'in-progress':'complete'}:b);
+  stor('dashboard:boardrooms',boardrooms); renderBoardrooms();
+}
+function updateBR(id, field, value) {
+  boardrooms = boardrooms.map(b => b.id===id ? {...b, [field]: value.trim()} : b);
+  stor('dashboard:boardrooms', boardrooms);
+  // Re-render only if date changed (affects sorting/highlighting), otherwise skip to avoid losing focus
+  if (field === 'rawDate') renderBoardrooms();
+}
+
+function deleteBR(id) { boardrooms=boardrooms.filter(b=>b.id!==id); stor('dashboard:boardrooms',boardrooms); renderBoardrooms(); }
+function toggleBRForm() {
+  const f = document.getElementById('br-add-form');
+  f.classList.toggle('hidden');
+}
+function addBR() {
+  const d=document.getElementById('br-date').value.trim();
+  const m=document.getElementById('br-member').value.trim();
+  if (!d||!m) return;
+  boardrooms.push({
+    id:Date.now(), rawDate:d, member:m,
+    poc:document.getElementById('br-poc').value.trim(),
+    time:document.getElementById('br-time').value.trim(),
+    guests:document.getElementById('br-guests').value.trim(),
+    status:'in-progress',
+    link:document.getElementById('br-link').value.trim()
+  });
+  stor('dashboard:boardrooms',boardrooms); renderBoardrooms();
+  ['br-date','br-member','br-poc','br-time','br-guests','br-link'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('br-add-form').classList.add('hidden');
+}
+renderBoardrooms();
+
+// ── CLUB EVENTS ───────────────────────────────────────────────────────────────
+const TODAY_EVT = new Date(); TODAY_EVT.setHours(0,0,0,0);
+
+const CLUB_EVENTS = {
+  march: [
+    { date:'Mar 24', raw: new Date(2026,2,24), time:'4:30–7:30 PM',          name:'Industry Networking Night',               loc:'Restaurant',                      note:'', alert:false },
+    { date:'Mar 25', raw: new Date(2026,2,25), time:'6:00–8:00 PM',          name:'Sip & Sauce: Utah Whiskey & Wings',        loc:'Boardroom',                       note:'', alert:false },
+    { date:'Mar 26', raw: new Date(2026,2,26), time:'6:00–7:00 PM',          name:'New Member Mixer',                         loc:'Restaurant',                      note:'', alert:false },
+    { date:'Mar 27', raw: new Date(2026,2,27), time:'5:30–8:30 PM',          name:'Live Music Friday — Hana Kamler',          loc:'Restaurant',                      note:'', alert:false },
+    { date:'Mar 28', raw: new Date(2026,2,28), time:'5:30 & 7:00 PM',        name:'🍲 Hot Pot Night',                         loc:'Restaurant & Suite Level',        note:'No regular dinner menu · $60++ per couple', alert:true },
+    { date:'Mar 28', raw: new Date(2026,2,28), time:'6:30 PM',               name:'🍝 Italian Prom Dinner',                   loc:'Patio',                           note:'36 guests · Limited Italian menu · Regular dining closed', alert:true },
+    { date:'Mar 30', raw: new Date(2026,2,30), time:'6:00–8:00 PM',          name:'MS/PE – Sip, Tour & Discover Open House',  loc:'Restaurant, Suite Level, Field Club', note:'', alert:false },
+  ],
+  april: [
+    { date:'Apr 1',  raw: new Date(2026,3,1),  time:'5:00–9:00 PM',          name:'National Sourdough Bread Day',             loc:'Restaurant',  note:'', alert:false },
+    { date:'Apr 2',  raw: new Date(2026,3,2),  time:'6:00–8:00 PM',          name:"Ladies' Night",                            loc:'Restaurant',  note:'', alert:false },
+    { date:'Apr 4',  raw: new Date(2026,3,4),  time:'5:00 PM',               name:'Easter Dinner',                            loc:'Field Club',  note:'', alert:false },
+    { date:'Apr 9',  raw: new Date(2026,3,9),  time:'6:00 PM',               name:'Bingo Night',                              loc:'Restaurant',  note:'', alert:false },
+    { date:'Apr 10', raw: new Date(2026,3,10), time:'5:30–8:30 PM',          name:'Live Music Friday — Will Baxter',          loc:'Restaurant',  note:'', alert:false },
+    { date:'Apr 11', raw: new Date(2026,3,11), time:'5:00–9:00 PM',          name:'Fondue Special',                           loc:'Restaurant',  note:'', alert:false },
+    { date:'Apr 15', raw: new Date(2026,3,15), time:'6:00 PM',               name:'Skill Swap: Build Your Own Herb Garden',   loc:'South Patio', note:'$45 · 24hr cancellation policy', alert:false },
+    { date:'Apr 16', raw: new Date(2026,3,16), time:'11:30 AM–1:00 PM',      name:'Third Thursday Open House Lunch',          loc:'Boardroom',   note:'Special menu · Comped to membership sales', alert:false },
+    { date:'Apr 21', raw: new Date(2026,3,21), time:'7:30–9:30 AM',          name:'Coffee & Connection',                      loc:'Restaurant',  note:'', alert:false },
+    { date:'Apr 21', raw: new Date(2026,3,21), time:'5:00–9:00 PM',          name:'Passport Dinner: Greek & Mediterranean',   loc:'Restaurant',  note:'Singer: Britany Bly', alert:false },
+    { date:'Apr 24', raw: new Date(2026,3,24), time:'5:30–8:30 PM',          name:'Business Meets Beer Networking',           loc:'North Patio', note:'Co-hosted with HOA Love & 801 Coffee · $20 · Burger bar', alert:false },
+    { date:'Apr 24', raw: new Date(2026,3,24), time:'5:30–8:30 PM',          name:'Live Music Friday — Hana Kamler',          loc:'Restaurant',  note:'', alert:false },
+    { date:'Apr 25', raw: new Date(2026,3,25), time:'5:00–9:00 PM',          name:'Casino Night',                             loc:'TBD',         note:'$50 · 18+ · Kids Zone available $25', alert:false },
+    { date:'Apr 30', raw: new Date(2026,3,30), time:'6:00–7:00 PM',          name:'New Member Mixer',                         loc:'Restaurant',  note:'', alert:false },
+  ],
+  may: [
+    { date:'May 1',  raw: new Date(2026,4,1),  time:'5:30–8:30 PM',          name:'Live Music Friday — Josh Thompson',        loc:'Restaurant',  note:'', alert:false },
+    { date:'May 2',  raw: new Date(2026,4,2),  time:'11:00 AM–2:00 PM',      name:'Kentucky Derby Brunch',                    loc:'Restaurant',  note:'', alert:false },
+    { date:'May 5',  raw: new Date(2026,4,5),  time:'5:00 PM',               name:'Passport Dinner: Cinco de Mayo',           loc:'Restaurant',  note:'', alert:false },
+    { date:'May 7',  raw: new Date(2026,4,7),  time:'All Day',               name:'⛔ Club Closed — Supercross',              loc:'',            note:'Reopens Mon May 11', alert:true },
+    { date:'May 8',  raw: new Date(2026,4,8),  time:'All Day',               name:'⛔ Club Closed — Supercross',              loc:'',            note:'No dining service', alert:true },
+    { date:'May 9',  raw: new Date(2026,4,9),  time:'All Day',               name:'⛔ Club Closed — Supercross',              loc:'',            note:'No dining service', alert:true },
+    { date:'May 12', raw: new Date(2026,4,12), time:'5:30–7:00 PM',          name:'UofU Young Alumni Mixer',                  loc:'Suite Lounge',note:'', alert:false },
+    { date:'May 13', raw: new Date(2026,4,13), time:'6:00 PM',               name:"Kids' Paint Night",                        loc:'TBD',         note:'$20++ · 24hr cancellation policy', alert:false },
+    { date:'May 14', raw: new Date(2026,4,14), time:'6:00–8:00 PM',          name:"Ladies' Night — Stained Glass Activity",   loc:'Restaurant',  note:'24hr cancellation policy', alert:false },
+    { date:'May 15', raw: new Date(2026,4,15), time:'TBD',                   name:'Cocktail Class with Burt',                 loc:'TBD',         note:'Details TBD', alert:false },
+    { date:'May 16', raw: new Date(2026,4,16), time:'6:00 PM',               name:'Karaoke Night',                            loc:'TBD',         note:'', alert:false },
+    { date:'May 19', raw: new Date(2026,4,19), time:'7:30–9:30 AM',          name:'Coffee & Connection',                      loc:'Restaurant',  note:'', alert:false },
+    { date:'May 21', raw: new Date(2026,4,21), time:'11:30 AM–1:00 PM',      name:'Third Thursday Open House Lunch',          loc:'Boardroom',   note:'Special menu · Comped to membership sales', alert:false },
+    { date:'May 21', raw: new Date(2026,4,21), time:'6:00 PM',               name:'Bingo Night',                              loc:'TBD',         note:'', alert:false },
+    { date:'May 22', raw: new Date(2026,4,22), time:'5:30–8:30 PM',          name:'Live Music Friday — Chase Given',          loc:'Restaurant',  note:'', alert:false },
+    { date:'May 23', raw: new Date(2026,4,23), time:'TBD',                   name:'BBQ Special',                              loc:'TBD',         note:'', alert:false },
+    { date:'May 25', raw: new Date(2026,4,25), time:'All Day',               name:'⛔ Club Closed — Memorial Day',            loc:'',            note:'No dining service', alert:true },
+    { date:'May 26', raw: new Date(2026,4,26), time:'5:30–7:00 PM',          name:'Industry Networking Night (Real Estate)', loc:'Restaurant Patio', note:'Open to members · Free', alert:false },
+    { date:'May 28', raw: new Date(2026,4,28), time:'6:00–7:00 PM',          name:'New Member Mixer',                         loc:'Restaurant',  note:'', alert:false },
+  ]
+};
+
+function daysOutLabel(d) {
+  const diff = Math.round((d - TODAY_EVT) / 86400000);
+  if (diff === 0) return '<span class="font-black text-yellow-400">TODAY</span>';
+  if (diff === 1) return '<span class="font-black text-yellow-300">Tomorrow</span>';
+  if (diff < 0)  return '';
+  return diff + ' days out';
+}
+
+function buildEvtCard(ev, compact) {
+  const diff = Math.round((ev.raw - TODAY_EVT) / 86400000);
+  if (diff < 0) return '';
+  const isToday   = diff === 0;
+  const isSoon    = diff <= 3;
+  const borderCls = ev.alert
+    ? 'border border-tertiary/40 bg-tertiary/5'
+    : isToday
+      ? 'border border-yellow-400/40 bg-yellow-400/5'
+      : 'border border-outline-variant/10 bg-[#0f172a]';
+  const dateCls = ev.alert ? 'text-tertiary' : isToday ? 'text-yellow-400' : isSoon ? 'text-primary' : 'text-on-surface-variant';
+  const countdown = daysOutLabel(ev.raw);
+  return `
+    <div class="p-3 rounded-lg ${borderCls} fade-in">
+      <div class="flex items-center justify-between mb-0.5 gap-2">
+        <span class="text-[10px] font-extrabold ${dateCls} uppercase tracking-widest flex-shrink-0">${ev.date}</span>
+        <span class="text-[10px] font-semibold text-on-surface-variant truncate">${ev.time}</span>
+      </div>
+      <p class="font-bold text-sm text-on-surface leading-snug">${ev.name}</p>
+      ${ev.loc || countdown ? `<p class="text-xs text-on-surface-variant mt-0.5">${[ev.loc, countdown].filter(Boolean).join(' · ')}</p>` : ''}
+      ${ev.note ? `<p class="text-xs text-tertiary mt-1 font-semibold">⚠️ ${ev.note}</p>` : ''}
+    </div>`;
+}
+
+function renderEventsLists() {
+  ['march','april','may'].forEach(month => {
+    const el = document.getElementById('evt-' + month + '-list');
+    if (!el) return;
+    const html = CLUB_EVENTS[month].map(ev => buildEvtCard(ev, false)).filter(Boolean).join('');
+    el.innerHTML = html || '<p class="text-on-surface-variant text-sm col-span-3 py-4">No upcoming events this month.</p>';
+  });
+}
+
+function showEventsMonth(month) {
+  document.querySelectorAll('.evt-month-panel').forEach(p => p.classList.add('hidden'));
+  document.querySelectorAll('.evt-month-tab').forEach(t => t.classList.remove('active'));
+  const panel = document.getElementById('evt-' + month);
+  const tab   = document.getElementById('evt-tab-' + month);
+  if (panel) panel.classList.remove('hidden');
+  if (tab)   tab.classList.add('active');
+}
+
+function renderThisWeekEvents() {
+  const el = document.getElementById('events-this-week');
+  if (!el) return;
+  const allEvents = [...CLUB_EVENTS.march, ...CLUB_EVENTS.april, ...CLUB_EVENTS.may];
+  const thisWeek  = allEvents.filter(ev => {
+    const diff = Math.round((ev.raw - TODAY_EVT) / 86400000);
+    return diff >= 0 && diff <= 7;
+  });
+  if (!thisWeek.length) {
+    el.innerHTML = '<p class="text-xs text-on-surface-variant">No events in the next 7 days.</p>';
+    return;
+  }
+  el.innerHTML = thisWeek.map(ev => buildEvtCard(ev, true)).join('');
+}
+
+renderEventsLists();
+
+// Auto-select the current month tab on load
+(function() {
+  const m = TODAY_EVT.getMonth(); // 0=Jan ... 11=Dec
+  const monthMap = {2:'april', 3:'april', 4:'may'}; // march tab removed; fall back to april
+  const target = monthMap[m] || 'april';
+  showEventsMonth(target);
+})();
+
+// ── XLSX IMPORT: SCHEDULE ─────────────────────────────────────────────────────
+// Parses Restaurant Schedule 26.xlsx using SheetJS.
+// Confirmed layout:
+//   Row 0  = "RESTAURANT SCHEDULE" title
+//   Row 1  = DATE row — col 2 is the anchor date, cols 4,6,8,10,12,14 are +1 formulas
+//   Rows 2–17 = main staff — col 0 "Name | Role", shifts in cols 2,4,6,8,10,12,14
+//   Row 18 = "BANQUET HELP:" marker
+//   Rows 19–21 = banquet/additional staff (same shift column layout)
+//   Row 22+ = "MEMBER EVENTS" section — stop here
+//   OUT = staff member is out (not ML — kept as distinct status)
+//   Split shifts: two time ranges in one cell separated by a space
+
+function importScheduleXlsx(input) {
+  const file = input.files[0];
+  if (!file) return;
+  if (typeof XLSX === 'undefined') {
+    alert('SheetJS library not loaded.\n\nThis usually means the dashboard opened while offline, or the CDN was blocked.\n\nFix: Make sure you have an internet connection, then reload the dashboard (F5) and try importing again.');
+    input.value = '';
+    return;
+  }
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const SHIFT_COLS = [2, 4, 6, 8, 10, 12, 14];
+
+      function isoFromDate(val) {
+        if (!val) return null;
+        // JS Date object (SheetJS cellDates:true)
+        if (val instanceof Date && !isNaN(val)) {
+          return val.getFullYear() + '-' +
+            String(val.getMonth() + 1).padStart(2, '0') + '-' +
+            String(val.getDate()).padStart(2, '0');
+        }
+        // Raw Excel serial number — SheetJS sometimes returns this even with cellDates:true
+        // Excel serial: days since Jan 0 1900, with the 1900 leap year bug (+2 offset)
+        if (typeof val === 'number' && val > 40000 && val < 60000) {
+          // Convert via JS Date: Excel epoch is Dec 30 1899
+          const d = new Date(Math.round((val - 25569) * 86400 * 1000));
+          return d.getUTCFullYear() + '-' +
+            String(d.getUTCMonth() + 1).padStart(2, '0') + '-' +
+            String(d.getUTCDate()).padStart(2, '0');
+        }
+        // Formatted string "M/D/YY" or "M/D/YYYY"
+        const mdy = String(val).match(/^(\d{1,2})\/(\d{1,2})\/(\d{2,4})$/);
+        if (mdy) {
+          const yr = parseInt(mdy[3]) < 100 ? 2000 + parseInt(mdy[3]) : parseInt(mdy[3]);
+          return yr + '-' + String(mdy[1]).padStart(2,'0') + '-' + String(mdy[2]).padStart(2,'0');
+        }
+        return null;
+      }
+
+      function cleanShift(s) {
+        // Strip job-code suffixes (S), (H), (B), (TR), (T), (BR ASSIST) etc.
+        // but preserve (On Call) and (ON CALL)
+        return s.replace(/\s*\(([^)]+)\)/g, (m, inner) => {
+          if (/on\s*call/i.test(inner)) return ' (On Call)';
+          return '';
+        }).replace(/\s+/g, ' ').trim();
+      }
+
+      function normalizeShift(raw) {
+        if (!raw && raw !== 0) return 'OFF';
+        const s = raw.toString().trim();
+        if (!s) return 'OFF';
+        if (/^maternity\s*leave$/i.test(s)) return 'ML';
+        if (/^out$/i.test(s))               return 'OUT';   // OUT = own status, not ML
+        if (/^r\s*-?\s*off$/i.test(s))      return 'R-OFF';
+        if (/^wfh$/i.test(s))               return 'WFH';
+        if (/^off$/i.test(s))               return 'OFF';
+        // Detect split shift: two time ranges in one cell
+        // e.g. "10:30 AM - 3:00 PM (S) 4:30 PM - CLOSE (S)"
+        const splitMatch = s.match(/^(.+?(?:AM|PM)[^0-9]*)[\s]+(\d{1,2}:\d{2}\s*(?:AM|PM).+)$/i);
+        if (splitMatch) {
+          return cleanShift(splitMatch[1].trim()) + ' / ' + cleanShift(splitMatch[2].trim());
+        }
+        return cleanShift(s);
+      }
+
+      function extractRoster(ws, includeBanquet) {
+        const data = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '', raw: true });
+        const roster = [];
+
+        // ── Main staff: rows 2–17 ──────────────────────────────────────────────
+        for (let ri = 2; ri <= 17; ri++) {
+          const row = data[ri];
+          if (!row) continue;
+          const rawName = (row[0] || '').toString().trim();
+          if (!rawName || /^banquet/i.test(rawName)) break;
+          const name   = rawName.split('|')[0].trim();
+          const shifts = SHIFT_COLS.map(c => normalizeShift(row[c]));
+          roster.push({ name, shifts, banquet: false });
+        }
+
+        // ── Banquet help: rows 19–21 (stop at MEMBER EVENTS) ──────────────────
+        if (includeBanquet) {
+          for (let ri = 19; ri <= 21; ri++) {
+            const row = data[ri];
+            if (!row) continue;
+            const rawName = (row[0] || '').toString().trim();
+            if (!rawName || /^member\s*events/i.test(rawName)) break;
+            const name   = rawName.split('|')[0].trim();
+            const shifts = SHIFT_COLS.map(c => normalizeShift(row[c]));
+            roster.push({ name, shifts, banquet: true });
+          }
+        }
+
+        return roster;
+      }
+
+      const wb = XLSX.read(e.target.result, { type: 'array', cellDates: true });
+      let matchedCurrent = 0, matchedNext = 0, sheetsMatched = [];
+
+      // Match sheets by name — avoids brittle date-cell parsing entirely.
+      // Sheet names follow "Mon Dth to Mon Dth", e.g. "Apr 2nd to Apr 8th".
+      const MONTH_ABBR = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      function isoToSheetFrag(iso) {
+        const p = iso.split('-');
+        return MONTH_ABBR[parseInt(p[1])-1] + ' ' + parseInt(p[2]);
+      }
+      const currentFrag = isoToSheetFrag(WEEK_DATES[0]);
+      const nextFrag    = isoToSheetFrag(WEEK_DATES_NEXT[0]);
+
+      for (const sheetName of wb.SheetNames) {
+        const ws = wb.Sheets[sheetName];
+        const matchesCurrent = sheetName.includes(currentFrag);
+        const matchesNext    = sheetName.includes(nextFrag);
+        if (!matchesCurrent && !matchesNext) continue;
+
+        if (matchesCurrent) {
+          const roster = extractRoster(ws, true);
+          roster.forEach(parsed => {
+            const first = parsed.name.split(' ')[0].toLowerCase();
+            const last  = parsed.name.split(' ').slice(-1)[0].toLowerCase();
+            // Try to find existing entry in STAFF_ROSTER
+            let match = STAFF_ROSTER.find(s =>
+              s.name.toLowerCase().includes(first) && s.name.toLowerCase().includes(last)
+            );
+            if (match) {
+              match.shifts = parsed.shifts;
+              matchedCurrent++;
+            } else if (parsed.banquet && first && last && first !== last) {
+              // Add banquet staff not already in roster
+              STAFF_ROSTER.push({ name: parsed.name, role: 'Banquet', shifts: parsed.shifts });
+              matchedCurrent++;
+            }
+          });
+          sheetsMatched.push('current week (' + sheetName + ')');
+        }
+
+        if (matchesNext) {
+          const roster = extractRoster(ws, true);
+          roster.forEach(parsed => {
+            const first = parsed.name.split(' ')[0].toLowerCase();
+            const last  = parsed.name.split(' ').slice(-1)[0].toLowerCase();
+            let match = STAFF_ROSTER_NEXT.find(s =>
+              s.name.toLowerCase().includes(first) && s.name.toLowerCase().includes(last)
+            );
+            if (match) {
+              match.shifts = parsed.shifts;
+              matchedNext++;
+            } else if (parsed.banquet && first && last && first !== last) {
+              STAFF_ROSTER_NEXT.push({ name: parsed.name, role: 'Banquet', shifts: parsed.shifts });
+              matchedNext++;
+            }
+          });
+          sheetsMatched.push('next week (' + sheetName + ')');
+        }
+      }
+
+      if (!sheetsMatched.length) {
+        // Collect anchor dates found across all sheets for diagnostics
+        alert('No sheets matched.\n\nLooking for sheet names containing:\n  "' + currentFrag + '" (current week)\n  "' + nextFrag + '" (next week)\n\nSheets in file:\n' + wb.SheetNames.join('\n'));
+        return;
+      }
+
+      // Re-render master roster table (whichever tab is active)
+      if (_activeRosterWeek === 'current') {
+        renderRosterWeek(WEEK_DATES, STAFF_ROSTER);
+      } else {
+        renderRosterWeek(WEEK_DATES_NEXT, STAFF_ROSTER_NEXT);
+      }
+      // Re-render My Schedule card — always update both weeks, then re-draw active tab
+      schedRenderMini(
+        _schedTab === 'next' ? WEEK_DATES_NEXT : WEEK_DATES,
+        _schedTab === 'next' ? STAFF_ROSTER_NEXT : STAFF_ROSTER
+      );
+      renderTodayStaff();
+      schedImportToast(matchedCurrent + matchedNext, sheetsMatched.join(' + '), matchedCurrent, matchedNext, currentFrag, nextFrag);
+
+      // ── Persist updated rosters to localStorage ───────────────────────────────
+      stor('dashboard:roster:current', STAFF_ROSTER);
+      stor('dashboard:roster:next', STAFF_ROSTER_NEXT);
+
+    } catch(err) {
+      alert('Error parsing schedule file: ' + err.message);
+      console.error(err);
+    }
+  };
+  reader.readAsArrayBuffer(file);
+  input.value = '';
+}
+
+function schedImportToast(matched, sheetsFound, matchedCurrent, matchedNext, currentFrag, nextFrag) {
+  const existing = document.getElementById('sched-import-toast');
+  if (existing) existing.remove();
+  const toast = document.createElement('div');
+  toast.id = 'sched-import-toast';
+  const gotCurrent = matchedCurrent > 0;
+  const gotNext    = matchedNext > 0;
+  const bg    = (!gotCurrent || !gotNext) ? '#1e3a5f' : '#134e4a';
+  const border= (!gotCurrent || !gotNext) ? '#60a5fa' : '#2dd4bf';
+  const tick  = (!gotCurrent || !gotNext) ? '⚠️' : '✓';
+  const color = (!gotCurrent || !gotNext) ? '#93c5fd' : '#2dd4bf';
+  toast.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:9999;background:' + bg + ';border:1px solid ' + border + ';color:#f1f5f9;font-family:Inter,sans-serif;font-size:12px;font-weight:600;padding:10px 16px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,.4);max-width:440px;line-height:1.6;';
+  let lines = '<span style="color:' + color + '">' + tick + ' Schedule import complete</span><br>';
+  if (gotCurrent) lines += '✅ Current week (' + currentFrag + ' week) — ' + matchedCurrent + ' staff updated<br>';
+  else            lines += '❌ Current week (' + currentFrag + ' week) — sheet not found in file<br>';
+  if (gotNext)    lines += '✅ Next week (' + nextFrag + ' week) — ' + matchedNext + ' staff updated<br>';
+  else            lines += '⚠️ Next week (' + nextFrag + ' week) — sheet not in file yet, dashes kept<br>';
+  toast.innerHTML = lines;
+  document.body.appendChild(toast);
+  setTimeout(() => { toast.style.transition='opacity 0.5s'; toast.style.opacity='0'; }, 8000);
+  setTimeout(() => toast.remove(), 8600);
+}
+
+// ── XLSX IMPORT: BOARDROOMS ───────────────────────────────────────────────────
+// Parses Boardrooms.xlsx using SheetJS.
+// Sheet named "BR". Columns: Date | Member | POC | Time | Guests | [Status] [Link]
+// Merges with existing boardrooms — skips exact duplicates (same date + member).
+// Pre-order links are stored as cell values (SheetJS reads hyperlink display text;
+// actual hrefs would require openpyxl — users can add links manually via inline edit).
+
+function importBoardroomsXlsx(input) {
+  const file = input.files[0];
+  if (!file) return;
+  if (typeof XLSX === 'undefined') {
+    alert('SheetJS not loaded — check your internet connection and reload the page.');
+    return;
+  }
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const wb = XLSX.read(e.target.result, { type: 'array' });
+      const wsName = wb.SheetNames.includes('BR') ? 'BR' : wb.SheetNames[0];
+      const ws   = wb.Sheets[wsName];
+      const rows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '' });
+
+      // Layout: row 0 = title, row 1 = headers, rows 2+ = data
+      // Cols: 0=Date(float), 1=Member, 2=POC, 3=Time, 4=People, 5=Status, 6=Pre-Order Sheet
+
+      function floatToRawDate(val, labelHint) {
+        if (!val && val !== 0) return '';
+        const parts = String(val).split('.');
+        if (parts.length !== 2) return String(val);
+        const month = parseInt(parts[0]);
+        // Use pre-order label prefix to resolve ambiguity (e.g. 4.3 = Apr 3 or Apr 30)
+        if (labelHint) {
+          const hintMatch = String(labelHint).match(/^(\d+)\.(\d+)\s/);
+          if (hintMatch && parseInt(hintMatch[1]) === month) {
+            return month + '.' + parseInt(hintMatch[2]);
+          }
+        }
+        return month + '.' + parseInt(parts[1]);
+      }
+
+      // ── Parse all rows from the file ─────────────────────────────────────────
+      const fileEntries = [];
+      for (let i = 2; i < rows.length; i++) {
+        const row    = rows[i];
+        const member = (row[1] || '').toString().trim();
+        if (!member) continue;
+        const rawDate = floatToRawDate(row[0], (row[6] || '').toString().trim());
+        if (!rawDate) continue;
+        const statusRaw = (row[5] || '').toString().toLowerCase();
+        // SheetJS exposes hyperlinks via ws[cellAddr].l.Target
+        const linkCellAddr = XLSX.utils.encode_cell({ r: i, c: 6 });
+        const linkCell = ws[linkCellAddr];
+        let link = (linkCell && linkCell.l && linkCell.l.Target) ? linkCell.l.Target : '';
+        // Normalize relative SharePoint paths to full URLs
+        if (link && !link.startsWith('http')) {
+          link = 'https://oakview-my.sharepoint.com/' + link.replace(/^(\.\.\/)+/, '');
+        }
+        fileEntries.push({
+          rawDate,
+          member,
+          poc:    (row[2] || '').toString().trim(),
+          time:   (row[3] || '').toString().trim(),
+          guests: row[4] ? String(row[4]) : '',
+          status: statusRaw.includes('complete') ? 'complete' : 'in-progress',
+          link,
+        });
+      }
+
+      // ── Separate past bookings (keep them untouched) ──────────────────────────
+      const pastBookings    = boardrooms.filter(b => isBRPast(b));
+      const currentBookings = boardrooms.filter(b => !isBRPast(b));
+
+      let added = 0, removed = 0, updated = 0, unchanged = 0;
+      const resultBookings = [];
+
+      // ── For each file entry: find match in current boardrooms ─────────────────
+      fileEntries.forEach(entry => {
+        const match = currentBookings.find(b =>
+          b.rawDate === entry.rawDate &&
+          b.member.toLowerCase() === entry.member.toLowerCase()
+        );
+        if (match) {
+          // Exists — update status/guests/poc/time but preserve manual link
+          // Use file link if present; preserve existing dashboard link otherwise
+          const mergedLink = entry.link || match.link || '';
+          const changed = match.status !== entry.status || match.guests !== entry.guests ||
+                          match.poc !== entry.poc || match.time !== entry.time || mergedLink !== match.link;
+          resultBookings.push({ ...match, poc: entry.poc, time: entry.time, guests: entry.guests, status: entry.status, link: mergedLink });
+          if (changed) updated++; else unchanged++;
+        } else {
+          // New — add it
+          resultBookings.push({
+            id: Date.now() + Math.random(),
+            rawDate:  entry.rawDate,
+            member:   entry.member,
+            poc:      entry.poc,
+            time:     entry.time,
+            guests:   entry.guests,
+            status:   entry.status,
+            link:     entry.link || '',
+          });
+          added++;
+        }
+      });
+
+      // Anything in currentBookings not matched by the file = removed
+      currentBookings.forEach(b => {
+        const stillInFile = fileEntries.some(e =>
+          e.rawDate === b.rawDate &&
+          e.member.toLowerCase() === b.member.toLowerCase()
+        );
+        if (!stillInFile) removed++;
+      });
+
+      // ── Rebuild boardrooms: past entries + file-reconciled current entries ────
+      boardrooms = [...pastBookings, ...resultBookings];
+      stor('dashboard:boardrooms', boardrooms);
+      renderBoardrooms();
+      brImportToast(added, updated, removed, unchanged);
+
+    } catch(err) {
+      alert('Error parsing boardrooms file: ' + err.message);
+      console.error(err);
+    }
+  };
+  reader.readAsArrayBuffer(file);
+  input.value = '';
+}
+
+function brImportToast(added, updated, removed, unchanged) {
+  const existing = document.getElementById('br-import-toast');
+  if (existing) existing.remove();
+  const toast = document.createElement('div');
+  toast.id = 'br-import-toast';
+  toast.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:9999;background:#134e4a;border:1px solid #2dd4bf;color:#f1f5f9;font-family:Inter,sans-serif;font-size:12px;font-weight:600;padding:10px 16px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,.4);max-width:440px;';
+  const parts = [];
+  if (added)     parts.push(added + ' added');
+  if (updated)   parts.push(updated + ' updated');
+  if (removed)   parts.push(removed + ' removed');
+  if (unchanged) parts.push(unchanged + ' unchanged');
+  toast.innerHTML = '<span style="color:#2dd4bf">\u2713 Boardrooms synced</span> \u2014 ' + parts.join(', ') + '. Pre-order links preserved.';
+  document.body.appendChild(toast);
+  setTimeout(() => toast.style.opacity = '0', 6000);
+  setTimeout(() => toast.remove(), 6500);
+}
+
+// ── ROSTER TABLE ──────────────────────────────────────────────────────────────
+
+// ── SELF-SAVE: persist full HTML source to localStorage on every load ─────────
+(function dashboardSelfSave() {
+  try {
+    // Serialize the current document source
+    const source = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    localStorage.setItem('kguc_dashboard_html', source);
+    localStorage.setItem('kguc_dashboard_saved_at', new Date().toISOString());
+    console.log('[KGUC] Dashboard self-saved to localStorage at ' + new Date().toLocaleTimeString());
+  } catch (e) {
+    console.warn('[KGUC] Self-save failed:', e);
+  }
+})();
+
+// Expose a global so the sync skill can trigger a re-save after injection
+window.kgucSave = function() {
+  try {
+    const source = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    localStorage.setItem('kguc_dashboard_html', source);
+    localStorage.setItem('kguc_dashboard_saved_at', new Date().toISOString());
+    return 'saved:' + source.length;
+  } catch(e) {
+    return 'error:' + e.message;
+  }
+};
+
+// Expose a global so the sync skill can read the saved HTML back out
+window.kgucRead = function() {
+  return localStorage.getItem('kguc_dashboard_html') || null;
+};
+</script>
+</body>
+</html>
