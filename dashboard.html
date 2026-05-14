@@ -2046,31 +2046,6 @@ renderBoardrooms();
 const TODAY_EVT = new Date(); TODAY_EVT.setHours(0,0,0,0);
 
 const CLUB_EVENTS = {
-  march: [
-    { date:'Mar 24', raw: new Date(2026,2,24), time:'4:30–7:30 PM',          name:'Industry Networking Night',               loc:'Restaurant',                      note:'', alert:false },
-    { date:'Mar 25', raw: new Date(2026,2,25), time:'6:00–8:00 PM',          name:'Sip & Sauce: Utah Whiskey & Wings',        loc:'Boardroom',                       note:'', alert:false },
-    { date:'Mar 26', raw: new Date(2026,2,26), time:'6:00–7:00 PM',          name:'New Member Mixer',                         loc:'Restaurant',                      note:'', alert:false },
-    { date:'Mar 27', raw: new Date(2026,2,27), time:'5:30–8:30 PM',          name:'Live Music Friday — Hana Kamler',          loc:'Restaurant',                      note:'', alert:false },
-    { date:'Mar 28', raw: new Date(2026,2,28), time:'5:30 & 7:00 PM',        name:'🍲 Hot Pot Night',                         loc:'Restaurant & Suite Level',        note:'No regular dinner menu · $60++ per couple', alert:true },
-    { date:'Mar 28', raw: new Date(2026,2,28), time:'6:30 PM',               name:'🍝 Italian Prom Dinner',                   loc:'Patio',                           note:'36 guests · Limited Italian menu · Regular dining closed', alert:true },
-    { date:'Mar 30', raw: new Date(2026,2,30), time:'6:00–8:00 PM',          name:'MS/PE – Sip, Tour & Discover Open House',  loc:'Restaurant, Suite Level, Field Club', note:'', alert:false },
-  ],
-  april: [
-    { date:'Apr 1',  raw: new Date(2026,3,1),  time:'5:00–9:00 PM',          name:'National Sourdough Bread Day',             loc:'Restaurant',  note:'', alert:false },
-    { date:'Apr 2',  raw: new Date(2026,3,2),  time:'6:00–8:00 PM',          name:"Ladies' Night",                            loc:'Restaurant',  note:'', alert:false },
-    { date:'Apr 4',  raw: new Date(2026,3,4),  time:'5:00 PM',               name:'Easter Dinner',                            loc:'Field Club',  note:'', alert:false },
-    { date:'Apr 9',  raw: new Date(2026,3,9),  time:'6:00 PM',               name:'Bingo Night',                              loc:'Restaurant',  note:'', alert:false },
-    { date:'Apr 10', raw: new Date(2026,3,10), time:'5:30–8:30 PM',          name:'Live Music Friday — Will Baxter',          loc:'Restaurant',  note:'', alert:false },
-    { date:'Apr 11', raw: new Date(2026,3,11), time:'5:00–9:00 PM',          name:'Fondue Special',                           loc:'Restaurant',  note:'', alert:false },
-    { date:'Apr 15', raw: new Date(2026,3,15), time:'6:00 PM',               name:'Skill Swap: Build Your Own Herb Garden',   loc:'South Patio', note:'$45 · 24hr cancellation policy', alert:false },
-    { date:'Apr 16', raw: new Date(2026,3,16), time:'11:30 AM–1:00 PM',      name:'Third Thursday Open House Lunch',          loc:'Boardroom',   note:'Special menu · Comped to membership sales', alert:false },
-    { date:'Apr 21', raw: new Date(2026,3,21), time:'7:30–9:30 AM',          name:'Coffee & Connection',                      loc:'Restaurant',  note:'', alert:false },
-    { date:'Apr 21', raw: new Date(2026,3,21), time:'5:00–9:00 PM',          name:'Passport Dinner: Greek & Mediterranean',   loc:'Restaurant',  note:'Singer: Britany Bly', alert:false },
-    { date:'Apr 24', raw: new Date(2026,3,24), time:'5:30–8:30 PM',          name:'Business Meets Beer Networking',           loc:'North Patio', note:'Co-hosted with HOA Love & 801 Coffee · $20 · Burger bar', alert:false },
-    { date:'Apr 24', raw: new Date(2026,3,24), time:'5:30–8:30 PM',          name:'Live Music Friday — Hana Kamler',          loc:'Restaurant',  note:'', alert:false },
-    { date:'Apr 25', raw: new Date(2026,3,25), time:'5:00–9:00 PM',          name:'Casino Night',                             loc:'TBD',         note:'$50 · 18+ · Kids Zone available $25', alert:false },
-    { date:'Apr 30', raw: new Date(2026,3,30), time:'6:00–7:00 PM',          name:'New Member Mixer',                         loc:'Restaurant',  note:'', alert:false },
-  ],
   may: [
     { date:'May 1',  raw: new Date(2026,4,1),  time:'5:30–8:30 PM',          name:'Live Music Friday — Josh Thompson',        loc:'Restaurant',  note:'', alert:false },
     { date:'May 2',  raw: new Date(2026,4,2),  time:'11:00 AM–2:00 PM',      name:'Kentucky Derby Brunch',                    loc:'Restaurant',  note:'', alert:false },
@@ -2092,6 +2067,26 @@ const CLUB_EVENTS = {
     { date:'May 26', raw: new Date(2026,4,26), time:'5:30–7:00 PM',          name:'Industry Networking Night (Real Estate)', loc:'Restaurant Patio', note:'Open to members · Free', alert:false },
     { date:'May 28', raw: new Date(2026,4,28), time:'6:00–7:00 PM',          name:'New Member Mixer',                         loc:'Restaurant',  note:'', alert:false },
   ]
+  june: [
+    { date:'Jun 4', raw: new Date(2026,5,4), time:'6:00–8:00 PM', name:'Ladies Night Dinner', loc:'Restaurant', note:'', alert:false },
+    { date:'Jun 5', raw: new Date(2026,5,5), time:'5:30–8:30 PM', name:'Live Music Friday — Hana Kamler', loc:'Restaurant', note:'', alert:false },
+    { date:'Jun 5', raw: new Date(2026,5,5), time:'5:00–8:00 PM', name:'National Donut Day Dessert Special', loc:'Restaurant', note:'', alert:false },
+    { date:'Jun 6', raw: new Date(2026,5,6), time:'11:00 AM–1:30 PM', name:'Saturday Brunch', loc:'Restaurant', note:'', alert:false },
+    { date:'Jun 9', raw: new Date(2026,5,9), time:'TBD', name:'MS/Jeremy Ranch Open House', loc:'Restaurant', note:'', alert:false },
+    { date:'Jun 10', raw: new Date(2026,5,10), time:'6:00–8:00 PM', name:'Skill Swap: Pasta & Prosecco', loc:'Restaurant', note:'', alert:false },
+    { date:'Jun 12', raw: new Date(2026,5,12), time:'6:00 PM', name:'National Movie Night', loc:'', note:'', alert:false },
+    { date:'Jun 16', raw: new Date(2026,5,16), time:'7:30–9:30 AM', name:'Coffee & Connection', loc:'Restaurant', note:'', alert:false },
+    { date:'Jun 16', raw: new Date(2026,5,16), time:'5:00 PM', name:'Passport Dinner: Escape to Hawaii', loc:'Restaurant', note:'', alert:false },
+    { date:'Jun 18', raw: new Date(2026,5,18), time:'6:00 PM', name:'Bingo Night', loc:'', note:'', alert:false },
+    { date:'Jun 19', raw: new Date(2026,5,19), time:'', name:'Club Closed — Juneteenth', loc:'', note:'', alert:true },
+    { date:'Jun 20', raw: new Date(2026,5,20), time:'', name:'Dad's Dinner', loc:'', note:'', alert:false },
+    { date:'Jun 25', raw: new Date(2026,5,25), time:'6:00–7:00 PM', name:'New Member Mixer', loc:'Restaurant', note:'', alert:false },
+    { date:'Jun 26', raw: new Date(2026,5,26), time:'5:30–8:30 PM', name:'Live Music Friday — Will Baxter', loc:'Restaurant', note:'', alert:false },
+    { date:'Jun 27', raw: new Date(2026,5,27), time:'5:00–9:00 PM', name:'Burger Battle', loc:'Restaurant', note:'', alert:false },
+    { date:'Jun 29', raw: new Date(2026,5,29), time:'', name:'Open for Lunch and Dinner', loc:'', note:'', alert:false },
+    { date:'Jun 30', raw: new Date(2026,5,30), time:'', name:'Open for Dinner', loc:'', note:'', alert:false }
+  ],
+
 };
 
 function daysOutLabel(d) {
