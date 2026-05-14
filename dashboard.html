@@ -423,81 +423,80 @@
           </div>
           <!-- Day tabs -->
           <div class="flex flex-wrap gap-2 mb-4">
-            <button onclick="csShowDay('thu-may7')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Thu 5/7 <span class="opacity-60">0</span></button>
-            <button onclick="csShowDay('fri-may8')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Fri 5/8 <span class="opacity-60">0</span></button>
-            <button onclick="csShowDay('sat-may9')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Sat 5/9 <span class="opacity-60">0</span></button>
-            <button onclick="csShowDay('tue-may12')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Tue 5/12 <span class="opacity-60">1</span></button>
-            <button onclick="csShowDay('wed-may13')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Wed 5/13 <span class="opacity-60">14</span></button>
+            <button onclick="csShowDay('thu-may14')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Thu 5/14 <span class="opacity-60">8</span></button>
+            <button onclick="csShowDay('fri-may15')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Fri 5/15 <span class="opacity-60">0</span></button>
+            <button onclick="csShowDay('sat-may16')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Sat 5/16 <span class="opacity-60">0</span></button>
+            <button onclick="csShowDay('tue-may19')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Tue 5/19 <span class="opacity-60">0</span></button>
+            <button onclick="csShowDay('wed-may20')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Wed 5/20 <span class="opacity-60">0</span></button>
           </div>
 
                     
-          <div class="cs-day-panel" id="cs-thu-may7">
-            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">0 reservations</strong> · <span class="text-on-surface-variant/50">Not yet synced</span></p>
-            <!-- Service Log -->
-            <div class="mt-4 border-t border-outline-variant/10 pt-3">
-              <div class="flex items-center justify-between mb-1.5">
-                <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-xs">edit_note</span>Service Log</span>
-                <span class="text-[10px] text-on-surface-variant" id="log-saved-thu-may7"></span>
-              </div>
-              <textarea id="service-log-thu-may7" rows="3" placeholder="Jot notes here — 86 items, complaints, comps, timing issues, highlights…"
-                class="w-full bg-[#0f172a] border border-outline-variant/20 rounded-lg px-3 py-2 text-xs text-on-surface outline-none focus:border-primary resize-none placeholder-on-surface-variant/30 transition-colors"
-                oninput="saveServiceLog('thu-may7', this.value)"></textarea>
-            </div>
-          </div>
-          <div class="cs-day-panel" id="cs-fri-may8">
-            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">0 reservations</strong> · <span class="text-on-surface-variant/50">Not yet synced</span></p>
-            <!-- Service Log -->
-            <div class="mt-4 border-t border-outline-variant/10 pt-3">
-              <div class="flex items-center justify-between mb-1.5">
-                <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-xs">edit_note</span>Service Log</span>
-                <span class="text-[10px] text-on-surface-variant" id="log-saved-fri-may8"></span>
-              </div>
-              <textarea id="service-log-fri-may8" rows="3" placeholder="Jot notes here — 86 items, complaints, comps, timing issues, highlights…"
-                class="w-full bg-[#0f172a] border border-outline-variant/20 rounded-lg px-3 py-2 text-xs text-on-surface outline-none focus:border-primary resize-none placeholder-on-surface-variant/30 transition-colors"
-                oninput="saveServiceLog('fri-may8', this.value)"></textarea>
-            </div>
-          </div>
-          <div class="cs-day-panel" id="cs-sat-may9">
-            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">0 reservations</strong> · <span class="text-on-surface-variant/50">Not yet synced</span></p>
-            <!-- Service Log -->
-            <div class="mt-4 border-t border-outline-variant/10 pt-3">
-              <div class="flex items-center justify-between mb-1.5">
-                <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-xs">edit_note</span>Service Log</span>
-                <span class="text-[10px] text-on-surface-variant" id="log-saved-sat-may9"></span>
-              </div>
-              <textarea id="service-log-sat-may9" rows="3" placeholder="Jot notes here — 86 items, complaints, comps, timing issues, highlights…"
-                class="w-full bg-[#0f172a] border border-outline-variant/20 rounded-lg px-3 py-2 text-xs text-on-surface outline-none focus:border-primary resize-none placeholder-on-surface-variant/30 transition-colors"
-                oninput="saveServiceLog('sat-may9', this.value)"></textarea>
-            </div>
-          </div>
-          <div class="cs-day-panel active" id="cs-tue-may12">
-            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">1 reservation</strong> · 2 covers · <span class="text-primary">⟳ Synced May 12</span></p>
-            <div class="overflow-hidden"><table class="w-full text-left"><thead><tr class="text-on-surface-variant text-xs font-bold border-b border-outline-variant/20 uppercase tracking-wider"><th class="pb-2 px-2">Time</th><th class="pb-2 px-2">Member</th><th class="pb-2 px-2 text-center">Covers</th><th class="pb-2 px-2">Note</th></tr></thead><tbody class="text-sm"><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">11:50 AM</td><td class="py-3 px-2 font-semibold">John Gwynn</td><td class="py-3 px-2 text-center text-on-surface-variant">2</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr></tbody></table></div>
+          
+          <div class="cs-day-panel active" id="cs-thu-may14">
+            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">8 reservations</strong> · 33 covers · <span class="text-primary">⟳ Synced May 14</span></p>
+            <div class="overflow-hidden"><table class="w-full text-left"><thead><tr class="text-on-surface-variant text-xs font-bold border-b border-outline-variant/20 uppercase tracking-wider"><th class="pb-2 px-2">Time</th><th class="pb-2 px-2">Member</th><th class="pb-2 px-2 text-center">Covers</th><th class="pb-2 px-2">Note</th></tr></thead><tbody class="text-sm"><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:00 PM</td><td class="py-3 px-2 font-semibold">Sidney Norton</td><td class="py-3 px-2 text-center text-on-surface-variant">2</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:00 PM</td><td class="py-3 px-2 font-semibold">Matt Dalton</td><td class="py-3 px-2 text-center text-on-surface-variant">5</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:10 PM</td><td class="py-3 px-2 font-semibold">Branden Dalley</td><td class="py-3 px-2 text-center text-on-surface-variant">5</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:20 PM</td><td class="py-3 px-2 font-semibold">Gavin Gough</td><td class="py-3 px-2 text-center text-on-surface-variant">10</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:30 PM</td><td class="py-3 px-2 font-semibold">Marian Rice</td><td class="py-3 px-2 text-center text-on-surface-variant">4</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:30 PM</td><td class="py-3 px-2 font-semibold">Lori Kowaleski-Jones</td><td class="py-3 px-2 text-center text-on-surface-variant">2</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:30 PM</td><td class="py-3 px-2 font-semibold">Tanya Flores</td><td class="py-3 px-2 text-center text-on-surface-variant">2</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">4:00 PM</td><td class="py-3 px-2 font-semibold">Branden Dalley</td><td class="py-3 px-2 text-center text-on-surface-variant">3</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr></tbody></table></div>
             
             <!-- Service Log -->
             <div class="mt-4 border-t border-outline-variant/10 pt-3">
               <div class="flex items-center justify-between mb-1.5">
                 <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-xs">edit_note</span>Service Log</span>
-                <span class="text-[10px] text-on-surface-variant" id="log-saved-tue-may12"></span>
+                <span class="text-[10px] text-on-surface-variant" id="log-saved-thu-may14"></span>
               </div>
-              <textarea id="service-log-tue-may12" rows="3" placeholder="Jot notes here — 86 items, complaints, comps, timing issues, highlights…"
+              <textarea id="service-log-thu-may14" rows="3" placeholder="Jot notes here — 86 items, complaints, comps, timing issues, highlights…"
                 class="w-full bg-[#0f172a] border border-outline-variant/20 rounded-lg px-3 py-2 text-xs text-on-surface outline-none focus:border-primary resize-none placeholder-on-surface-variant/30 transition-colors"
-                oninput="saveServiceLog('tue-may12', this.value)"></textarea>
+                oninput="saveServiceLog('thu-may14', this.value)"></textarea>
             </div>
           </div>
-          <div class="cs-day-panel" id="cs-wed-may13">
-            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">14 reservations</strong> · 65 covers · <span class="text-primary">⟳ Synced May 13</span></p>
-            <div class="overflow-hidden"><table class="w-full text-left"><thead><tr class="text-on-surface-variant text-xs font-bold border-b border-outline-variant/20 uppercase tracking-wider"><th class="pb-2 px-2">Time</th><th class="pb-2 px-2">Member</th><th class="pb-2 px-2 text-center">Covers</th><th class="pb-2 px-2">Note</th></tr></thead><tbody class="text-sm"><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">11:30 AM</td><td class="py-3 px-2 font-semibold">Lori Kowaleski-Jones</td><td class="py-3 px-2 text-center text-on-surface-variant">2</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:00 PM</td><td class="py-3 px-2 font-semibold">Branden Dalley</td><td class="py-3 px-2 text-center text-on-surface-variant">8</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:00 PM</td><td class="py-3 px-2 font-semibold">Ren Rice</td><td class="py-3 px-2 text-center text-on-surface-variant">4</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:10 PM</td><td class="py-3 px-2 font-semibold">Erin Dermody</td><td class="py-3 px-2 text-center text-on-surface-variant">3</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:20 PM</td><td class="py-3 px-2 font-semibold">Nancy Jenkins</td><td class="py-3 px-2 text-center text-on-surface-variant">5</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:30 PM</td><td class="py-3 px-2 font-semibold">Jennifer Wilcox</td><td class="py-3 px-2 text-center text-on-surface-variant">12</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:30 PM</td><td class="py-3 px-2 font-semibold">John Gwynn</td><td class="py-3 px-2 text-center text-on-surface-variant">9</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">1:00 PM</td><td class="py-3 px-2 font-semibold">Nadia Letey</td><td class="py-3 px-2 text-center text-on-surface-variant">1</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">5:00 PM</td><td class="py-3 px-2 font-semibold">Becky Johnson</td><td class="py-3 px-2 text-center text-on-surface-variant">2</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">5:00 PM</td><td class="py-3 px-2 font-semibold">Mike Shuping</td><td class="py-3 px-2 text-center text-on-surface-variant">5</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">Wings & Whisky — requests 6-top round table 4–6 PM</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">5:30 PM</td><td class="py-3 px-2 font-semibold">Alexandria Vogt</td><td class="py-3 px-2 text-center text-on-surface-variant">3</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">5:30 PM</td><td class="py-3 px-2 font-semibold">Craig Mosman</td><td class="py-3 px-2 text-center text-on-surface-variant">4</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">5:40 PM</td><td class="py-3 px-2 font-semibold">Bryant Dieffenbacher</td><td class="py-3 px-2 text-center text-on-surface-variant">5</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">7:30 PM</td><td class="py-3 px-2 font-semibold">William Chaus</td><td class="py-3 px-2 text-center text-on-surface-variant">2</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr></tbody></table></div>
-            
+          <div class="cs-day-panel" id="cs-fri-may15">
+            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">0 reservations</strong> · <span class="text-on-surface-variant/50">Not yet synced</span></p>
             <!-- Service Log -->
             <div class="mt-4 border-t border-outline-variant/10 pt-3">
               <div class="flex items-center justify-between mb-1.5">
                 <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-xs">edit_note</span>Service Log</span>
-                <span class="text-[10px] text-on-surface-variant" id="log-saved-wed-may13"></span>
+                <span class="text-[10px] text-on-surface-variant" id="log-saved-fri-may15"></span>
               </div>
-              <textarea id="service-log-wed-may13" rows="3" placeholder="Jot notes here — 86 items, complaints, comps, timing issues, highlights…"
+              <textarea id="service-log-fri-may15" rows="3" placeholder="Jot notes here — 86 items, complaints, comps, timing issues, highlights…"
                 class="w-full bg-[#0f172a] border border-outline-variant/20 rounded-lg px-3 py-2 text-xs text-on-surface outline-none focus:border-primary resize-none placeholder-on-surface-variant/30 transition-colors"
-                oninput="saveServiceLog('wed-may13', this.value)"></textarea>
+                oninput="saveServiceLog('fri-may15', this.value)"></textarea>
+            </div>
+          </div>
+          <div class="cs-day-panel" id="cs-sat-may16">
+            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">0 reservations</strong> · <span class="text-on-surface-variant/50">Not yet synced</span></p>
+            <!-- Service Log -->
+            <div class="mt-4 border-t border-outline-variant/10 pt-3">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-xs">edit_note</span>Service Log</span>
+                <span class="text-[10px] text-on-surface-variant" id="log-saved-sat-may16"></span>
+              </div>
+              <textarea id="service-log-sat-may16" rows="3" placeholder="Jot notes here — 86 items, complaints, comps, timing issues, highlights…"
+                class="w-full bg-[#0f172a] border border-outline-variant/20 rounded-lg px-3 py-2 text-xs text-on-surface outline-none focus:border-primary resize-none placeholder-on-surface-variant/30 transition-colors"
+                oninput="saveServiceLog('sat-may16', this.value)"></textarea>
+            </div>
+          </div>
+          <div class="cs-day-panel" id="cs-tue-may19">
+            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">0 reservations</strong> · <span class="text-on-surface-variant/50">Not yet synced</span></p>
+            <!-- Service Log -->
+            <div class="mt-4 border-t border-outline-variant/10 pt-3">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-xs">edit_note</span>Service Log</span>
+                <span class="text-[10px] text-on-surface-variant" id="log-saved-tue-may19"></span>
+              </div>
+              <textarea id="service-log-tue-may19" rows="3" placeholder="Jot notes here — 86 items, complaints, comps, timing issues, highlights…"
+                class="w-full bg-[#0f172a] border border-outline-variant/20 rounded-lg px-3 py-2 text-xs text-on-surface outline-none focus:border-primary resize-none placeholder-on-surface-variant/30 transition-colors"
+                oninput="saveServiceLog('tue-may19', this.value)"></textarea>
+            </div>
+          </div>
+          <div class="cs-day-panel" id="cs-wed-may20">
+            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">0 reservations</strong> · <span class="text-on-surface-variant/50">Not yet synced</span></p>
+            <!-- Service Log -->
+            <div class="mt-4 border-t border-outline-variant/10 pt-3">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-xs">edit_note</span>Service Log</span>
+                <span class="text-[10px] text-on-surface-variant" id="log-saved-wed-may20"></span>
+              </div>
+              <textarea id="service-log-wed-may20" rows="3" placeholder="Jot notes here — 86 items, complaints, comps, timing issues, highlights…"
+                class="w-full bg-[#0f172a] border border-outline-variant/20 rounded-lg px-3 py-2 text-xs text-on-surface outline-none focus:border-primary resize-none placeholder-on-surface-variant/30 transition-colors"
+                oninput="saveServiceLog('wed-may20', this.value)"></textarea>
             </div>
           </div>
           </div>
@@ -528,15 +527,18 @@
           </div>
           <!-- Month tabs -->
           <div class="flex gap-2 mb-5 flex-wrap">
-            <button onclick="showEventsMonth('may')"  id="evt-tab-may"  class="evt-month-tab active px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-primary text-on-primary">May</button>
-            <button onclick="showEventsMonth('june')" id="evt-tab-june" class="evt-month-tab px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-[#0f172a] text-on-surface-variant hover:text-primary">June</button>
+            <button onclick="showEventsMonth('april')" id="evt-tab-april" class="evt-month-tab active px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-primary text-on-primary">April</button>
+            <button onclick="showEventsMonth('may')"   id="evt-tab-may"   class="evt-month-tab px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-[#0f172a] text-on-surface-variant hover:text-primary">May</button>
           </div>
           <!-- Event lists per month -->
-          <div id="evt-may" class="evt-month-panel">
-            <div id="evt-may-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
+          <div id="evt-march" class="evt-month-panel">
+            <div id="evt-march-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
           </div>
-          <div id="evt-june" class="evt-month-panel hidden">
-            <div id="evt-june-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
+          <div id="evt-april" class="evt-month-panel hidden">
+            <div id="evt-april-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
+          </div>
+          <div id="evt-may" class="evt-month-panel hidden">
+            <div id="evt-may-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
           </div>
         </div>
       </section>
@@ -1081,51 +1083,50 @@ updateClock(); setInterval(updateClock, 30000);
 // Each day: { reservations:[{time:'HH:MM', covers:N}], staff:{name: shift} }
 // shifts: 'OFF' | 'R-OFF' | 'ML' | 'HH:MM–HH:MM' working shift
 // ══════════════════════════════════════════════════════════════════════════════
-const WEEK_DATES = ['2026-05-07','2026-05-08','2026-05-09','2026-05-12','2026-05-13'];
+const WEEK_DATES = ['2026-05-14','2026-05-15','2026-05-16','2026-05-19','2026-05-20'];
 
 // Staff shift index matches WEEK_DATES order: [Wed Apr23, Fri24, Sat25, Mon28, Tue29]
 const STAFF_ROSTER = [
-  {name:'Braxton Butterstein',      role:'Director',         shifts:['ML','ML','ML','ML','ML']},
-  {name:'Ash Franco',               role:'Asst. R. Manager', shifts:['TBD','9:00 AM - 4:00 PM','TBD','10:00 AM - 8:00 PM','12:00 PM - CLOSE (PM S)']},
-  {name:'Lacey Long',               role:'Bar Lead',         shifts:['TBD','OFF','9:30 AM - CLOSE','R-OFF','3:00 PM - CLOSE (B)']},
-  {name:'Madi Cheek',               role:'',                 shifts:['—','—','—','—','—']},
-  {name:'Brandi Obrien',            role:'',                 shifts:['TBD','OFF','1:00 PM - 10:30 PM','3:00 PM - CLOSE','4:00 PM - CLOSE (ON CALL)']},
-  {name:'Taylor Gleave',            role:'',                 shifts:['R-OFF','R-OFF','R-OFF','7:00 AM - 3:00 PM','7:00 AM - 3:00 PM']},
-  {name:'Chris Baigue',             role:'',                 shifts:['TBD','9:00 AM - 4:00 PM','1:00 PM - 10:30 PM','10:00 AM - 3:00 PM / 4:00 PM - CLOSE','4:00 PM - CLOSE']},
-  {name:'Bryn Kurt',                role:'',                 shifts:['TBD','9:00 AM - 4:00 PM','1:00 PM - 10:30 PM','OFF','OFF']},
-  {name:'Ashley Watkins',           role:'',                 shifts:['OFF','OFF','1:00 PM - 10:30 PM','OFF','OFF']},
-  {name:'Kaitlyn Adair',            role:'',                 shifts:['TBD','OFF','OFF','4:00 PM - CLOSE','10:00 AM - 3:00 PM']},
-  {name:'Shannon Keil',             role:'',                 shifts:['TBD','OFF','1:00 PM - 10:30 PM','4:00 PM - CLOSE','4:00 PM - CLOSE (ON CALL)']},
-  {name:'Jade Curtis',              role:'',                 shifts:['—','—','—','—','—']},
-  {name:'Ella Bashore',             role:'',                 shifts:['TBD','OFF','OFF','10:00 AM - 3:00 PM','10:00 AM - 3:00 PM']},
-  {name:'Audrey Irvine',            role:'',                 shifts:['—','—','—','—','—']},
-  {name:'Malia Sager',              role:'',                 shifts:['TBD','9:00 AM - 4:00 PM','1:00 PM - 10:30 PM','4:00 PM - CLOSE (ON CALL)','4:00 PM - CLOSE']},
+  {name:'Braxton Butterstein',      role:'Director',         shifts:['—','—','—','—','—']},
+  {name:'Ash Franco',      role:'Asst. R. Manager',         shifts:['—','—','—','—','—']},
+  {name:'Lacey Long',      role:'Bar Lead',         shifts:['—','—','—','—','—']},
+  {name:'Madi Cheek',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Brandi Obrien',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Taylor Gleave',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Chris Baigue',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Bryn Kurt',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Ashley Watkins',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Kaitlyn Adair',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Shannon Keil',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Jade Curtis',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Ella Bashore',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Audrey Irvine',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Malia Sager',      role:'',         shifts:['—','—','—','—','—']}
 ];
 
 // Reservations per date — updated from ClubSpot Apr 9
 const RESERVATIONS_BY_DATE = {
+    '2026-05-14': [
+    {time:'12:00', covers:2},
+    {time:'12:00', covers:5},
+    {time:'12:10', covers:5},
+    {time:'12:20', covers:10},
+    {time:'12:30', covers:4},
+    {time:'12:30', covers:2},
+    {time:'12:30', covers:2},
+    {time:'16:00', covers:3},
+  ],
+  '2026-05-15': [],
+  '2026-05-16': [],
+  '2026-05-19': [],
+  '2026-05-20': [],
   '2026-05-07': [],
   '2026-05-08': [],
   '2026-05-09': [],
     '2026-05-12': [
     {time:'11:50', covers:2},
   ],
-    '2026-05-13': [
-    {time:'11:30', covers:2},
-    {time:'12:00', covers:8},
-    {time:'12:00', covers:4},
-    {time:'12:10', covers:3},
-    {time:'12:20', covers:5},
-    {time:'12:30', covers:12},
-    {time:'12:30', covers:9},
-    {time:'13:00', covers:1},
-    {time:'17:00', covers:2},
-    {time:'17:00', covers:5},
-    {time:'17:30', covers:3},
-    {time:'17:30', covers:4},
-    {time:'17:40', covers:5},
-    {time:'19:30', covers:2},
-  ],
+  '2026-05-13': [],
   '2026-05-02': [
     {time:'17:20', covers:5},
     {time:'17:50', covers:4},
@@ -1318,21 +1319,6 @@ const RESERVATIONS_BY_DATE = {
   ],
 };
 
-const WEEK_DATES_NEXT = ['2026-05-14','2026-05-15','2026-05-16','2026-05-19','2026-05-20'];
-const STAFF_ROSTER_NEXT = [
-  {name:'Braxton Butterstein',      role:'Director',           shifts:['MATERNITY LEAVE','MATERNITY LEAVE','MATERNITY LEAVE','MATERNITY LEAVE','MATERNITY LEAVE']},
-  {name:'Ash Franco',               role:'A. Manager',         shifts:['10:00 AM - 8:00 PM','2:00 PM - CLOSE (PM S)','4:00 PM - CLOSE','10:00 AM - 3:00 PM','10:00 AM - 9:00 PM (PM S)']},
-  {name:'Lacey Long',               role:'Bar Lead',           shifts:['3:30 PM - CLOSE (B)','10:00 AM - CLOSE (PM B)','R - OFF','OFF','3:30 PM - CLOSE (B)']},
-  {name:'Brandi Obrien',            role:'',                   shifts:['4:00 PM - CLOSE (on call)','OFF','OFF','OFF','OFF']},
-  {name:'Taylor Gleave',            role:'',                   shifts:['7:00 AM - 3:00 PM','7:00 AM - 3:00 PM','OFF','7:00 AM - 3:00 PM','7:00 AM - 3:00 PM']},
-  {name:'Chris Baigue',             role:'',                   shifts:['10:00 AM - 3:00 PM','10:00 AM - 3:00 PM','4:00 PM - CLOSE','10:00 AM - 3:00 PM','4:00 PM - CLOSE']},
-  {name:'Ashley Watkins',           role:'',                   shifts:['5:00 PM - CLOSE','4:30 PM - CLOSE','4:30 PM - CLOSE','OFF','OFF']},
-  {name:'Kaitlyn Adair',            role:'',                   shifts:['4:00 PM - CLOSE','OFF','OFF','OFF','10:00 AM - 3:00 PM']},
-  {name:'Shannon Keil',             role:'',                   shifts:['R - OFF','R - OFF','4:00 PM - CLOSE','10:00 AM - 3:00 PM','4:00 PM - CLOSE']},
-  {name:'Ella Bashore',             role:'',                   shifts:['10:00 AM - 3:00 PM','OFF','OFF','R - OFF','R - OFF']},
-  {name:'Malia Sager',              role:'',                   shifts:['4:00 PM - CLOSE','10:00 AM - 3:00 PM / 4:00 PM - CLOSE','OFF','OFF','4:30 PM - CLOSE (on call)']},
-];
-
 // ── TODAY CONTEXT ─────────────────────────────────────────────────────────────
 const _now      = new Date();
 const _todayStr = _now.getFullYear() + '-' + String(_now.getMonth()+1).padStart(2,'0') + '-' + String(_now.getDate()).padStart(2,'0');
@@ -1366,10 +1352,10 @@ function shiftForToday(memberName) {
   return r ? r.shifts[_todayIdx] : null;
 }
 function shiftType(s) {
-  if (!s || s === 'OFF' || s === '—') return 'off';
-  if (s === 'R-OFF' || s === 'R - OFF') return 'roff';
-  if (s === 'ML' || /maternity/i.test(s)) return 'leave';
-  if (s === 'OUT') return 'out';
+  if (!s || s === 'OFF') return 'off';
+  if (s === 'R-OFF')    return 'roff';
+  if (s === 'ML')       return 'leave';
+  if (s === 'OUT')      return 'out';
   return 'working';
 }
 function shiftColor(s) {
@@ -1498,7 +1484,6 @@ function renderTodayStaff() {
 
   // Parse shift start hour (24h)
   function shiftStartHour(shift) {
-    if (!shift) return 12;
     const m = shift.match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i);
     if (!m) return 12;
     let h = parseInt(m[1]);
@@ -1511,7 +1496,7 @@ function renderTodayStaff() {
 
   // Detect split shifts — contains two time ranges separated by ' / '
   function isSplitShift(shift) {
-    return !!(shift && shift.includes(' / '));
+    return shift.includes(' / ');
   }
 
   // For split shifts: first segment start hour, second segment start hour
@@ -1530,7 +1515,7 @@ function renderTodayStaff() {
       // Split shift: show in both columns
       const h1 = splitSegmentHour(s.shift, 0);
       const h2 = splitSegmentHour(s.shift, 1);
-      const parts = (s.shift||'').split(' / ');
+      const parts = s.shift.split(' / ');
       if (h1 < 15) lunchStaff.push({ ...s, shift: parts[0].trim(), splitBadge: true });
       if (h2 >= 15) dinnerStaff.push({ ...s, shift: parts[1].trim(), splitBadge: true });
     } else if (shiftStartHour(s.shift) < 15) {
@@ -1544,10 +1529,10 @@ function renderTodayStaff() {
   function staffCard(s) {
     const firstName = s.name.split(' ')[0];
     // Extract job code from shift e.g. "(S)", "(H)", "(T)", "(S/TR)", "(H On Call)"
-    const codeMatch = (s.shift||'').match(/\(([^)]+)\)\s*$/);
+    const codeMatch = s.shift.match(/\(([^)]+)\)\s*$/);
     const jobCode   = codeMatch ? codeMatch[1].replace(/\s*On Call/i, '').trim() : '';
-    const isOnCall  = /on call/i.test(s.shift||'');
-    const shiftBase = (s.shift||'').replace(/\s*\([^)]+\)\s*$/, '').trim();
+    const isOnCall  = /on call/i.test(s.shift);
+    const shiftBase = s.shift.replace(/\s*\([^)]+\)\s*$/, '').trim();
     const splitBadge = s.splitBadge
       ? '<span class="text-[9px] font-bold text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 rounded px-1 ml-0.5 whitespace-nowrap">split</span>'
       : '';
@@ -1615,7 +1600,7 @@ function computeStats() {
 
   let lunch = 0, dinner = 0;
   todayData.forEach(r => {
-    const h = parseInt((r.time||'00:00').split(':')[0]);
+    const h = parseInt(r.time.split(':')[0]);
     if (h < 15) lunch += r.covers; else dinner += r.covers;
   });
   lunchEl.textContent  = lunch  || '—';
@@ -1626,6 +1611,24 @@ function computeStats() {
 computeStats();
 
 // ── NEXT WEEK ROSTER (Apr 9–15) — sync from schedule when available ───────────
+const WEEK_DATES_NEXT = ['2026-05-14','2026-05-15','2026-05-16','2026-05-19','2026-05-20'];
+const STAFF_ROSTER_NEXT = [
+  {name:'Braxton Butterstein',      role:'Director',         shifts:['—','—','—','—','—']},
+  {name:'Ash Franco',      role:'Asst. R. Manager',         shifts:['—','—','—','—','—']},
+  {name:'Lacey Long',      role:'Bar Lead',         shifts:['—','—','—','—','—']},
+  {name:'Madi Cheek',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Brandi Obrien',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Taylor Gleave',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Chris Baigue',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Bryn Kurt',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Ashley Watkins',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Kaitlyn Adair',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Shannon Keil',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Jade Curtis',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Ella Bashore',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Audrey Irvine',      role:'',         shifts:['—','—','—','—','—']},
+  {name:'Malia Sager',      role:'',         shifts:['—','—','—','—','—']}
+];
 
 // ── ROSTER RENDER ─────────────────────────────────────────────────────────────
 function shiftCls(s) {
@@ -1633,7 +1636,7 @@ function shiftCls(s) {
   if (s==='ML'||s.includes('Maternity'))  return 'text-pink-400 bg-pink-400/10 text-[10px] italic';
   if (s==='OUT')   return 'text-orange-400 bg-orange-400/10 text-[10px] italic';
   if (s==='OFF')   return 'text-slate-500 text-[10px]';
-  if (s==='R-OFF'||s==='R - OFF') return 'text-emerald-400 text-[10px] font-bold';
+  if (s==='R-OFF') return 'text-emerald-400 text-[10px] font-bold';
   if (s==='WFH')   return 'text-blue-400 text-[10px] font-semibold';
   if (s.includes('On Call')||s.includes('ON CALL')) return 'text-yellow-400 font-semibold text-[10px]';
   return 'text-emerald-400 font-semibold text-[10px]';
@@ -1892,7 +1895,7 @@ function toggleGoalInput() {
 renderGoals();
 
 // ── SERVICE LOG ──────────────────────────────────────────────────────────────
-const SERVICE_LOG_DAYS = ['thu-may7','fri-may8','sat-may9','tue-may12','wed-may13'];
+const SERVICE_LOG_DAYS = ['thu-may14','fri-may15','sat-may16','tue-may19','wed-may20'];
 function saveServiceLog(day, text) {
   stor('dashboard:log:' + day, text);
   const el = document.getElementById('log-saved-' + day);
@@ -1925,26 +1928,30 @@ na.addEventListener('input', () => {
 // ── BOARDROOMS ─────────────────────────────────────────────────────────────────
 const BR_SHEET_URL = 'https://oakview-my.sharepoint.com/:x:/r/personal/ash_franco_oakviewgroup_com/_layouts/15/Doc.aspx?sourcedoc=%7B09FC94B2-C685-446C-B504-76850C3B3CC9%7D&file=Boardrooms.xlsx&action=default&mobileredirect=true';
 const DEFAULT_BOARDROOMS = [
-  { date:'2026-05-13', rawDate:'5.13', member:'Kerri Nakamura',       poc:'',               time:'7:30am',  people:5,  status:'In Progress', preorder:'5.13 Kerri Nakamura BR Pre-Order',       link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQBr2wMKWH6zRLVm6WZDLFxjAS-XqrDAH74bswJJgtY_PJc?e=kqNBs8', past:true },
-  { date:'2026-05-15', rawDate:'5.15', member:'Andrea Wallace',        poc:'',               time:'9:00am',  people:18, status:'In Progress', preorder:'5.15 Andrea Wallace BR Pre-Order',        link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQDCqS1ip6asS4ms9wB3x_YvAbM6X4FLkG5izdKXvn57HHs?e=Sxz5UA', past:false },
-  { date:'2026-05-19', rawDate:'5.19', member:'Ibi Guevara',           poc:'Kristen Cordova',time:'7:30am',  people:20, status:'In Progress', preorder:'5.19 Ibi Guevara BR Pre-Order',           link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQD7tQin2nDqSbG5yhhoy4fKAZ4Wf9AFcbTcTA87gSI8tU8?e=9By6NT', past:false },
-  { date:'2026-06-05', rawDate:'6.5',  member:'Scott Betts',           poc:'Lisa Shick',     time:'8:00am',  people:10, status:'In Progress', preorder:'6.5 Scott Betts BR Pre-Order',            link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQBK_cmMgDhgQrw7EXJbWjUBAWxoOBCySabxhkUreEJsJlY?e=64QjYy', past:false },
-  { date:'2026-06-18', rawDate:'6.18', member:'Branden Dalley',        poc:'',               time:'8:00am',  people:20, status:'In Progress', preorder:'6.18 Branden Dalley BR Pre-Order',        link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQB-ifdRE9PnQKo10VTFOfYJAfpxyU2nYiG4FJDF_006vvI?e=2d2KMp', past:false },
-  { date:'2026-06-26', rawDate:'6.26', member:'Encarnacion Gallardo',  poc:'',               time:'9:30am',  people:20, status:'In Progress', preorder:'6.26 Encarnacion Gallardo BR Pre-Order',  link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQAAW-QXIb3eTpTo4Vklui0_Aa_svL-2EoxcivpgPcJOTxQ?e=gY2jel', past:false },
-  { date:'2026-07-07', rawDate:'7.7',  member:'Paul Kohn',             poc:'Kamarie Nicdao', time:'10:00am', people:15, status:'In Progress', preorder:'7.7 Paul Kohn BR Pre-Order',              link:'https://oakview-my.sharepoint.com:w:/g/personal/ash_franco_oakviewgroup_com/IQDVO9fQn95oRax8QcGsDtA9AYDMsQu2-cHpui7sDV9zJIM?e=upOgNq', past:false },
+  {id:1 , rawDate:"4.29", member:"Maria Mullahi",     poc:"",                time:"6:00pm",  guests:"17", status:"complete",    link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQChiny1QxX0SL3llVo79CQ1ATlfhmAGV5tYttOffI44N3Q?e=pHsX13", past:true},
+  {id:2 , rawDate:"4.3",  member:"Katia Henderson",   poc:"",                time:"9:00am",  guests:"16", status:"complete",    link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQCeIo2b26ZrSYv-1kROmcYKARxRU82PVXXanQaWNNN1wY0?e=ABgFzY", past:true},
+  {id:3 , rawDate:"5.1",  member:"Jeana Campbell",    poc:"",                time:"10:30am", guests:"12", status:"complete",    link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQBC-2HE4C3KQ5bxjL6cQljfAe_cKbN3nVrtAhfTAc8E5-0?e=cZguHU", past:true},
+  {id:4 , rawDate:"5.2",  member:"Troy Perry",        poc:"",                time:"5:30pm",  guests:"17", status:"complete",    link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQDU-BJDVO8BS4ss-DfFRh0-ATIhWzS6JnLQxayhPJXC624?e=lmcGmD"},
+  {id:5 , rawDate:"5.13", member:"Kerri Nakamura",    poc:"",                time:"7:30am",  guests:"5",  status:"in-progress", link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQBr2wMKWH6zRLVm6WZDLFxjAS-XqrDAH74bswJJgtY_PJc?e=kqNBs8"},
+  {id:6 , rawDate:"5.15", member:"Andrea Wallace",    poc:"",                time:"9:00am",  guests:"18", status:"in-progress", link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQDCqS1ip6asS4ms9wB3x_YvAbM6X4FLkG5izdKXvn57HHs?e=Sxz5UA"},
+  {id:7 , rawDate:"5.19", member:"Ibi Guevara",       poc:"Kristen Cordova", time:"7:30am",  guests:"20", status:"in-progress", link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQD7tQin2nDqSbG5yhhoy4fKAZ4Wf9AFcbTcTA87gSI8tU8?e=9By6NT"},
+  {id:8 , rawDate:"5.20", member:"Tanya Flores",      poc:"",                time:"6:00pm",  guests:"10", status:"in-progress", link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQAo5c7AJO0zSrrFdqpOON5oAc30v-f6tj_zi70dC7eTUc8?e=X81Gnh"},
+  {id:9 , rawDate:"6.5",  member:"Scott Betts",       poc:"Lisa Shick",      time:"8:00am",  guests:"10", status:"in-progress", link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQBK_cmMgDhgQrw7EXJbWjUBAWxoOBCySabxhkUreEJsJlY?e=64QjYy"},
+  {id:10, rawDate:"6.18", member:"Branden Dalley",    poc:"",                time:"8:00am",  guests:"20", status:"in-progress", link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQB-ifdRE9PnQKo10VTFOfYJAfpxyU2nYiG4FJDF_006vvI?e=2d2KMp"},
+  {id:11, rawDate:"7.7",  member:"Paul Kohn",         poc:"Kamarie Nicdao",  time:"10:00am", guests:"15", status:"in-progress", link:"https://oakview-my.sharepoint.com/:w:/g/personal/ash_franco_oakviewgroup_com/IQDVO9fQn95oRax8QcGsDtA9AYDMsQu2-cHpui7sDV9zJIM?e=upOgNq"},
 ];
 // Version stamp — bump this whenever DEFAULT_BOARDROOMS is updated to force a reset
-const BR_VERSION = '2026-05-13-a';
+const BR_VERSION = '2026-05-02-a';
 if (stor('dashboard:boardrooms:version') !== BR_VERSION) {
   stor('dashboard:boardrooms', DEFAULT_BOARDROOMS);
   stor('dashboard:boardrooms:version', BR_VERSION);
 }
 let boardrooms = stor('dashboard:boardrooms') || DEFAULT_BOARDROOMS;
 
-function parseBRDate(raw) { if(!raw)return null; const p=String(raw).split('.'); if(p.length<2)return null; return new Date(2026,parseInt(p[0])-1,parseInt(p[1])); }
+function parseBRDate(raw) { const p=raw.split('.'); if(p.length<2)return null; return new Date(2026,parseInt(p[0])-1,parseInt(p[1])); }
 function formatBRDate(raw) { const d=parseBRDate(raw); if(!d)return raw; return d.toLocaleDateString('en-US',{month:'short',day:'numeric'}); }
-function isBRPast(br) { if(br.past)return true; if(!br.rawDate && br.date) { const d=new Date(br.date+'T12:00:00'); const today=new Date(); today.setHours(0,0,0,0); return d<today; } const d=parseBRDate(br.rawDate); const today=new Date(); today.setHours(0,0,0,0); return d&&d<today; }
-function isBRThisWeek(br) { const d=br.rawDate?parseBRDate(br.rawDate):(br.date?new Date(br.date+'T12:00:00'):null); if(!d)return false; const t=new Date(WEEK_DATES[0]+'T12:00:00'),e=new Date(WEEK_DATES[WEEK_DATES.length-1]+'T12:00:00'); return d>=t&&d<=e; }
+function isBRPast(br) { if(br.past)return true; const d=parseBRDate(br.rawDate); const today=new Date(); today.setHours(0,0,0,0); return d&&d<today; }
+function isBRThisWeek(br) { const d=parseBRDate(br.rawDate); if(!d)return false; const t=new Date(WEEK_DATES[0]+'T12:00:00'),e=new Date(WEEK_DATES[WEEK_DATES.length-1]+'T12:00:00'); return d>=t&&d<=e; }
 
 function renderBoardrooms() {
   const tbody = document.getElementById('br-tbody'); tbody.innerHTML = '';
@@ -2088,22 +2095,6 @@ const CLUB_EVENTS = {
     { date:'May 25', raw: new Date(2026,4,25), time:'All Day',               name:'⛔ Club Closed — Memorial Day',            loc:'',            note:'No dining service', alert:true },
     { date:'May 26', raw: new Date(2026,4,26), time:'5:30–7:00 PM',          name:'Industry Networking Night (Real Estate)', loc:'Restaurant Patio', note:'Open to members · Free', alert:false },
     { date:'May 28', raw: new Date(2026,4,28), time:'6:00–7:00 PM',          name:'New Member Mixer',                         loc:'Restaurant',  note:'', alert:false },
-  ],
-  june: [
-    { date:'Jun 5',  raw: new Date(2026,5,5),  time:'5:30–8:30 PM',     name:'Live Music Friday — Hana Kamler',         loc:'Restaurant',            note:'', alert:false },
-    { date:'Jun 5',  raw: new Date(2026,5,5),  time:'5:00–8:00 PM',     name:'National Donut Day Special',              loc:'Restaurant',            note:'', alert:false },
-    { date:'Jun 6',  raw: new Date(2026,5,6),  time:'11:00 AM–1:30 PM', name:'Saturday Brunch',                         loc:'Restaurant',            note:'', alert:false },
-    { date:'Jun 9',  raw: new Date(2026,5,9),  time:'TBD',              name:'MS/Jeremy Ranch Open House',             loc:'Restaurant',            note:'', alert:false },
-    { date:'Jun 10', raw: new Date(2026,5,10), time:'6:00–8:00 PM',     name:'Skill Swap: Pasta & Prosecco',            loc:'Restaurant',            note:'', alert:false },
-    { date:'Jun 12', raw: new Date(2026,5,12), time:'6:00 PM',          name:'National Movie Night',                    loc:'TBD',                   note:'', alert:false },
-    { date:'Jun 16', raw: new Date(2026,5,16), time:'7:30–9:30 AM',     name:'Coffee & Connection',                     loc:'Restaurant',            note:'', alert:false },
-    { date:'Jun 16', raw: new Date(2026,5,16), time:'5:00 PM',          name:'Passport Dinner: Escape to Hawaii',       loc:'Restaurant',            note:'', alert:false },
-    { date:'Jun 18', raw: new Date(2026,5,18), time:'6:00 PM',          name:'Bingo Night',                             loc:'TBD',                   note:'', alert:false },
-    { date:'Jun 19', raw: new Date(2026,5,19), time:'All Day',          name:'⛔ Club Closed — Juneteenth',             loc:'',                      note:'No dining service', alert:true },
-    { date:'Jun 20', raw: new Date(2026,5,20), time:'6:00 PM',          name:"Dad's Dinner: Prime Rib & Golf Night",   loc:'TBD',                   note:'', alert:false },
-    { date:'Jun 25', raw: new Date(2026,5,25), time:'6:00–7:00 PM',     name:'New Member Mixer',                        loc:'Restaurant',            note:'', alert:false },
-    { date:'Jun 26', raw: new Date(2026,5,26), time:'5:30–8:30 PM',     name:'Live Music Friday — Will Baxter',         loc:'Restaurant',            note:'', alert:false },
-    { date:'Jun 27', raw: new Date(2026,5,27), time:'5:00–9:00 PM',     name:'Burger Battle',                           loc:'Restaurant',            note:'', alert:false },
   ]
 };
 
@@ -2140,7 +2131,7 @@ function buildEvtCard(ev, compact) {
 }
 
 function renderEventsLists() {
-  ['may','june'].forEach(month => {
+  ['march','april','may'].forEach(month => {
     const el = document.getElementById('evt-' + month + '-list');
     if (!el) return;
     const html = CLUB_EVENTS[month].map(ev => buildEvtCard(ev, false)).filter(Boolean).join('');
@@ -2160,7 +2151,7 @@ function showEventsMonth(month) {
 function renderThisWeekEvents() {
   const el = document.getElementById('events-this-week');
   if (!el) return;
-  const allEvents = [...CLUB_EVENTS.may, ...(CLUB_EVENTS.june||[])];
+  const allEvents = [...CLUB_EVENTS.march, ...CLUB_EVENTS.april, ...CLUB_EVENTS.may];
   const thisWeek  = allEvents.filter(ev => {
     const diff = Math.round((ev.raw - TODAY_EVT) / 86400000);
     return diff >= 0 && diff <= 7;
