@@ -1706,7 +1706,19 @@ function showRosterWeek(week) {
 
 // Initial render — default to current week
 // ── Restore persisted roster from localStorage (survives page reload) ─────────
+// Guard: only restore if the saved week matches the current WEEK_DATES.
+// If the week has rolled over, stale localStorage shifts are discarded so the
+// fresh data baked into the file is not overwritten by old dashes.
 (function() {
+  const weekKey = WEEK_DATES.join(',');
+  const savedWeekKey = stor('dashboard:roster:weekKey');
+  if (savedWeekKey !== weekKey) {
+    // Week has changed — clear stale roster data and record new key
+    stor('dashboard:roster:current', null);
+    stor('dashboard:roster:next', null);
+    stor('dashboard:roster:weekKey', weekKey);
+    return;
+  }
   const savedCurrent = stor('dashboard:roster:current');
   const savedNext    = stor('dashboard:roster:next');
   if (savedCurrent?.length) {
