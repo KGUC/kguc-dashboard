@@ -526,18 +526,15 @@
           </div>
           <!-- Month tabs -->
           <div class="flex gap-2 mb-5 flex-wrap">
-            <button onclick="showEventsMonth('april')" id="evt-tab-april" class="evt-month-tab active px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-primary text-on-primary">April</button>
-            <button onclick="showEventsMonth('may')"   id="evt-tab-may"   class="evt-month-tab px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-[#0f172a] text-on-surface-variant hover:text-primary">May</button>
+            <button onclick="showEventsMonth('may')"  id="evt-tab-may"  class="evt-month-tab active px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-primary text-on-primary">May</button>
+            <button onclick="showEventsMonth('june')" id="evt-tab-june" class="evt-month-tab px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-[#0f172a] text-on-surface-variant hover:text-primary">June</button>
           </div>
           <!-- Event lists per month -->
-          <div id="evt-march" class="evt-month-panel">
-            <div id="evt-march-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
-          </div>
-          <div id="evt-april" class="evt-month-panel hidden">
-            <div id="evt-april-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
-          </div>
-          <div id="evt-may" class="evt-month-panel hidden">
+          <div id="evt-may" class="evt-month-panel">
             <div id="evt-may-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
+          </div>
+          <div id="evt-june" class="evt-month-panel hidden">
+            <div id="evt-june-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
           </div>
         </div>
       </section>
@@ -2047,26 +2044,27 @@ const TODAY_EVT = new Date(); TODAY_EVT.setHours(0,0,0,0);
 
 const CLUB_EVENTS = {
   may: [
-    { date:'May 1',  raw: new Date(2026,4,1),  time:'5:30–8:30 PM',          name:'Live Music Friday — Josh Thompson',        loc:'Restaurant',  note:'', alert:false },
-    { date:'May 2',  raw: new Date(2026,4,2),  time:'11:00 AM–2:00 PM',      name:'Kentucky Derby Brunch',                    loc:'Restaurant',  note:'', alert:false },
-    { date:'May 5',  raw: new Date(2026,4,5),  time:'5:00 PM',               name:'Passport Dinner: Cinco de Mayo',           loc:'Restaurant',  note:'', alert:false },
-    { date:'May 7',  raw: new Date(2026,4,7),  time:'All Day',               name:'⛔ Club Closed — Supercross',              loc:'',            note:'Reopens Mon May 11', alert:true },
-    { date:'May 8',  raw: new Date(2026,4,8),  time:'All Day',               name:'⛔ Club Closed — Supercross',              loc:'',            note:'No dining service', alert:true },
-    { date:'May 9',  raw: new Date(2026,4,9),  time:'All Day',               name:'⛔ Club Closed — Supercross',              loc:'',            note:'No dining service', alert:true },
-    { date:'May 12', raw: new Date(2026,4,12), time:'5:30–7:00 PM',          name:'UofU Young Alumni Mixer',                  loc:'Suite Lounge',note:'', alert:false },
-    { date:'May 13', raw: new Date(2026,4,13), time:'6:00 PM',               name:"Kids' Paint Night",                        loc:'TBD',         note:'$20++ · 24hr cancellation policy', alert:false },
-    { date:'May 14', raw: new Date(2026,4,14), time:'6:00–8:00 PM',          name:"Ladies' Night — Stained Glass Activity",   loc:'Restaurant',  note:'24hr cancellation policy', alert:false },
-    { date:'May 15', raw: new Date(2026,4,15), time:'TBD',                   name:'Cocktail Class with Burt',                 loc:'TBD',         note:'Details TBD', alert:false },
-    { date:'May 16', raw: new Date(2026,4,16), time:'6:00 PM',               name:'Karaoke Night',                            loc:'TBD',         note:'', alert:false },
-    { date:'May 19', raw: new Date(2026,4,19), time:'7:30–9:30 AM',          name:'Coffee & Connection',                      loc:'Restaurant',  note:'', alert:false },
-    { date:'May 21', raw: new Date(2026,4,21), time:'11:30 AM–1:00 PM',      name:'Third Thursday Open House Lunch',          loc:'Boardroom',   note:'Special menu · Comped to membership sales', alert:false },
-    { date:'May 21', raw: new Date(2026,4,21), time:'6:00 PM',               name:'Bingo Night',                              loc:'TBD',         note:'', alert:false },
-    { date:'May 22', raw: new Date(2026,4,22), time:'5:30–8:30 PM',          name:'Live Music Friday — Chase Given',          loc:'Restaurant',  note:'', alert:false },
-    { date:'May 23', raw: new Date(2026,4,23), time:'TBD',                   name:'BBQ Special',                              loc:'TBD',         note:'', alert:false },
-    { date:'May 25', raw: new Date(2026,4,25), time:'All Day',               name:'⛔ Club Closed — Memorial Day',            loc:'',            note:'No dining service', alert:true },
-    { date:'May 26', raw: new Date(2026,4,26), time:'5:30–7:00 PM',          name:'Industry Networking Night (Real Estate)', loc:'Restaurant Patio', note:'Open to members · Free', alert:false },
-    { date:'May 28', raw: new Date(2026,4,28), time:'6:00–7:00 PM',          name:'New Member Mixer',                         loc:'Restaurant',  note:'', alert:false },
-  ]
+    { date:'May 1', raw: new Date(2026,4,1), time:'5:30–8:30 PM', name:'Live Music Friday — Josh Thompson', loc:'Restaurant', note:'', alert:false },
+    { date:'May 2', raw: new Date(2026,4,2), time:'11:00 AM–2:00 PM', name:'Kentucky Derby Brunch', loc:'Restaurant', note:'', alert:false },
+    { date:'May 5', raw: new Date(2026,4,5), time:'5:00 PM', name:'Passport Dinner: Cinco de Mayo', loc:'Restaurant', note:'', alert:false },
+    { date:'May 7', raw: new Date(2026,4,7), time:'All Day', name:'⛔ Club Closed — Supercross', loc:'', note:'', alert:true },
+    { date:'May 8', raw: new Date(2026,4,8), time:'All Day', name:'⛔ Club Closed — Supercross', loc:'', note:'', alert:true },
+    { date:'May 9', raw: new Date(2026,4,9), time:'All Day', name:'⛔ Club Closed — Supercross', loc:'', note:'', alert:true },
+    { date:'May 12', raw: new Date(2026,4,12), time:'5:30–7:00 PM', name:'UofU Young Alumni Mixer', loc:'Suite Lounge', note:'', alert:false },
+    { date:'May 13', raw: new Date(2026,4,13), time:'6:00 PM', name:'Kid\'s Paint Night', loc:'', note:'', alert:false },
+    { date:'May 14', raw: new Date(2026,4,14), time:'6:00–8:00 PM', name:'Ladies Night Dinner', loc:'Restaurant', note:'', alert:false },
+    { date:'May 15', raw: new Date(2026,4,15), time:'6:00 PM', name:'Cocktail Class with Burt', loc:'', note:'', alert:false },
+    { date:'May 16', raw: new Date(2026,4,16), time:'6:00 PM', name:'Karaoke Night', loc:'', note:'', alert:false },
+    { date:'May 19', raw: new Date(2026,4,19), time:'7:30–9:30 AM', name:'Coffee & Connection', loc:'Restaurant', note:'', alert:false },
+    { date:'May 21', raw: new Date(2026,4,21), time:'11:30 AM–1:00 PM', name:'Third Thursday Open House Lunch', loc:'Boardroom', note:'', alert:false },
+    { date:'May 21', raw: new Date(2026,4,21), time:'6:00 PM', name:'Bingo Night', loc:'', note:'', alert:false },
+    { date:'May 22', raw: new Date(2026,4,22), time:'5:30–8:30 PM', name:'Live Music Friday — Chase Given', loc:'Restaurant', note:'', alert:false },
+    { date:'May 23', raw: new Date(2026,4,23), time:'5:00–9:00 PM', name:'BBQ Special', loc:'Restaurant', note:'', alert:false },
+    { date:'May 25', raw: new Date(2026,4,25), time:'All Day', name:'⛔ Club Closed — Memorial Day', loc:'', note:'', alert:true },
+    { date:'May 26', raw: new Date(2026,4,26), time:'5:30–7:00 PM', name:'Industry Networking Night (Real Estate)', loc:'Restaurant Patio', note:'', alert:false },
+    { date:'May 27', raw: new Date(2026,4,27), time:'6:00–8:00 PM', name:'Skill Swap: Charcuterie', loc:'Restaurant Patio', note:'', alert:false },
+    { date:'May 28', raw: new Date(2026,4,28), time:'6:00–7:00 PM', name:'New Member Mixer', loc:'Restaurant', note:'', alert:false }
+  ],
   june: [
     { date:'Jun 4', raw: new Date(2026,5,4), time:'6:00–8:00 PM', name:'Ladies Night Dinner', loc:'Restaurant', note:'', alert:false },
     { date:'Jun 5', raw: new Date(2026,5,5), time:'5:30–8:30 PM', name:'Live Music Friday — Hana Kamler', loc:'Restaurant', note:'', alert:false },
@@ -2079,14 +2077,13 @@ const CLUB_EVENTS = {
     { date:'Jun 16', raw: new Date(2026,5,16), time:'5:00 PM', name:'Passport Dinner: Escape to Hawaii', loc:'Restaurant', note:'', alert:false },
     { date:'Jun 18', raw: new Date(2026,5,18), time:'6:00 PM', name:'Bingo Night', loc:'', note:'', alert:false },
     { date:'Jun 19', raw: new Date(2026,5,19), time:'', name:'Club Closed — Juneteenth', loc:'', note:'', alert:true },
-    { date:'Jun 20', raw: new Date(2026,5,20), time:'', name:'Dad's Dinner', loc:'', note:'', alert:false },
+    { date:'Jun 20', raw: new Date(2026,5,20), time:'', name:'Dad\'s Dinner', loc:'', note:'', alert:false },
     { date:'Jun 25', raw: new Date(2026,5,25), time:'6:00–7:00 PM', name:'New Member Mixer', loc:'Restaurant', note:'', alert:false },
     { date:'Jun 26', raw: new Date(2026,5,26), time:'5:30–8:30 PM', name:'Live Music Friday — Will Baxter', loc:'Restaurant', note:'', alert:false },
     { date:'Jun 27', raw: new Date(2026,5,27), time:'5:00–9:00 PM', name:'Burger Battle', loc:'Restaurant', note:'', alert:false },
     { date:'Jun 29', raw: new Date(2026,5,29), time:'', name:'Open for Lunch and Dinner', loc:'', note:'', alert:false },
     { date:'Jun 30', raw: new Date(2026,5,30), time:'', name:'Open for Dinner', loc:'', note:'', alert:false }
   ],
-
 };
 
 function daysOutLabel(d) {
@@ -2122,7 +2119,7 @@ function buildEvtCard(ev, compact) {
 }
 
 function renderEventsLists() {
-  ['march','april','may'].forEach(month => {
+  ['may','june'].forEach(month => {
     const el = document.getElementById('evt-' + month + '-list');
     if (!el) return;
     const html = CLUB_EVENTS[month].map(ev => buildEvtCard(ev, false)).filter(Boolean).join('');
