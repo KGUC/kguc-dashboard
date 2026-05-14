@@ -921,6 +921,11 @@ function extApplyReservations(resData) {
 // ── Apply roster data ─────────────────────────────────────────────────────────
 function extApplyRoster(rosterData) {
   if (!rosterData?.length) return;
+  // Guard: if the extension's roster was synced for a different week, discard it.
+  // This prevents stale chrome.storage data from overwriting fresh file shifts after a rollover.
+  const extWeekKey = rosterData[0]?.weekKey;
+  const currentWeekKey = WEEK_DATES.join(',');
+  if (extWeekKey && extWeekKey !== currentWeekKey) return;
   // Update the STAFF_ROSTER array if names match
   rosterData.forEach(extStaff => {
     const match = STAFF_ROSTER.find(s =>
@@ -1087,6 +1092,7 @@ const WEEK_DATES = ['2026-05-14','2026-05-15','2026-05-16','2026-05-19','2026-05
 
 // Staff shift index matches WEEK_DATES order: [Wed Apr23, Fri24, Sat25, Mon28, Tue29]
 const STAFF_ROSTER = [
+  {name:'Ash Franco', role:'A. Manager', shifts:['10:00 AM - 8:00 PM','2:00 PM - CLOSE (PM S)','4:00 PM - CLOSE','10:00 AM - 3:00 PM','10:00 AM - 9:00 PM (PM S)']},
   {name:'Lacey Long', role:'Bar Lead', shifts:['3:30 PM - CLOSE (B)','10:00 AM - CLOSE (PM B)','OFF','OFF','3:30 PM - CLOSE (B)']},
   {name:'Taylor Gleave', role:'Server', shifts:['7:00 AM - 3:00 PM','7:00 AM - 3:00 PM','OFF','7:00 AM - 3:00 PM','7:00 AM - 3:00 PM']},
   {name:'Chris Baigue', role:'Server', shifts:['10:00 AM - 3:00 PM','10:00 AM - 3:00 PM','4:00 PM - CLOSE','10:00 AM - 3:00 PM','4:00 PM - CLOSE']},
