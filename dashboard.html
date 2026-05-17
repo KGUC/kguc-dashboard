@@ -424,15 +424,14 @@
           <!-- Day tabs -->
           <div class="flex flex-wrap gap-2 mb-4">
             <button onclick="csShowDay('thu-may14')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Thu 5/14 <span class="opacity-60">0</span></button>
-            <button onclick="csShowDay('fri-may15')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Fri 5/15 <span class="opacity-60">7</span></button>
+            <button onclick="csShowDay('fri-may15')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Fri 5/15 <span class="opacity-60">0</span></button>
             <button onclick="csShowDay('sat-may16')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Sat 5/16 <span class="opacity-60">0</span></button>
             <button onclick="csShowDay('tue-may19')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Tue 5/19 <span class="opacity-60">0</span></button>
             <button onclick="csShowDay('wed-may20')" class="cs-tab-btn no-res bg-surface-container px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant border border-outline-variant/20">Wed 5/20 <span class="opacity-60">0</span></button>
           </div>
 
                     
-          
-          <div class="cs-day-panel" id="cs-thu-may14">
+                              <div class="cs-day-panel" id="cs-thu-may14">
             <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">0 reservations</strong> · <span class="text-on-surface-variant/50">Not yet synced</span></p>
             <!-- Service Log -->
             <div class="mt-4 border-t border-outline-variant/10 pt-3">
@@ -445,25 +444,8 @@
                 oninput="saveServiceLog('thu-may14', this.value)"></textarea>
             </div>
           </div>
-          <div class="cs-day-panel active" id="cs-fri-may15">
-            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">7 reservations</strong> · <span class="text-emerald-600">&#x27F3; Synced May 15</span> · 43 covers</p>
-            
-      <div class="overflow-hidden mt-2">
-        <table class="w-full text-left">
-          <thead><tr class="text-on-surface-variant text-xs font-bold border-b border-outline-variant/20 uppercase tracking-wider">
-            <th class="pb-2 px-2">Time</th><th class="pb-2 px-2">Member</th>
-            <th class="pb-2 px-2 text-center">Covers</th><th class="pb-2 px-2">Note</th>
-          </tr></thead>
-          <tbody class="text-sm">
-      <tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">7:30 PM</td><td class="py-3 px-2 font-semibold">Chris Mousley</td><td class="py-3 px-2 text-center text-on-surface-variant">4</td><td class="py-3 px-2 text-on-surface-variant text-xs">—</td></tr>
-      <tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">6:30 PM</td><td class="py-3 px-2 font-semibold">Ethan Hirabayashi</td><td class="py-3 px-2 text-center text-on-surface-variant">10</td><td class="py-3 px-2 text-on-surface-variant text-xs">—</td></tr>
-      <tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">6:00 PM</td><td class="py-3 px-2 font-semibold">Sidney Norton</td><td class="py-3 px-2 text-center text-on-surface-variant">4</td><td class="py-3 px-2 text-on-surface-variant text-xs">—</td></tr>
-      <tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">5:30 PM</td><td class="py-3 px-2 font-semibold">Aubrey Margetts</td><td class="py-3 px-2 text-center text-on-surface-variant">6</td><td class="py-3 px-2 text-on-surface-variant text-xs">—</td></tr>
-      <tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">5:30 PM</td><td class="py-3 px-2 font-semibold">Andrew Allison</td><td class="py-3 px-2 text-center text-on-surface-variant">4</td><td class="py-3 px-2 text-on-surface-variant text-xs">Air hockey table available:-)</td></tr>
-      <tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">1:30 PM</td><td class="py-3 px-2 font-semibold">Adam Raines</td><td class="py-3 px-2 text-center text-on-surface-variant">10</td><td class="py-3 px-2 text-on-surface-variant text-xs">—</td></tr>
-      <tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">12:30 PM</td><td class="py-3 px-2 font-semibold">Tanya Flores</td><td class="py-3 px-2 text-center text-on-surface-variant">5</td><td class="py-3 px-2 text-on-surface-variant text-xs">Have a couple of appetizers ready. Thanks!</td></tr></tbody>
-        </table>
-      </div>
+          <div class="cs-day-panel" id="cs-fri-may15">
+            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">0 reservations</strong> · <span class="text-on-surface-variant/50">Not yet synced</span></p>
             <!-- Service Log -->
             <div class="mt-4 border-t border-outline-variant/10 pt-3">
               <div class="flex items-center justify-between mb-1.5">
@@ -475,8 +457,8 @@
                 oninput="saveServiceLog('fri-may15', this.value)"></textarea>
             </div>
           </div>
-          <div class="cs-day-panel" id="cs-sat-may16">
-            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">0 reservations</strong> · <span class="text-on-surface-variant/50">Not yet synced</span></p>
+          <div class="cs-day-panel active" id="cs-sat-may16">
+            <p class="text-xs text-on-surface-variant mb-3"><strong class="text-on-surface">4 reservations</strong> · 17 covers · <span class="text-primary">⟳ Synced May 16</span></p><div class="overflow-hidden"><table class="w-full text-left"><thead><tr class="text-on-surface-variant text-xs font-bold border-b border-outline-variant/20 uppercase tracking-wider"><th class="pb-2 px-2">Time</th><th class="pb-2 px-2">Member</th><th class="pb-2 px-2 text-center">Covers</th><th class="pb-2 px-2">Area</th><th class="pb-2 px-2">Note</th></tr></thead><tbody class="text-sm"><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">6:30 PM</td><td class="py-3 px-2 font-semibold">Torr Brush</td><td class="py-3 px-2 text-center text-on-surface-variant">5</td><td class="py-3 px-2 text-xs text-on-surface-variant">Main Dining</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">6:00 PM</td><td class="py-3 px-2 font-semibold">Erin Dermody</td><td class="py-3 px-2 text-center text-on-surface-variant">4</td><td class="py-3 px-2 text-xs text-on-surface-variant">Main Dining</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">6:00 PM</td><td class="py-3 px-2 font-semibold">James Flynn</td><td class="py-3 px-2 text-center text-on-surface-variant">2</td><td class="py-3 px-2 text-xs text-on-surface-variant">Main Dining</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr><tr class="hover:bg-white/5 border-t border-outline-variant/5"><td class="py-3 px-2 font-bold text-primary text-xs">6:00 PM</td><td class="py-3 px-2 font-semibold">Lisa Balog</td><td class="py-3 px-2 text-center text-on-surface-variant">6</td><td class="py-3 px-2 text-xs text-on-surface-variant">Bar Lounge</td><td class="py-3 px-2 text-xs"><span class="text-on-surface-variant">—</span></td></tr></tbody></table></div>
             <!-- Service Log -->
             <div class="mt-4 border-t border-outline-variant/10 pt-3">
               <div class="flex items-center justify-between mb-1.5">
@@ -514,8 +496,6 @@
                 oninput="saveServiceLog('wed-may20', this.value)"></textarea>
             </div>
           </div>
-          </div>
-        </div>
         </div>
       </section>
 
@@ -542,18 +522,15 @@
           </div>
           <!-- Month tabs -->
           <div class="flex gap-2 mb-5 flex-wrap">
-            <button onclick="showEventsMonth('april')" id="evt-tab-april" class="evt-month-tab active px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-primary text-on-primary">April</button>
-            <button onclick="showEventsMonth('may')"   id="evt-tab-may"   class="evt-month-tab px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-[#0f172a] text-on-surface-variant hover:text-primary">May</button>
+            <button onclick="showEventsMonth('may')"   id="evt-tab-may"   class="evt-month-tab active px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-primary text-on-primary">May</button>
+            <button onclick="showEventsMonth('june')"  id="evt-tab-june"  class="evt-month-tab px-4 py-1.5 rounded-lg text-xs font-bold transition-colors bg-[#0f172a] text-on-surface-variant hover:text-primary">June</button>
           </div>
           <!-- Event lists per month -->
-          <div id="evt-march" class="evt-month-panel">
-            <div id="evt-march-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
-          </div>
-          <div id="evt-april" class="evt-month-panel hidden">
-            <div id="evt-april-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
-          </div>
-          <div id="evt-may" class="evt-month-panel hidden">
+          <div id="evt-may" class="evt-month-panel">
             <div id="evt-may-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
+          </div>
+          <div id="evt-june" class="evt-month-panel hidden">
+            <div id="evt-june-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"></div>
           </div>
         </div>
       </section>
@@ -623,14 +600,14 @@
           <div class="flex items-end justify-between mb-4">
             <div>
               <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-[0.2em] block mb-1">Master Schedule</span>
-              <h3 class="font-headline text-2xl font-black text-on-surface" id="roster-title">Apr 9 – 15</h3>
+              <h3 class="font-headline text-2xl font-black text-on-surface" id="roster-title">May 14 – 20</h3>
             </div>
             <div class="flex items-center gap-2">
               <div class="flex rounded-lg overflow-hidden border border-outline-variant/20 text-xs font-bold">
                 <button onclick="showRosterWeek('current')" id="roster-btn-current"
-                  class="px-3 py-1.5 bg-primary text-on-primary transition-colors">Apr 9–15</button>
+                  class="px-3 py-1.5 bg-primary text-on-primary transition-colors">May 14–20</button>
                 <button onclick="showRosterWeek('next')" id="roster-btn-next"
-                  class="px-3 py-1.5 bg-[#0f172a] text-on-surface-variant hover:text-primary transition-colors">Apr 16–22</button>
+                  class="px-3 py-1.5 bg-[#0f172a] text-on-surface-variant hover:text-primary transition-colors">May 21–27</button>
               </div>
               <button onclick="document.getElementById('sched-xlsx-import').click()"
                 class="text-xs font-bold px-3 py-2 rounded-lg border border-outline-variant/30 bg-surface-container text-on-surface-variant hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-all">
@@ -1098,40 +1075,35 @@ updateClock(); setInterval(updateClock, 30000);
 // Each day: { reservations:[{time:'HH:MM', covers:N}], staff:{name: shift} }
 // shifts: 'OFF' | 'R-OFF' | 'ML' | 'HH:MM–HH:MM' working shift
 // ══════════════════════════════════════════════════════════════════════════════
+const WEEK_DATES_NEXT = ['2026-05-21','2026-05-22','2026-05-23','2026-05-26','2026-05-27'];
 const WEEK_DATES = ['2026-05-14','2026-05-15','2026-05-16','2026-05-19','2026-05-20'];
 
-// Staff shift index matches WEEK_DATES order: [Wed Apr23, Fri24, Sat25, Mon28, Tue29]
+// Staff shift index matches WEEK_DATES order: [Thu May14, Fri15, Sat16, Tue19, Wed20]
 const STAFF_ROSTER = [
-  {name:'Braxton Butterstein',      role:'Director',         shifts:['Leave','Leave','Leave','Leave','Leave']},
-  {name:'Ash Franco',      role:'Asst. R. Manager',         shifts:['10:00 AM - 8:00 PM','2:00 PM - CLOSE (PM S)','4:00 PM - CLOSE','10:00 AM - 3:00 PM','10:00 AM - 9:00 PM (PM S)']},
-  {name:'Lacey Long',      role:'Bar Lead',         shifts:['3:30 PM - CLOSE (B)','10:00 AM - CLOSE (PM B)','R-OFF','OFF','3:30 PM - CLOSE (B)']},
-  {name:'Madi Cheek',      role:'',         shifts:['OFF','OFF','OFF','OFF','OFF']},
-  {name:'Brandi Obrien',      role:'',         shifts:['4:00 PM - CLOSE (on call)','OFF','OFF','OFF','OFF']},
-  {name:'Taylor Gleave',      role:'',         shifts:['7:00 AM - 3:00 PM','7:00 AM - 3:00 PM','OFF','7:00 AM - 3:00 PM','7:00 AM - 3:00 PM']},
-  {name:'Chris Baigue',      role:'',         shifts:['10:00 AM - 3:00 PM','10:00 AM - 3:00 PM','4:00 PM - CLOSE','10:00 AM - 3:00 PM','4:00 PM - CLOSE']},
-  {name:'Bryn Kurt',      role:'',         shifts:['OFF','OFF','OFF','OFF','OFF']},
-  {name:'Ashley Watkins',      role:'',         shifts:['5:00 PM - CLOSE','4:30 PM - CLOSE','4:30 PM - CLOSE','OFF','OFF']},
-  {name:'Kaitlyn Adair',      role:'',         shifts:['4:00 PM - CLOSE','OFF','OFF','OFF','10:00 AM - 3:00 PM']},
-  {name:'Shannon Keil',      role:'',         shifts:['R-OFF','R-OFF','4:00 PM - CLOSE','10:00 AM - 3:00 PM','4:00 PM - CLOSE']},
-  {name:'Jade Curtis',      role:'',         shifts:['OFF','OFF','OFF','OFF','OFF']},
-  {name:'Ella Bashore',      role:'',         shifts:['10:00 AM - 3:00 PM','OFF','OFF','R-OFF','R-OFF']},
-  {name:'Audrey Irvine',      role:'',         shifts:['OFF','OFF','OFF','OFF','OFF']},
-  {name:'Malia Sager',      role:'',         shifts:['4:00 PM - CLOSE','10:00 AM - 3:00 PM 4:00 PM - CLOSE','OFF','OFF','4:30 PM - CLOSE (on call)']}
+  {name:'Braxton Butterstein', role:'Director', shifts:['ML','ML','ML','ML','ML']},
+  {name:'Ash Franco', role:'A. Manager', shifts:['10:00 AM - 8:00 PM','2:00 PM - CLOSE (PM S)','4:00 PM - CLOSE','10:00 AM - 3:00 PM','10:00 AM - 9:00 PM (PM S)']},
+  {name:'Lacey Long', role:'Bar Lead', shifts:['3:30 PM - CLOSE (B)','10:00 AM - CLOSE (PM B)','R-OFF','OFF','3:30 PM - CLOSE (B)']},
+  {name:'Brandi Obrien', role:'', shifts:['4:00 PM - CLOSE (on call)','OFF','OFF','OFF','OFF']},
+  {name:'Taylor Gleave', role:'', shifts:['7:00 AM - 3:00 PM','7:00 AM - 3:00 PM','OFF','7:00 AM - 3:00 PM','7:00 AM - 3:00 PM']},
+  {name:'Chris Baigue', role:'', shifts:['10:00 AM - 3:00 PM','10:00 AM - 3:00 PM','4:00 PM - CLOSE','10:00 AM - 3:00 PM','4:00 PM - CLOSE']},
+  {name:'Ashley Watkins', role:'', shifts:['5:00 PM - CLOSE','4:30 PM - CLOSE','4:30 PM - CLOSE','OFF','OFF']},
+  {name:'Kaitlyn Adair', role:'', shifts:['4:00 PM - CLOSE','OFF','OFF','OFF','10:00 AM - 3:00 PM']},
+  {name:'Shannon Keil', role:'', shifts:['R-OFF','R-OFF','4:00 PM - CLOSE','10:00 AM - 3:00 PM','4:00 PM - CLOSE']},
+  {name:'Ella Bashore', role:'', shifts:['10:00 AM - 3:00 PM','OFF','OFF','R-OFF','R-OFF']},
+  {name:'Malia Sager', role:'', shifts:['4:00 PM - CLOSE','10:00 AM - 3:00 PM 4:00 PM - CLOSE','OFF','OFF','4:30 PM - CLOSE (on call)']}
 ];
 
-// Reservations per date — updated from ClubSpot Apr 9
+// Reservations per date — updated from ClubSpot May 16
 const RESERVATIONS_BY_DATE = {
-  '2026-05-14': [],
-  '2026-05-15': [
-    {name:'Chris Mousley',table:'34',area:'Main Dining',partySize:4,time:'7:30 PM',notes:''},
-    {name:'Ethan Hirabayashi',table:'35',area:'Main Dining',partySize:10,time:'6:30 PM',notes:''},
-    {name:'Sidney Norton',table:'33',area:'Main Dining',partySize:4,time:'6:00 PM',notes:''},
-    {name:'Aubrey Margetts',table:'23',area:'Main Dining',partySize:6,time:'5:30 PM',notes:''},
-    {name:'Andrew Allison',table:'40',area:'Main Dining',partySize:4,time:'5:30 PM',notes:'Air hockey table available:-)'},
-    {name:'Adam Raines',table:'40',area:'Main Dining',partySize:10,time:'1:30 PM',notes:''},
-    {name:'Tanya Flores',table:'23',area:'Main Dining',partySize:5,time:'12:30 PM',notes:'Have a couple of appetizers ready. Thanks!'}
+  '2026-05-16': [
+    {time:'18:30', covers:5},
+    {time:'18:00', covers:4},
+    {time:'18:00', covers:2},
+    {time:'18:00', covers:6}
   ],
-  '2026-05-16': [],
+  '2026-05-14': [],
+  '2026-05-15': [],
+  '2026-05-18': [],
   '2026-05-19': [],
   '2026-05-20': [],
   '2026-05-07': [],
@@ -1332,6 +1304,21 @@ const RESERVATIONS_BY_DATE = {
     {time:'19:00', covers:5},
   ],
 };
+
+// ── NEXT WEEK ROSTER (moved) — sync from schedule when available ─────────────────────
+const STAFF_ROSTER_NEXT = [
+  {name:'Braxton Butterstein', role:'Director', shifts:['—','—','—','—','—']},
+  {name:'Ash Franco', role:'A. Manager', shifts:['—','—','—','—','—']},
+  {name:'Lacey Long', role:'Bar Lead', shifts:['—','—','—','—','—']},
+  {name:'Brandi Obrien', role:'', shifts:['—','—','—','—','—']},
+  {name:'Taylor Gleave', role:'', shifts:['—','—','—','—','—']},
+  {name:'Chris Baigue', role:'', shifts:['—','—','—','—','—']},
+  {name:'Ashley Watkins', role:'', shifts:['—','—','—','—','—']},
+  {name:'Kaitlyn Adair', role:'', shifts:['—','—','—','—','—']},
+  {name:'Shannon Keil', role:'', shifts:['—','—','—','—','—']},
+  {name:'Ella Bashore', role:'', shifts:['—','—','—','—','—']},
+  {name:'Malia Sager', role:'', shifts:['—','—','—','—','—']}
+];
 
 // ── TODAY CONTEXT ─────────────────────────────────────────────────────────────
 const _now      = new Date();
@@ -1556,15 +1543,11 @@ function renderTodayStaff() {
     const onCallBadge = isOnCall
       ? '<span class="text-[9px] font-bold text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 rounded px-1 ml-0.5 whitespace-nowrap">On Call</span>'
       : '';
-    return `<div class="flex flex-col gap-0.5 p-2 rounded-lg border bg-emerald-400/10 border-emerald-400/20">
-      <div class="flex items-center gap-1.5">
-        <span class="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-emerald-400"></span>
-        <span class="text-xs font-semibold text-on-surface">${firstName}</span>
-      </div>
-      <div class="flex items-center gap-0.5 pl-3">
-        <span class="text-[10px] font-bold text-emerald-400 whitespace-nowrap">${shiftBase}</span>
-        ${codeBadge}${onCallBadge}${splitBadge}
-      </div>
+    return `<div class="flex items-center gap-1.5 p-2 rounded-lg border bg-emerald-400/10 border-emerald-400/20">
+      <span class="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-emerald-400"></span>
+      <span class="text-xs font-semibold text-on-surface truncate flex-1">${firstName}</span>
+      <span class="flex items-center gap-0.5 flex-shrink-0">${codeBadge}${onCallBadge}${splitBadge}</span>
+      <span class="text-[10px] font-bold text-emerald-400 whitespace-nowrap">${shiftBase}</span>
     </div>`;
   }
 
@@ -1618,13 +1601,8 @@ function computeStats() {
 
   let lunch = 0, dinner = 0;
   todayData.forEach(r => {
-    const covers = r.partySize || r.covers || 0;
-    const timeStr = r.time || '';
-    // Parse hour from "1:30 PM" or "13:30" format
-    let h = parseInt(timeStr.split(':')[0]);
-    if (/PM/i.test(timeStr) && h !== 12) h += 12;
-    if (/AM/i.test(timeStr) && h === 12) h = 0;
-    if (h < 15) lunch += covers; else dinner += covers;
+    const h = parseInt(r.time.split(':')[0]);
+    if (h < 15) lunch += r.covers; else dinner += r.covers;
   });
   lunchEl.textContent  = lunch  || '—';
   dinnerEl.textContent = dinner || '—';
@@ -1632,26 +1610,6 @@ function computeStats() {
   dinnerEl.classList.remove('text-yellow-500');
 }
 computeStats();
-
-// ── NEXT WEEK ROSTER (Apr 9–15) — sync from schedule when available ───────────
-const WEEK_DATES_NEXT = ['2026-05-21','2026-05-22','2026-05-23','2026-05-26','2026-05-27'];
-const STAFF_ROSTER_NEXT = [
-  {name:'Braxton Butterstein',      role:'Director',         shifts:['—','—','—','—','—']},
-  {name:'Ash Franco',      role:'Asst. R. Manager',         shifts:['—','—','—','—','—']},
-  {name:'Lacey Long',      role:'Bar Lead',         shifts:['—','—','—','—','—']},
-  {name:'Madi Cheek',      role:'',         shifts:['—','—','—','—','—']},
-  {name:'Brandi Obrien',      role:'',         shifts:['—','—','—','—','—']},
-  {name:'Taylor Gleave',      role:'',         shifts:['—','—','—','—','—']},
-  {name:'Chris Baigue',      role:'',         shifts:['—','—','—','—','—']},
-  {name:'Bryn Kurt',      role:'',         shifts:['—','—','—','—','—']},
-  {name:'Ashley Watkins',      role:'',         shifts:['—','—','—','—','—']},
-  {name:'Kaitlyn Adair',      role:'',         shifts:['—','—','—','—','—']},
-  {name:'Shannon Keil',      role:'',         shifts:['—','—','—','—','—']},
-  {name:'Jade Curtis',      role:'',         shifts:['—','—','—','—','—']},
-  {name:'Ella Bashore',      role:'',         shifts:['—','—','—','—','—']},
-  {name:'Audrey Irvine',      role:'',         shifts:['—','—','—','—','—']},
-  {name:'Malia Sager',      role:'',         shifts:['—','—','—','—','—']}
-];
 
 // ── ROSTER RENDER ─────────────────────────────────────────────────────────────
 function shiftCls(s) {
@@ -1918,7 +1876,7 @@ function toggleGoalInput() {
 renderGoals();
 
 // ── SERVICE LOG ──────────────────────────────────────────────────────────────
-const SERVICE_LOG_DAYS = ['thu-may14','fri-may15','sat-may16','tue-may19','wed-may20'];
+const SERVICE_LOG_DAYS = ['cs-thu-may14', 'cs-fri-may15', 'cs-sat-may16', 'cs-tue-may19', 'cs-wed-may20'];
 function saveServiceLog(day, text) {
   stor('dashboard:log:' + day, text);
   const el = document.getElementById('log-saved-' + day);
@@ -2117,7 +2075,27 @@ const CLUB_EVENTS = {
     { date:'May 23', raw: new Date(2026,4,23), time:'TBD',                   name:'BBQ Special',                              loc:'TBD',         note:'', alert:false },
     { date:'May 25', raw: new Date(2026,4,25), time:'All Day',               name:'⛔ Club Closed — Memorial Day',            loc:'',            note:'No dining service', alert:true },
     { date:'May 26', raw: new Date(2026,4,26), time:'5:30–7:00 PM',          name:'Industry Networking Night (Real Estate)', loc:'Restaurant Patio', note:'Open to members · Free', alert:false },
+    { date:'May 27', raw: new Date(2026,4,27), time:'TBD',                   name:'Skill Swap: Charcuterie',                  loc:'TBD',         note:'Led by Braxton', alert:false },
     { date:'May 28', raw: new Date(2026,4,28), time:'6:00–7:00 PM',          name:'New Member Mixer',                         loc:'Restaurant',  note:'', alert:false },
+    { date:'May 30', raw: new Date(2026,4,30), time:'TBD',                   name:'Graduation',                               loc:'TBD',         note:'', alert:false },
+  ],
+  june: [
+    { date:'Jun 4',  raw: new Date(2026,5,4),  time:'6:00 PM',               name:"Ladies' Night",                            loc:'Restaurant',  note:'', alert:false },
+    { date:'Jun 5',  raw: new Date(2026,5,5),  time:'5:30–8:30 PM',          name:'Live Music Friday',                        loc:'Restaurant',  note:'National Donut Day', alert:false },
+    { date:'Jun 6',  raw: new Date(2026,5,6),  time:'10:30 AM–1:30 PM',      name:'Saturday Brunch',                          loc:'Restaurant',  note:'Bart cocktail special', alert:false },
+    { date:'Jun 10', raw: new Date(2026,5,10), time:'TBD',                   name:'Skill Swap: Pasta & Prosecco Class',        loc:'TBD',         note:'', alert:false },
+    { date:'Jun 12', raw: new Date(2026,5,12), time:'TBD',                   name:'Family Outdoor Movie Night',               loc:'Field Club',  note:'National Movie Night', alert:false },
+    { date:'Jun 16', raw: new Date(2026,5,16), time:'7:30–9:30 AM',          name:'Coffee & Connection',                      loc:'Restaurant',  note:'', alert:false },
+    { date:'Jun 16', raw: new Date(2026,5,16), time:'5:00–9:00 PM',          name:'Passport Dinner: Hawaiian & Seafood',      loc:'Restaurant',  note:'', alert:false },
+    { date:'Jun 19', raw: new Date(2026,5,19), time:'6:00 PM',               name:'Bingo Night',                              loc:'TBD',         note:'', alert:false },
+    { date:'Jun 20', raw: new Date(2026,5,20), time:'TBD',                   name:'⛔ Juneteenth',                            loc:'',            note:'Confirm closure / hours with leadership', alert:true },
+    { date:'Jun 20', raw: new Date(2026,5,20), time:'TBD',                   name:"Dad's Dinner — Prime Rib Night",           loc:'Restaurant',  note:'9 and Dine format', alert:false },
+    { date:'Jun 22', raw: new Date(2026,5,22), time:'All Month',             name:'⛔ North Patio Closed — Field Work',       loc:'',            note:'Dirt on field · North patio closed through end of month', alert:true },
+    { date:'Jun 25', raw: new Date(2026,5,25), time:'6:00 PM',               name:'New Member Mixer',                         loc:'TBD',         note:'', alert:false },
+    { date:'Jun 26', raw: new Date(2026,5,26), time:'5:30–8:30 PM',          name:'Live Music Friday',                        loc:'Restaurant',  note:'', alert:false },
+    { date:'Jun 27', raw: new Date(2026,5,27), time:'TBD',                   name:'3rd Annual Chef Burger Battle',            loc:'TBD',         note:'', alert:false },
+    { date:'Jun 29', raw: new Date(2026,5,29), time:'TBD',                   name:'Open for Lunch & Dinner',                  loc:'',            note:'Confirm with leadership', alert:false },
+    { date:'Jun 30', raw: new Date(2026,5,30), time:'TBD',                   name:'Open for Dinner Only',                     loc:'',            note:'Confirm with leadership', alert:false },
   ]
 };
 
@@ -2154,7 +2132,7 @@ function buildEvtCard(ev, compact) {
 }
 
 function renderEventsLists() {
-  ['march','april','may'].forEach(month => {
+  ['may','june'].forEach(month => {
     const el = document.getElementById('evt-' + month + '-list');
     if (!el) return;
     const html = CLUB_EVENTS[month].map(ev => buildEvtCard(ev, false)).filter(Boolean).join('');
@@ -2174,7 +2152,7 @@ function showEventsMonth(month) {
 function renderThisWeekEvents() {
   const el = document.getElementById('events-this-week');
   if (!el) return;
-  const allEvents = [...CLUB_EVENTS.march, ...CLUB_EVENTS.april, ...CLUB_EVENTS.may];
+  const allEvents = [...CLUB_EVENTS.may, ...CLUB_EVENTS.june];
   const thisWeek  = allEvents.filter(ev => {
     const diff = Math.round((ev.raw - TODAY_EVT) / 86400000);
     return diff >= 0 && diff <= 7;
@@ -2191,8 +2169,8 @@ renderEventsLists();
 // Auto-select the current month tab on load
 (function() {
   const m = TODAY_EVT.getMonth(); // 0=Jan ... 11=Dec
-  const monthMap = {2:'april', 3:'april', 4:'may'}; // march tab removed; fall back to april
-  const target = monthMap[m] || 'april';
+  const monthMap = {4:'may', 5:'june'}; // Tue–Sat club; May=month 4, Jun=month 5
+  const target = monthMap[m] || 'may';
   showEventsMonth(target);
 })();
 
